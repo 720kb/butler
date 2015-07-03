@@ -1,0 +1,9 @@
+[submodule "submodules"]
+	path = submodules
+	url = https://github.com/45kb/asd.js
+[submodule "vendor/annyang"]
+	path = vendor/annyang
+	url = https://github.com/TalAter/annyang
+[submodule "vendor/asd"]
+	path = vendor/asd
+	url = https://github.com/45kb/asd.js
