@@ -4,7 +4,8 @@
 
   var Hey = function initHey(settings) {
     /*eslint-disable*/
-    var i
+    var Pointer = new window.Pointer()
+    , i
     , self = this
     /*eslint-enable*/
     , onStartEvent = new window.CustomEvent('Hey:start')
@@ -30,21 +31,42 @@
     if (settings && settings.debug) {
       annyang.debug(settings.debug);
     }
+
     this.commands = {
-      'i': function pauseDetection() {
-        self.pause();
+      'select next element': function selectElementByClass(detection) {
+        Pointer.dehighlight();
+        Pointer.next();
+        Pointer.highlight();
+        window.console.info('Select next element', detection);
       },
-      'hey on': function resumeDetection() {
-        self.resume();
+      'select next element by id *detect': function selectElementById(detection) {
+        Pointer.dehighlight();
+        Pointer.next('#' + detection);
+        Pointer.highlight();
+        window.console.info('Select next element by id', detection);
       },
-      'ok select element by class *detect': function selectElementByClass(detect) {
-        window.console.log(detect);
+      'select next element by tag *detect': function selectElementByTag(detection) {
+        Pointer.dehighlight();
+        Pointer.next('<' + detection.replace('<', '').replace('>', '') + '>');
+        Pointer.highlight();
+        window.console.info('Select next element by id', detection);
       },
-      'ok select element by id *detect': function selectElementById(detect) {
-        window.console.log(detect);
+      'select next element by class *detect': function selectElementByClass(detection) {
+        Pointer.dehighlight();
+        Pointer.next('.' + detection.replace('.', ''));
+        Pointer.highlight();
+        window.console.info('Select next element by class', detection);
       },
-      'ok select element by tag *detect': function selectElementByTag(detect) {
-        window.console.log(detect);
+      'select next element by classes *detect': function selectElementByClasses(detection) {
+        Pointer.dehighlight();
+        Pointer.next(detection);
+        Pointer.highlight();
+        window.console.info('Select next element by classes', detection);
+      },
+      'deselect elements': function deselectAllElements(detection) {
+        Pointer.dehighlight();
+        Pointer = new window.Pointer();
+        window.console.info('Deselect all elements', detection);
       }
     };
     //mic access allowed
@@ -77,16 +99,6 @@
     annyang.addCommands(this.commands, false);
   };
 
-  Hey.prototype.resume = function resumeHey() {
-    annyang.resume();
-    window.console.log('resumed');
-  };
-
-  Hey.prototype.pause = function pauseHey() {
-    annyang.pause();
-    window.console.log('paused');
-  };
-
   Hey.prototype.start = function startHey() {
     annyang.debug(true);
     annyang.start({
@@ -110,5 +122,5 @@
     }
   };
 
-  window.Hey = Hey;
+  window.Hey = new Hey();
 }(window, annyang));
