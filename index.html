@@ -604,14 +604,16 @@
     <script src="index.js"></script>
     <script type="text/javascript">
       Hey.plug({
-        'langs': [],
         'commands': {
           'go': function hey() {
             alert('goooooo');
           }
         }
       });
-      Hey.start();
+
+      Hey.start({
+        'debug':true
+      });
     </script>
   </body>
 </html>

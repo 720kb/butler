@@ -2,7 +2,7 @@
 (function plainOldJs(window, annyang) {
   'use strict';
 
-  var Hey = function initHey(settings) {
+  var Hey = function initHey() {
     /*eslint-disable*/
     var Pointer = new window.Pointer()
     , i
@@ -13,25 +13,9 @@
     , onDetectionEvent = new window.CustomEvent('Hey:detection')
     , onDetectionMatchEvent = new window.CustomEvent('Hey:detection-match')
     , onDetectionNotMatchEvent = new window.CustomEvent('Hey:detection-not-match')
-    , onErrorsEvent = new window.CustomEvent('Hey:error')
-    , defaultLang = 'en-EN';
+    , onErrorsEvent = new window.CustomEvent('Hey:error');
 
-    if (settings
-      && settings.langs
-      && settings.langs.length > 0) {
-
-      for (i; i <= settings.langs.length; i += 1) {
-        annyang.setLanguage(settings.langs[i]);
-      }
-    } else {
-
-      annyang.setLanguage(defaultLang);
-    }
-
-    if (settings && settings.debug) {
-      annyang.debug(settings.debug);
-    }
-
+    this.lang = 'en-EN';
     this.commands = {
       'select next element': function selectElementByClass(detection) {
         Pointer.dehighlight();
@@ -101,7 +85,6 @@
   };
 
   Hey.prototype.createHtml = function createHtml() {
-
     this.html = window.document.createElement('div');
     this.html.innerHTML = 'DETECTION ON';
     this.html.style.cssText = 'border:5px solid #444; text-align:center;position:fixed;bottom:2%;margin:0 auto;left:2%;width:200px;background:rgba(0,0,0,0.7); z-index:9999999999999;border-radius:5px;line-height:25px;color:white;';
@@ -112,8 +95,14 @@
     this.html.style.visibility = 'visible';
   };
 
-  Hey.prototype.start = function startHey() {
-    annyang.debug(true);
+  Hey.prototype.start = function startHey(settings) {
+
+    if (settings
+      && settings.debug) {
+
+      annyang.debug(settings.debug);
+    }
+
     annyang.start({
       'autoRestart': false,
       'continuous': true
@@ -121,14 +110,7 @@
   };
 
   Hey.prototype.plug = function plugPlugin(plugin) {
-    var i = 0;
 
-    if (plugin && plugin.langs && plugin.langs.length > 0) {
-      for (i; i < plugin.langs.length; i += 1) {
-
-        annyang.setLanguage(plugin.langs[i]);
-      }
-    }
     if (plugin && plugin.commands) {
 
       annyang.addCommands(plugin.commands);
