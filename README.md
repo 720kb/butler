@@ -138,4 +138,4 @@ Hey.start({
 
 ##Thank you
 - to Google for the awesome webkit speech API
-- to https://github.com/TalAter/annyang developers and mantainers for the awesome library.
+- to https://github.com/TalAter/annyang developers and maintainers for the awesome library.
