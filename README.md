@@ -37,7 +37,7 @@ Default voice commands you can abuse of.
 _"Hey"_
 
 ####Selector
-Commands to select and highlight the DOM elements.
+Commands to select, highlight, manipulate, trigger.
 
 <img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
 _"Selector on"_
