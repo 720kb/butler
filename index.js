@@ -44,74 +44,100 @@ Element.prototype.isVisible=function(){"use strict";function t(o,s,n,r,l,h,f){va
 
     this.lang = 'en-EN';
     this.commands = {
-      'hey': function helloWorldHey() {
+      'hey': function helloWorld() {
         if (!sayHello) {
+
           sayHello = true;
           that.hello();
+
           window.setTimeout(function sayHelloTimeout() {
             that.goodbye();
             sayHello = false;
           }, 4500);
         }
       },
-      'selector on': function turnOnSelector() {
+      'selector on': function selectorOn() {
         Highlighter.erase();
         Highlighter.underline();
       },
-      'selector next': function selectElementByClass(detection) {
+      'selector off': function selectorOff(detection) {
+        Highlighter.erase();
+        Highlighter = new window.Highlighter();
+        window.console.info('Deselect all elements', detection);
+      },
+      'selector next': function selectorNext(detection) {
         Highlighter.erase();
         Highlighter.next();
         Highlighter.underline();
         window.console.info('Select next element', detection);
       },
-      'selector back': function selectElementByClass(detection) {
+      'selector back': function selectorBack(detection) {
         Highlighter.erase();
         Highlighter.previous();
         Highlighter.underline();
         window.console.info('Select next element', detection);
       },
-      'selector next id *detect': function selectElementById(detection) {
+      'selector next id *detect': function selectorNextById(detection) {
         Highlighter.erase();
         Highlighter.next('#' + detection);
         Highlighter.underline();
         window.console.info('Select next element by id', detection);
       },
-      'selector next tag *detect': function selectElementByTag(detection) {
+      'selector next tag *detect': function selectorNextByTag(detection) {
         Highlighter.erase();
         Highlighter.next('<' + detection.replace('<', '').replace('>', '') + '>');
         Highlighter.underline();
         window.console.info('Select next element by id', detection);
       },
-      'selector next class *detect': function selectElementByClass(detection) {
+      'selector next class *detect': function selectorNextByClass(detection) {
         Highlighter.erase();
         Highlighter.next('.' + detection.replace('.', ''));
         Highlighter.underline();
         window.console.info('Select next element by class', detection);
       },
-      'selector back id *detect': function selectElementById(detection) {
+      'selector back id *detect': function selectorBackById(detection) {
         Highlighter.erase();
         Highlighter.next('#' + detection);
         Highlighter.underline();
         window.console.info('Select next element by id', detection);
       },
-      'selector back tag *detect': function selectElementByTag(detection) {
+      'selector back tag *detect': function selectorBackByTag(detection) {
         Highlighter.erase();
         Highlighter.next('<' + detection.replace('<', '').replace('>', '') + '>');
         Highlighter.underline();
         window.console.info('Select next element by id', detection);
       },
-      'selector back class *detect': function selectElementByClass(detection) {
+      'selector back class *detect': function selectorBackByClass(detection) {
         Highlighter.erase();
         Highlighter.next('.' + detection.replace('.', ''));
         Highlighter.underline();
         window.console.info('Select next element by class', detection);
       },
-      'selector off': function deselectAllElements(detection) {
-        Highlighter.erase();
-        Highlighter = new window.Highlighter();
-        window.console.info('Deselect all elements', detection);
+      'selector add class :detection:': function selectorAddClass(detection) {
+
+        Highlighter.element.classList.add(detection);
       },
-      'selector which': function wichSelectorElement() {
+      'selector add id :detection:': function selectorAddId(detection) {
+
+        Highlighter.element.id = detection;
+      },
+      'selector put value :detection:': function selectorPutValue(detection) {
+
+        Highlighter.element.value = detection;
+      },
+      'selector insert text :detection:': function selectorInsertText(detection) {
+
+        Highlighter.element.innerText = detection;
+      },
+      'selector remove class :detection:': function selectorRemoveClass(detection) {
+
+        Highlighter.element.classElement.remove(detection);
+      },
+      'selector empty text': function selectorRemoveText() {
+
+        Highlighter.element.innerText = '';
+      },
+      'selector which': function selectorWich() {
         /*eslint-disable*/
         //jscs:disable
         window.alert(
