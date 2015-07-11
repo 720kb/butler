@@ -137,6 +137,18 @@ Element.prototype.isVisible=function(){"use strict";function t(o,s,n,r,l,h,f){va
 
         Highlighter.element.innerText = '';
       },
+      'selector click': function selectorClick() {
+
+        Highlighter.element.click();
+      },
+      'selector focus': function selectorFocus() {
+
+        Highlighter.element.focus();
+      },
+      'selector hover': function selectorHover() {
+
+        Highlighter.element.onmouseover();
+      },
       'selector which': function selectorWich() {
         /*eslint-disable*/
         //jscs:disable
