@@ -38,23 +38,32 @@ document.addEventListener("DOMContentLoaded", function() {
 <img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
 _"Hey"_
 
-![](http://i.imgur.com/2JA16e5.png) _"Selector on"_
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
+_"Selector on"_
 
-![](http://i.imgur.com/2JA16e5.png) _"Selector next"_
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
+_"Selector next"_
 
-![](http://i.imgur.com/2JA16e5.png) _"Selector back"_
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
+_"Selector back"_
 
-![](http://i.imgur.com/2JA16e5.png) _"Selector next id :detection:"_
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
+_"Selector next id :detection:"_
 
-![](http://i.imgur.com/2JA16e5.png) _"Selector next class :detection:"_
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
+_"Selector next class :detection:"_
 
-![](http://i.imgur.com/2JA16e5.png) _"Selector next tag :detection:"_
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
+_"Selector next tag :detection:"_
 
-![](http://i.imgur.com/2JA16e5.png) _"Selector back id :detection:"_
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
+_"Selector back id :detection:"_
 
-![](http://i.imgur.com/2JA16e5.png) _"Selector back class :detection:"_
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
+_"Selector back class :detection:"_
 
-![](http://i.imgur.com/2JA16e5.png) _"Selector back tag :detection:"_
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
+_"Selector back tag :detection:"_
 
 ##Options
 
