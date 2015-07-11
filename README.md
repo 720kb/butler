@@ -65,8 +65,10 @@ _"Selector back class :detection:"_
 _"Selector back tag :detection:"_
 
 ##Plugins
-Writing a plugin is very simple, all you have to do is to define new commands using the ```plug()``` method
+Writing a plugin is very simple, all you have to do is to define new commands using the ```plug()``` method.
+
 **Example**
+
 _hey.plugin.js_
 ```javascript
 Hey.plug({
