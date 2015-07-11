@@ -135,5 +135,7 @@ Hey.start({
 ```
 ##Gtk
 - Not ready for production
+
 ##Thank you
-- to https://github.com/TalAter/annyang developers and manteiners for the awesome library.
+- to Google for the awesome webkit speech API
+- to https://github.com/TalAter/annyang developers and mantainers for the awesome library.
