@@ -66,15 +66,27 @@ _"Selector back tag :detection:"_
 
 ##Plugins
 Writing a plugin is very simple, all you have to do is to define new commands using the ```plug()``` method
+**Example**
+_hey.plugin.js_
 ```javascript
 Hey.plug({
  'do something when i say this sentence': function callback(){
   window.alert('You said that sentence');
  } 
 });
-Hey.start();
-
 ```
+_index.html_
+```html
+<head>
+<script src="hey.min.js"></script>
+<script src="hey.plugin.js"></script>
+<script>
+Hey.start();
+</script>
+</head>
+```
+
+
 ##Debug
 Enable debug mode
 ```javascript
