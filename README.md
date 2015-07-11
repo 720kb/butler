@@ -69,5 +69,13 @@ _"Selector back tag :detection:"_
 
 ##Plugins
 How to write a plugin
+##Debug
+Enable debug mode
+```javascript
+var Hey = new window.Hey();
+Hey.start({
+ 'debug':true
+});
+```
 ##Gtk
 - Not ready for production
