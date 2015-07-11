@@ -43,6 +43,9 @@ Commands to select and highlight the DOM elements.
 _"Selector on"_
 
 <img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
+_"Selector off"_
+
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
 _"Selector next"_
 
 <img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
@@ -65,6 +68,36 @@ _"Selector back class :detection:"_
 
 <img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
 _"Selector back tag :detection:"_
+
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
+_"Selector add class :detection:"_
+
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
+_"Selector remove class :detection:"_
+
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
+_"Selector add id :detection:"_
+
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
+_"Selector put value :detection:"_
+
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
+_"Selector insert text :detection:"_
+
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
+_"Selector empty text"_
+
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
+_"Selector click"_
+
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
+_"Selector focus"_
+
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
+_"Selector hover"_
+
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
+_"Selector which"_
 
 ##Plugins
 Writing a plugin is very simple, all you have to do is to define new commands using the ```plug()``` method.
