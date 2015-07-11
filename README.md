@@ -85,7 +85,7 @@ Hey.start();
 </script>
 </head>
 ```
-
+Now all the hey.plugin.js defined commands and callbacks are plugged and can be used.
 
 ##Debug
 Enable debug mode
