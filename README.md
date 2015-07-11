@@ -14,12 +14,12 @@ http://caniuse.com/#feat=web-speech
 </head>
 ```
 ####Bower
-```shell
+```bash
 bower install
 ```
 
 ####Npm
-```shell
+```bash
 npm install
 ```
 
@@ -29,8 +29,6 @@ document.addEventListener("DOMContentLoaded", function() {
   Hey.start();
 });
 ```
-###Demo
-
 ##Commands
 Default voice commands you can abuse of.
 
