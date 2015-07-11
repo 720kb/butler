@@ -1,5 +1,5 @@
 ###Browser Support
-![Chrome](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Google_Chrome_icon_(2011).svg/1024px-Google_Chrome_icon_(2011).svg.png)
+![Chrome](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Google_Chrome_icon_(2011).svg/1024px-Google_Chrome_icon_(2011).svg.png =50x)
 
 http://caniuse.com/#feat=web-speech
 
