@@ -135,8 +135,10 @@ Hey.start({
 ```
 ##License 
 MIT
+
 ####Gtk
 - Not ready for production
+
 ####Thank you
 - to [Google](google.com) for the awesome webkit speech API
 - to https://github.com/TalAter/annyang developers and maintainers for the awesome library.
