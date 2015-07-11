@@ -26,9 +26,6 @@ npm install
 ###Usage
 ```javascript
 document.addEventListener("DOMContentLoaded", function() {
-
-  var Hey = new window.Hey();
-
   Hey.start();
 });
 ```
@@ -68,11 +65,19 @@ _"Selector back class :detection:"_
 _"Selector back tag :detection:"_
 
 ##Plugins
-How to write a plugin
+Writing a plugin is very simple, all you have to do is to define new commands using the ```plug()``` method
+```javascript
+Hey.plug({
+ 'do something when i say this sentence': function callback(){
+  window.alert('You said that sentence');
+ } 
+});
+Hey.start();
+
+```
 ##Debug
 Enable debug mode
 ```javascript
-var Hey = new window.Hey();
 Hey.start({
  'debug':true
 });
