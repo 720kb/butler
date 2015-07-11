@@ -99,6 +99,34 @@ _"Selector hover"_
 <img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
 _"Selector which"_
 
+##Events
+Available events
+```javascript
+document.addEventListner('Hey:start', function (data) {
+	console.info('Hey is started and microfone is allowed', data);
+});
+
+document.addEventListner('Hey:end', function (data) {
+	console.info('Hey has stopped working', data);
+});
+
+document.addEventListner('Hey:detection', function (data) {
+	console.info('Hey has new detections', data);
+});
+
+document.addEventListner('Hey:detection-match', function (data) {
+	console.log('Hey detection is matching', data);
+});
+
+document.addEventListner('Hey:detection-not-match', function (data) {
+	console.log('Hey detection is not matching', data);
+});
+
+document.addEventListner('Hey:error', function (error) {
+	console.error('Hey returned an error', error);
+});
+```
+
 ##Plugins
 Writing a plugin is very simple, all you have to do is to define new commands using the ```plug()``` method.
 
