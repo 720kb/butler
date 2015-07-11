@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
 ###Demo
 
 ##Commands
-<img src="http://i.imgur.com/2JA16e5.png" width="45"/> 
+<img src="http://i.imgur.com/2JA16e5.png" width="20"/> 
 _"Hey"_
 
 ![](http://i.imgur.com/2JA16e5.png) _"Selector on"_
