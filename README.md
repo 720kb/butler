@@ -67,6 +67,7 @@ _"Selector back class :detection:"_
 <img src="http://i.imgur.com/2JA16e5.png" width="18"/> 
 _"Selector back tag :detection:"_
 
-
+##Plugins
+How to write a plugin
 ##Gtk
 - Not ready for production
