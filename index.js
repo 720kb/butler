@@ -113,41 +113,77 @@ Element.prototype.isVisible=function(){"use strict";function t(o,s,n,r,l,h,f){va
         Highlighter.underline();
         window.console.info('Select next element by class', detection);
       },
-      'selector add class :detection:': function selectorAddClass(detection) {
+      'selector add class *detection': function selectorAddClass(detection) {
+        try {
+          Highlighter.element.classList.add(detection);
+        } catch(e) {
 
-        Highlighter.element.classList.add(detection);
+          window.alert(e);
+        }
       },
-      'selector add id :detection:': function selectorAddId(detection) {
+      'selector add id *detection': function selectorAddId(detection) {
+        try {
+          Highlighter.element.id = detection;
+        } catch(e) {
 
-        Highlighter.element.id = detection;
+          window.alert(e);
+        }
       },
-      'selector put value :detection:': function selectorPutValue(detection) {
+      'selector put value *detection': function selectorPutValue(detection) {
+        try {
+          Highlighter.element.value = detection;
+        } catch(e) {
 
-        Highlighter.element.value = detection;
+          window.alert(e);
+        }
       },
-      'selector insert text :detection:': function selectorInsertText(detection) {
+      'selector insert text *detection': function selectorInsertText(detection) {
+        try {
+          Highlighter.element.innerText = detection;
+        } catch(e) {
 
-        Highlighter.element.innerText = detection;
+          window.alert(e);
+        }
       },
-      'selector remove class :detection:': function selectorRemoveClass(detection) {
+      'selector remove class *detection': function selectorRemoveClass(detection) {
+        try {
+          Highlighter.element.classElement.remove(detection);
+        } catch(e) {
 
-        Highlighter.element.classElement.remove(detection);
+          window.alert(e);
+        }
       },
       'selector empty text': function selectorRemoveText() {
+        try {
+          Highlighter.element.innerText = '';
+        } catch(e) {
 
-        Highlighter.element.innerText = '';
+          window.alert(e);
+        }
       },
       'selector click': function selectorClick() {
+        try {
+          Highlighter.element.click();
+        } catch(e) {
 
-        Highlighter.element.click();
+          window.alert(e);
+        }
       },
       'selector focus': function selectorFocus() {
+        try {
+          Highlighter.element.focus();
+        } catch(e) {
 
-        Highlighter.element.focus();
+          window.alert(e);
+        }
       },
       'selector hover': function selectorHover() {
+        try {
+          Highlighter.element.onmouseover();
+        } catch(e) {
 
-        Highlighter.element.onmouseover();
+          window.alert(e);
+        }
       },
       'selector which': function selectorWich() {
         /*eslint-disable*/
