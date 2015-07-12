@@ -1,9 +1,9 @@
 {
-  "name": "...",
+  "name": "uknown",
   "version": "0.0.1",
-  "description": "...",
+  "description": "",
   "scripts": {
-    "js-min": "./tasks/banner | xargs -0 -I banner uglifyjs src/js/highlighter.js --preamble banner -c -m --screw-ie8 -p relative --source-map dist/highlighter.min.js.map -o dist/highlighter.min.js",
+    "js-min": "./tasks/banner | xargs -0 -I banner uglifyjs src/js/index.js --preamble banner -c -m --screw-ie8 -p relative --source-map dist/index.min.js.map -o dist/index.min.js",
     "lint": "eslint -c .eslintrc src && jscs -c .jscsrc src",
     "precommit": "npm run-script lint"
   },
@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "..."
+    "url": ""
   },
   "author": "Filippo Oretti <filippo.oretti@gmail.com>",
   "contributors": [
@@ -21,9 +21,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "..."
+    "url": ""
   },
-  "homepage": "...",
+  "homepage": "",
   "dependencies": {},
   "devDependencies": {
     "eslint": "*",
