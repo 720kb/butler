@@ -138,10 +138,12 @@ Please refer to [annyang](https://github.com/TalAter/annyang/blob/master/docs/RE
 
 _hey.plugin.js_
 ```javascript
-Hey.plug({
- 'do something when i say this sentence': function callback(){
-  window.alert('You said that sentence');
- }
+document.addEventListener("DOMContentLoaded", function () {
+   Hey.plug({
+    'do something when i say this sentence': function callback(){
+       window.alert('You said that sentence');
+    }
+  });
 });
 ```
 _index.html_
@@ -150,7 +152,9 @@ _index.html_
 <script src="hey.min.js"></script>
 <script src="hey.plugin.js"></script>
 <script>
-Hey.start();
+document.addEventListener("DOMContentLoaded", function () {
+  Hey.start();
+});
 </script>
 </head>
 ```
@@ -159,8 +163,10 @@ Now all the _hey.plugin.js_ defined commands and callbacks are plugged and can b
 ##Debug
 Enable debug mode
 ```javascript
-Hey.start({
- 'debug':true
+document.addEventListener("DOMContentLoaded", function () {
+  Hey.start({
+   'debug':true
+  });
 });
 ```
 ##License
@@ -170,5 +176,5 @@ MIT
 - Not ready for production
 
 ####Thank you
-- to [Google](google.com) for the awesome webkit speech API
+- to [Google](google.com) and Google developers, for the awesome webkit-speech API
 - to https://github.com/TalAter/annyang developers and maintainers for the awesome library.
