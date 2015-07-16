@@ -33,71 +33,36 @@ document.addEventListener("DOMContentLoaded", function() {
 Default voice commands you can abuse of.
 
 ####Hello
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/>
-_"Hey"_
+Command  | Result
+------------- | -------------
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/>_"Hey"_  | Hello
+
 
 ####Selector
 Commands to select, highlight, trigger, manipulate DOM elements.
 
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/>
-_"Selector on"_
-
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/>
-_"Selector off"_
-
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/>
-_"Selector next"_
-
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/>
-_"Selector back"_
-
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/>
-_"Selector next id :detection:"_
-
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/>
-_"Selector next class :detection:"_
-
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/>
-_"Selector next tag :detection:"_
-
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/>
-_"Selector back id :detection:"_
-
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/>
-_"Selector back class :detection:"_
-
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/>
-_"Selector back tag :detection:"_
-
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/>
-_"Selector add class :detection:"_
-
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/>
-_"Selector remove class :detection:"_
-
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/>
-_"Selector add id :detection:"_
-
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/>
-_"Selector put value :detection:"_
-
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/>
-_"Selector insert text :detection:"_
-
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/>
-_"Selector empty text"_
-
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/>
-_"Selector click"_
-
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/>
-_"Selector focus"_
-
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/>
-_"Selector hover"_
-
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/>
-_"Selector which"_
+Command  | Result
+------------- | -------------
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/>_"Selector on"_  | Hello
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/>_"Selector off"_ | Hello
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/>_"Selector next"_  | Hello
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/>_"Selector back"_  | Hello
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/>_"Selector next id :detection:"_  | Hello
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/>_"Selector next class :detection:"_  | Hello
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/>_"Selector next tag :detection:"_  | Hello
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/>_"Selector back id :detection:"_  | Hello
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/>_"Selector back class :detection:"_  | Hello
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/>_"Selector back tag :detection:"_  | Hello
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/>_"Selector add class :detection:"_  | Hello
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/>_"Selector remove class :detection:"_  | Hello
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/>_"Selector add id :detection:"_  | Hello
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/>_"Selector put value :detection:"_  | Hello
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/>_"Selector insert text :detection:"_  | Hello
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/>_"Selector empty text"_  | Hello
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/>_"Selector click"_  | Hello
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/>_"Selector focus"_  | Hello
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/>_"Selector hover"_  | Hello
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/>_"Selector which"_  | Hello
 
 ##Events
 Available events
