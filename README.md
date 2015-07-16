@@ -41,28 +41,28 @@ Command  | Result
 ####Selector
 Commands to select, highlight, trigger, manipulate DOM elements.
 
-Command  | Result
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> Command  | Result
 ------------- | -------------
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector on"_  | Turn on selector highlighter
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector off"_ | Turn off selector highlighter
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector next"_  | Select next element in the DOM
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector back"_  | Select previous element in the DOM
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector next id :detection:"_  | Select next element in the DOM by detected id value
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector next class :detection:"_  | Select next element in the DOM by detected class name
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector next tag :detection:"_  | Select next element by detected tag name
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector back id :detection:"_  | Select previous element by detected id value
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector back class :detection:"_  | Select next element by detected class name
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector back tag :detection:"_  | Select next element by detected tag name
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector add class :detection:"_  | Add detected class name to the current selected DOM element
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector remove class :detection:"_  | Remove detected class name from the current selected DOM element
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector add id :detection:"_  | Add detected id value to the current selected DOM element
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector put value :detection:"_  | Add detected value to the current selected DOM element (helpful for inputs)
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector insert text :detection:"_  | Insert detected text inside the current selected DOM element
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector empty text"_  | Remove all the text from the current selected DOM element
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector click"_  | Trigger click event on the current selected DOM element
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector focus"_  | Trigger focus event on the current selected DOM element
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector hover"_  | Trigger mouseover event on the current selected DOM element
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector which"_  | Alert the current selected DOM element's informations
+ _"Selector on"_  | Turn on selector highlighter
+ _"Selector off"_ | Turn off selector highlighter
+ _"Selector next"_  | Select next element in the DOM
+ _"Selector back"_  | Select previous element in the DOM
+ _"Selector next id :detection:"_  | Select next element in the DOM by detected id value
+ _"Selector next class :detection:"_  | Select next element in the DOM by detected class name
+ _"Selector next tag :detection:"_  | Select next element by detected tag name
+ _"Selector back id :detection:"_  | Select previous element by detected id value
+ _"Selector back class :detection:"_  | Select next element by detected class name
+ _"Selector back tag :detection:"_  | Select next element by detected tag name
+ _"Selector add class :detection:"_  | Add detected class name to the current selected DOM element
+ _"Selector remove class :detection:"_  | Remove detected class name from the current selected DOM element
+ _"Selector add id :detection:"_  | Add detected id value to the current selected DOM element
+ _"Selector put value :detection:"_  | Add detected value to the current selected DOM element (helpful for inputs)
+ _"Selector insert text :detection:"_  | Insert detected text inside the current selected DOM element
+ _"Selector empty text"_  | Remove all the text from the current selected DOM element
+ _"Selector click"_  | Trigger click event on the current selected DOM element
+ _"Selector focus"_  | Trigger focus event on the current selected DOM element
+ _"Selector hover"_  | Trigger mouseover event on the current selected DOM element
+ _"Selector which"_  | Alert the current selected DOM element's informations
 
 ##Events
 Available events
