@@ -35,7 +35,7 @@ Default voice commands you can abuse of.
 ####Hello
 <img src="http://i.imgur.com/2JA16e5.png" width="18"/> Command  | Result
 ------------- | -------------
-_"Hey"_  | Hello
+_"Hey"_  | Hello Hey is here
 
 
 ####Selector
