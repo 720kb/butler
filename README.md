@@ -43,26 +43,26 @@ Commands to select, highlight, trigger, manipulate DOM elements.
 
 Command  | Result
 ------------- | -------------
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector on"_  | Hello
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector off"_ | Hello
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector next"_  | Hello
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector back"_  | Hello
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector next id :detection:"_  | Hello
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector next class :detection:"_  | Hello
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector next tag :detection:"_  | Hello
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector back id :detection:"_  | Hello
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector back class :detection:"_  | Hello
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector back tag :detection:"_  | Hello
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector add class :detection:"_  | Hello
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector remove class :detection:"_  | Hello
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector add id :detection:"_  | Hello
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector put value :detection:"_  | Hello
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector insert text :detection:"_  | Hello
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector empty text"_  | Hello
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector click"_  | Hello
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector focus"_  | Hello
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector hover"_  | Hello
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector which"_  | Hello
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector on"_  | Turn on selector highlighter
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector off"_ | Turn off selector highlighter
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector next"_  | Select next element in the DOM
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector back"_  | Select previous element in the DOM
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector next id :detection:"_  | Select next element in the DOM by detected id value
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector next class :detection:"_  | Select next element in the DOM by detected class name
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector next tag :detection:"_  | Select next element by detected tag name
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector back id :detection:"_  | Select previous element by detected id value
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector back class :detection:"_  | Select next element by detected class name
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector back tag :detection:"_  | Select next element by detected tag name
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector add class :detection:"_  | Add detected class name to the current selected DOM element
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector remove class :detection:"_  | Remove detected class name from the current selected DOM element
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector add id :detection:"_  | Add detected id value to the current selected DOM element
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector put value :detection:"_  | Add detected value to the current selected DOM element (helpful for inputs)
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector insert text :detection:"_  | Insert detected text inside the current selected DOM element
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector empty text"_  | Remove all the text from the current selected DOM element
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector click"_  | Trigger click event on the current selected DOM element
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector focus"_  | Trigger focus event on the current selected DOM element
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector hover"_  | Trigger mouseover event on the current selected DOM element
+<img src="http://i.imgur.com/2JA16e5.png" width="18"/> _"Selector which"_  | Alert the current selected DOM element's informations
 
 ##Events
 Available events
