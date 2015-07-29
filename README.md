@@ -1,6 +1,6 @@
 ![Butler.js](http://i.imgur.com/y4Azi6t.jpg)
 Butler.js is a voice drive major-domo for your personal needs.
-You can easily customize it to your needs and, YES Sir! ... he will never never betray you.
+You can easily customize it to your needs and Sir ... he will never never betray you.
 
 ###Browser Support
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Google_Chrome_icon_(2011).svg/1024px-Google_Chrome_icon_(2011).svg.png" width="45"/>
