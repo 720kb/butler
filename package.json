@@ -1,5 +1,5 @@
 {
-  "name": "butler",
+  "name": "butler.js",
   "version": "0.0.1",
   "description": "Butler is your I/O javascript voice driven major-domo",
   "scripts": {
