@@ -1,7 +1,7 @@
 ![Butler.js](http://i.imgur.com/y4Azi6t.jpg)
 <br><br>
 <p align="center">
-  <b><a href="#install">Installation</a></b>
+  <b><a href="#installation">Installation</a></b>
   |
   <b><a href="#usage">Usage</a></b>
   |
