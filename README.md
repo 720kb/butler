@@ -1,20 +1,21 @@
 ![Butler.js](http://i.imgur.com/y4Azi6t.jpg)
 
-Butler.js is a voice driven portable major-domo, for your personal needs.
-You can easily customize it to your needs and _"Sir"_ ... he will never never betray you.
 <p align="center">
   <b><a href="#install">Installation</a></b>
   |
   <b><a href="#usage">Usage</a></b>
   |
-  <b><a href="/docs/README.md">Commands</a></b>
+  <b><a href="#commands">Commands</a></b>
   |
-  <b><a href="https://github.com/flyjs/fly/wiki#plugins">Plugins</a></b>
+  <b><a href="#plugins">Plugins</a></b>
   |
-  <b><a href="#usage">Browsers support</a></b>
+  <b><a href="#browser-support">Browsers support</a></b>
   |
-  <b><a href="#contributing">License</a></b>
+  <b><a href="#license">License</a></b>
 </p>
+
+Butler.js is a voice driven portable major-domo, for your personal needs.
+You can easily customize it to your needs and _"Sir"_ ... he will never never betray you.
 
 ###Installation
 
