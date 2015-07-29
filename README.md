@@ -1,5 +1,5 @@
 <br>
-![Butler.js](http://i.imgur.com/lJTD9GA.jpg)
+![Butler.js](http://i.imgur.com/75NI4tj.jpg)
 <br><br><br>
 <p align="center">
   <b><a href="#installation">Installation</a></b>
