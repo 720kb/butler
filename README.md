@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
   Butler.start();
 });
 ```
-##Commands
+###Commands
 Default voice commands you can abuse of.
 
 ####Selector
