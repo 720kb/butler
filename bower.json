@@ -1,5 +1,5 @@
 {
-  "name": "butler",
+  "name": "butler.js",
   "version": "0.0.1",
   "description": "Butler is your I/O javascript voice driven major-domo",
   "homepage": "http://github.com/720kb/butler",
@@ -13,7 +13,8 @@
     "**/.*",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "node_modules"
   ],
   "keywords": [
     "butler",
@@ -21,9 +22,15 @@
     "javascript",
     "js",
     "bot",
-    "speech recognition",
-    "voice commands",
-    "voice driven",
+    "speech",
+    "recognition",
+    "voice",
+    "commands",
+    "voice",
+    "driven",
     "customizable"
+  ],
+  "moduleType": [
+    "globals"
   ]
 }
