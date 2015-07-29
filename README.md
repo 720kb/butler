@@ -16,7 +16,9 @@
   <b><a href="#license">License</a></b>
 </p>
 <br><br>
+<p align="center">
 [![Join the chat at https://gitter.im/720kb/butler](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/720kb/butler?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+</p>
 <br><br>
 
 ###What is this?
