@@ -17,9 +17,6 @@
 </p>
 <br><br>
 
-
-<br><br>
-
 ###What is this?
 
 Butler.js is a voice driven portable major-domo, for your personal needs.
