@@ -11,6 +11,8 @@
   |
   <b><a href="#browser-support">Browsers support</a></b>
   |
+  <b><a href="#contributing">Contributing</a></b>
+  |
   <b><a href="#license">License</a></b>
 </p>
 <br>
@@ -148,6 +150,10 @@ document.addEventListener("DOMContentLoaded", function () {
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Google_Chrome_icon_(2011).svg/1024px-Google_Chrome_icon_(2011).svg.png" width="25"/> Google Chrome (latest versions)
 
 http://caniuse.com/#feat=web-speech
+
+###Contributing
+We will be much grateful if you help us making this project to grow up. 
+Feel free to contribute by forking, opening issues, pull requests etc...
 
 ###License
 The MIT License (MIT)
