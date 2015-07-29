@@ -62,7 +62,7 @@ Commands to select, highlight, trigger, manipulate DOM elements.
  _Selector hover_  | Trigger mouseover event on the current selected DOM element
  _Selector which_  | Alert the current selected DOM element's informations
 
-##Events
+###Events
 Available events
 ```javascript
 document.addEventListner('Butler:start', function (data) {
@@ -90,7 +90,7 @@ document.addEventListner('Butler:error', function (error) {
 });
 ```
 
-##Plugins
+###Plugins
 Writing a plugin is very simple, all you have to do is to define new commands using the ```plug()``` method.
 
 ####Plugin commands
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
 ```
 Now all the _butler.plugin.js_ defined commands and callbacks are plugged and can be used.
 
-##Debug
+###Debug
 Enable debug mode
 ```javascript
 document.addEventListener("DOMContentLoaded", function () {
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 ```
-##License
+###License
 MIT
 
 ####Gtk
