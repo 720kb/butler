@@ -1,4 +1,4 @@
-![Butler.js](http://i.imgur.com/y4Azi6t.jpg)
+![Butler.js](http://i.imgur.com/lJTD9GA.jpg)
 <br><br><br>
 <p align="center">
   <b><a href="#installation">Installation</a></b>
