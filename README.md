@@ -1,5 +1,5 @@
 ![Butler.js](http://i.imgur.com/y4Azi6t.jpg)
-<br><br>
+<br><br><br><br>
 <p align="center">
   <b><a href="#installation">Installation</a></b>
   |
@@ -15,7 +15,7 @@
   |
   <b><a href="#license">License</a></b>
 </p>
-<br>
+<br><br>
 
 ###What is this?
 Butler.js is a voice driven portable major-domo, for your personal needs.
@@ -33,12 +33,12 @@ You can easily customize it to your needs and _"Sir"_ ... he will never never be
 ```
 ####Bower
 ```bash
-bower install
+bower install butler.js
 ```
 
 ####Npm
 ```bash
-npm install
+npm install butler.js
 ```
 
 ###Usage
