@@ -2,11 +2,19 @@
 
 Butler.js is a voice driven portable major-domo, for your personal needs.
 You can easily customize it to your needs and _"Sir"_ ... he will never never betray you.
-
-###Browser Support
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Google_Chrome_icon_(2011).svg/1024px-Google_Chrome_icon_(2011).svg.png" width="25"/> Google Chrome (latest versions)
-
-http://caniuse.com/#feat=web-speech
+<p align="center">
+  <b><a href="#install">Installation</a></b>
+  |
+  <b><a href="#usage">Usage</a></b>
+  |
+  <b><a href="/docs/README.md">Commands</a></b>
+  |
+  <b><a href="https://github.com/flyjs/fly/wiki#plugins">Plugins</a></b>
+  |
+  <b><a href="#usage">Browsers support</a></b>
+  |
+  <b><a href="#contributing">License</a></b>
+</p>
 
 ###Installation
 
@@ -133,8 +141,21 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 ```
+###Browser Support
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Google_Chrome_icon_(2011).svg/1024px-Google_Chrome_icon_(2011).svg.png" width="25"/> Google Chrome (latest versions)
+
+http://caniuse.com/#feat=web-speech
+
 ###License
-MIT
+The MIT License (MIT)
+
+Copyright (c) 2015 Filippo Oretti, Dario Andrei
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ####Gtk
 - Not ready for production
