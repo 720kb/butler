@@ -1,5 +1,5 @@
 ![Butler.js](http://i.imgur.com/y4Azi6t.jpg)
-Butler.js is a voice drive major-domo for your personal needs.
+Butler.js is a voice driven portable major-domo, for your personal needs.
 You can easily customize it to your needs and Sir ... he will never never betray you.
 
 ###Browser Support
