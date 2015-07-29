@@ -1,5 +1,5 @@
 {
-  "name": "Butler.js",
+  "name": "butler",
   "version": "0.0.1",
   "description": "Butler is your I/O javascript voice driven major-domo",
   "scripts": {
@@ -23,7 +23,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/720kb/butler.git"
   },
   "author": "Filippo Oretti <filippo.oretti@gmail.com>",
   "contributors": [

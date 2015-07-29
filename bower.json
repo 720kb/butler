@@ -1,8 +1,8 @@
 {
-  "name": "Butler.js",
+  "name": "butler",
   "version": "0.0.1",
   "description": "Butler is your I/O javascript voice driven major-domo",
-  "homepage": "...",
+  "homepage": "http://github.com/720kb/butler",
   "authors": [
     "45kb <filippo.oretti@gmail.com>",
     "wouldgo <wouldgo84@gmail.com>"
