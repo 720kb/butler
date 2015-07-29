@@ -10,7 +10,7 @@ http://caniuse.com/#feat=web-speech
 <!DOCTYPE html>
 <html>
 <head>
-<script src="../path/to/hey.min.js"></script>
+<script src="../path/to/butler.min.js"></script>
 </head>
 ```
 ####Bower
@@ -26,7 +26,7 @@ npm install
 ###Usage
 ```javascript
 document.addEventListener("DOMContentLoaded", function() {
-  Hey.start();
+  Butler.start();
 });
 ```
 ##Commands
@@ -35,7 +35,7 @@ Default voice commands you can abuse of.
 ####Hello
 <img src="http://i.imgur.com/2JA16e5.png" width="18"/> Command  | Result
 ------------- | -------------
-_Hey_  | Hello Hey is here
+_Butler_  | Hello Butler is here
 
 
 ####Selector
@@ -67,28 +67,28 @@ Commands to select, highlight, trigger, manipulate DOM elements.
 ##Events
 Available events
 ```javascript
-document.addEventListner('Hey:start', function (data) {
-	console.info('Hey is started and microfone is allowed', data);
+document.addEventListner('Butler:start', function (data) {
+	console.info('Butler is started and microfone is allowed', data);
 });
 
-document.addEventListner('Hey:end', function (data) {
-	console.info('Hey has stopped working', data);
+document.addEventListner('Butler:end', function (data) {
+	console.info('Butler has stopped working', data);
 });
 
-document.addEventListner('Hey:detection', function (data) {
-	console.info('Hey has new detections', data);
+document.addEventListner('Butler:detection', function (data) {
+	console.info('Butler has new detections', data);
 });
 
-document.addEventListner('Hey:detection-match', function (data) {
-	console.log('Hey detection is matching', data);
+document.addEventListner('Butler:detection-match', function (data) {
+	console.log('Butler detection is matching', data);
 });
 
-document.addEventListner('Hey:detection-not-match', function (data) {
-	console.log('Hey detection is not matching', data);
+document.addEventListner('Butler:detection-not-match', function (data) {
+	console.log('Butler detection is not matching', data);
 });
 
-document.addEventListner('Hey:error', function (error) {
-	console.error('Hey returned an error', error);
+document.addEventListner('Butler:error', function (error) {
+	console.error('Butler returned an error', error);
 });
 ```
 
@@ -101,10 +101,10 @@ Please refer to [annyang](https://github.com/TalAter/annyang/blob/master/docs/RE
 **Example**
 
 
-_hey.plugin.js_
+_butler.plugin.js_
 ```javascript
 document.addEventListener("DOMContentLoaded", function () {
-   Hey.plug({
+   Butler.plug({
     'do something when i say this sentence': function callback(){
        window.alert('You said that sentence');
     }
@@ -114,22 +114,22 @@ document.addEventListener("DOMContentLoaded", function () {
 _index.html_
 ```html
 <head>
-<script src="hey.min.js"></script>
-<script src="hey.plugin.js"></script>
+<script src="butler.min.js"></script>
+<script src="butler.plugin.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  Hey.start();
+  Butler.start();
 });
 </script>
 </head>
 ```
-Now all the _hey.plugin.js_ defined commands and callbacks are plugged and can be used.
+Now all the _butler.plugin.js_ defined commands and callbacks are plugged and can be used.
 
 ##Debug
 Enable debug mode
 ```javascript
 document.addEventListener("DOMContentLoaded", function () {
-  Hey.start({
+  Butler.start({
    'debug':true
   });
 });
