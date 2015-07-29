@@ -1,13 +1,13 @@
 {
-  "name": "...",
+  "name": "Butler.js",
   "version": "0.0.1",
-  "description": "...",
+  "description": "Butler is your I/O javascript voice driven major-domo",
   "homepage": "...",
   "authors": [
     "45kb <filippo.oretti@gmail.com>",
     "wouldgo <wouldgo84@gmail.com>"
   ],
-  "main": "dist/index.min.js",
+  "main": "dist/butler.min.js",
   "license": "MIT",
   "ignore": [
     "**/.*",
@@ -15,5 +15,15 @@
     "test",
     "tests"
   ],
-  "keywords": []
+  "keywords": [
+    "butler",
+    "major-domo",
+    "javascript",
+    "js",
+    "bot",
+    "speech recognition",
+    "voice commands",
+    "voice driven",
+    "customizable"
+  ]
 }

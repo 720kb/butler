@@ -9,14 +9,14 @@
   <script src="../../src/js/index.js"></script>
   <script type="text/javascript">
   window.document.addEventListener('DOMContentLoaded', function () {
-    Hey.plug({
+    Butler.plug({
       'commands': {
         'go': function hey() {
           alert('go');
         }
       }
     });
-    Hey.plug({
+    Butler.plug({
       'commands': {
         'spot': function hey() {
           alert('spot');
@@ -26,7 +26,7 @@
   });
 
   window.document.addEventListener('DOMContentLoaded', function () {
-    Hey.start({
+    Butler.start({
       'debug':true
     });
   });

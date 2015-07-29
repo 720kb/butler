@@ -32,12 +32,6 @@ document.addEventListener("DOMContentLoaded", function() {
 ##Commands
 Default voice commands you can abuse of.
 
-####Hello
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> Command  | Result
-------------- | -------------
-_Butler_  | Hello Butler is here
-
-
 ####Selector
 Commands to select, highlight, trigger, manipulate DOM elements.
 

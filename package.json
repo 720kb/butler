@@ -1,15 +1,25 @@
 {
-  "name": "uknown",
+  "name": "Butler.js",
   "version": "0.0.1",
-  "description": "",
+  "description": "Butler is your I/O javascript voice driven major-domo",
   "scripts": {
-    "js-min": "./tasks/banner | xargs -0 -I banner uglifyjs src/js/index.js --preamble banner -c -m --screw-ie8 -p relative --source-map dist/index.min.js.map -o dist/index.min.js",
+    "js-min": "./tasks/banner | xargs -0 -I banner uglifyjs src/js/index.js --preamble banner -c -m --screw-ie8 -p relative --source-map dist/butler.min.js.map -o dist/butler.min.js",
     "lint": "eslint -c .eslintrc src && jscs -c .jscsrc src",
     "precommit": "npm run-script lint"
   },
-  "keywords": [],
+  "keywords": [
+    "butler",
+    "major-domo",
+    "javascript",
+    "js",
+    "bot",
+    "speech recognition",
+    "voice commands",
+    "voice driven",
+    "customizable"
+  ],
   "files": [
-    "dist/index.min.js"
+    "dist/butler.min.js"
   ],
   "repository": {
     "type": "git",
