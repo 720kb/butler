@@ -1,7 +1,7 @@
 ![Butler.js](http://i.imgur.com/y4Azi6t.jpg)
 <br><br>
 <p align="center">
-  <b><a href="#install" style="color:red;">Installation</a></b>
+  <b><a href="#install">Installation</a></b>
   |
   <b><a href="#usage">Usage</a></b>
   |
@@ -15,6 +15,7 @@
 </p>
 <br>
 
+###What is this?
 Butler.js is a voice driven portable major-domo, for your personal needs.
 You can easily customize it to your needs and _"Sir"_ ... he will never never betray you.
 
