@@ -84,9 +84,9 @@ Commands to trigger events on selected DOM elements
 
 Command  | Result
 ------------- | -------------
- _Selector click_  | Trigger click event on the current selected DOM element
- _Selector focus_  | Trigger focus event on the current selected DOM element
- _Selector hover_  | Trigger mouseover event on the current selected DOM element
+ _Trigger click_  | Trigger click event on the current selected DOM element
+ _Trigger focus_  | Trigger focus event on the current selected DOM element
+ _Trigger hover_  | Trigger mouseover event on the current selected DOM element
 
 ###Events
 Available events
