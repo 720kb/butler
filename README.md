@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
   Butler.start();
 });
 ```
-### <img src="http://i.imgur.com/1p126e1.png" valign="middle" width="30"/> Commands
+### <img src="http://i.imgur.com/1p126e1.png" valign="middle" width="23"/> Commands
 Default voice commands you can abuse of.
 
 ####Selector
