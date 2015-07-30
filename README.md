@@ -81,7 +81,8 @@ Command  | Result
  _Selector hover_  | Trigger mouseover event on the current selected DOM element
  _Selector which_  | Alert the current selected DOM element's informations
  
- ####Selector
+####Selector
+ 
 Commands to trigger events on selected DOM elements
 
 Command  | Result
