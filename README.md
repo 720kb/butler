@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
 Default voice commands you can abuse of.
 
 ####Selector
-Commands to select and highlight DOM elements
+Commands to select, visualize and manipulate DOM elements
 
 Command  | Result
 ------------- | -------------
@@ -76,12 +76,10 @@ Command  | Result
  _Selector put value :detection:_  | Add detected value to the current selected DOM element (helpful for inputs)
  _Selector insert text :detection:_  | Insert detected text inside the current selected DOM element
  _Selector empty text_  | Remove all the text from the current selected DOM element
- _Selector click_  | Trigger click event on the current selected DOM element
- _Selector focus_  | Trigger focus event on the current selected DOM element
- _Selector hover_  | Trigger mouseover event on the current selected DOM element
  _Selector which_  | Alert the current selected DOM element's informations
  
- ####Selector
+####Trigger
+ 
 Commands to trigger events on selected DOM elements
 
 Command  | Result
