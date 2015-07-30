@@ -155,6 +155,17 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           window.alert(e);
         }
       },
+      'selector which': function selectorWich() {
+        /*eslint-disable*/
+        //jscs:disable
+        window.alert(
+          'nodename: ' + Highlighter.element.nodeName.toLowerCase() + '\n' +
+          'classes: ' + Highlighter.element.classList.toString() + '\n' +
+          'id:' + Highlighter.element.id
+        );
+        /*eslint-enable*/
+        //jscs:enable
+      },
       'trigger click': function selectorClick() {
         try {
           Highlighter.element.click();
@@ -171,24 +182,13 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           window.alert(e);
         }
       },
-      'selector hover': function selectorHover() {
+      'trigger hover': function selectorHover() {
         try {
           Highlighter.element.onmouseover();
         } catch(e) {
 
           window.alert(e);
         }
-      },
-      'selector which': function selectorWich() {
-        /*eslint-disable*/
-        //jscs:disable
-        window.alert(
-          'nodename: ' + Highlighter.element.nodeName.toLowerCase() + '\n' +
-          'classes: ' + Highlighter.element.classList.toString() + '\n' +
-          'id:' + Highlighter.element.id
-        );
-        /*eslint-enable*/
-        //jscs:enable
       }
     };
 
