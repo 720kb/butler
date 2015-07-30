@@ -155,7 +155,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           window.alert(e);
         }
       },
-      'selector click': function selectorClick() {
+      'trigger click': function selectorClick() {
         try {
           Highlighter.element.click();
         } catch(e) {
@@ -163,7 +163,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           window.alert(e);
         }
       },
-      'selector focus': function selectorFocus() {
+      'trigger focus': function selectorFocus() {
         try {
           Highlighter.element.focus();
         } catch(e) {
