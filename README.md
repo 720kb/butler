@@ -58,7 +58,7 @@ Default voice commands you can abuse of.
 ####Selector
 Commands to select, highlight, trigger, manipulate DOM elements.
 
-<img src="http://i.imgur.com/2JA16e5.png" width="18"/> Command  | Result
+<img src="http://i.imgur.com/1p126e1.png" width="18"/> Command  | Result
 ------------- | -------------
  _Selector on_  | Turn on selector highlighter
  _Selector off_ | Turn off selector highlighter
