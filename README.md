@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
 Default voice commands you can abuse of.
 
 ####Selector
-Commands to select, visualize and manipulate DOM elements
+Commands to select, visualize and manipulate the DOM elements
 
 Command  | Result
 ------------- | -------------
@@ -80,7 +80,7 @@ Command  | Result
  
 ####Trigger
  
-Commands to trigger events on selected DOM elements
+Commands to trigger events and actions on the selected DOM elements
 
 Command  | Result
 ------------- | -------------
