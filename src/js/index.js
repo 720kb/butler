@@ -193,6 +193,15 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         /*eslint-enable*/
         //jscs:enable
       },
+      'trigger click': function triggerClick() {
+        try {
+          Highlighter.element.click();
+          window.console.info('Triggered click');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
       'trigger focus': function triggerFocus() {
         try {
           Highlighter.element.focus();
@@ -206,6 +215,60 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         try {
           Highlighter.element.fade();
           window.console.info('Triggered fade');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger blur': function triggerBlur() {
+        try {
+          Highlighter.element.blur();
+          window.console.info('Triggered blur');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger submit': function triggerSubmit() {
+        try {
+          Highlighter.element.submit();
+          window.console.info('Triggered submit');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger change': function triggerChange() {
+        try {
+          triggerEvent('change', Highlighter.element);
+          window.console.info('Triggered change');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger close': function triggerClose() {
+        try {
+          triggerEvent('close', Highlighter.element);
+          window.console.info('Triggered close');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger play': function triggerPlay() {
+        try {
+          Highlighter.element.play();
+          window.console.info('Triggered play');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger pause': function triggerPause() {
+        try {
+          Highlighter.element.pause();
+          window.console.info('Triggered pause');
         } catch(e) {
 
           window.alert(e);
@@ -278,60 +341,6 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         try {
           triggerMouse('mousedown', Highlighter.element);
           window.console.info('Triggered mousedown');
-        } catch(e) {
-
-          window.alert(e);
-        }
-      },
-      'trigger blur': function triggerBlur() {
-        try {
-          Highlighter.element.blur();
-          window.console.info('Triggered blur');
-        } catch(e) {
-
-          window.alert(e);
-        }
-      },
-      'trigger submit': function triggerSubmit() {
-        try {
-          Highlighter.element.submit();
-          window.console.info('Triggered submit');
-        } catch(e) {
-
-          window.alert(e);
-        }
-      },
-      'trigger change': function triggerChange() {
-        try {
-          triggerEvent('change', Highlighter.element);
-          window.console.info('Triggered change');
-        } catch(e) {
-
-          window.alert(e);
-        }
-      },
-      'trigger close': function triggerClose() {
-        try {
-          triggerEvent('close', Highlighter.element);
-          window.console.info('Triggered close');
-        } catch(e) {
-
-          window.alert(e);
-        }
-      },
-      'trigger play': function triggerPlay() {
-        try {
-          Highlighter.element.play();
-          window.console.info('Triggered play');
-        } catch(e) {
-
-          window.alert(e);
-        }
-      },
-      'trigger pause': function triggerPause() {
-        try {
-          Highlighter.element.pause();
-          window.console.info('Triggered pause');
         } catch(e) {
 
           window.alert(e);
