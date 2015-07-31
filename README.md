@@ -90,7 +90,10 @@ Command  | Result
  _Trigger pin_  | Trigger pin on the current selected DOM element
  _Trigger blur_  | Trigger blur on the current selected DOM element
  _Trigger submit_  | Trigger submit on the current selected DOM element
+ _Trigger select_  | Trigger select on the current selected DOM element
  _Trigger change_  | Trigger change on the current selected DOM element
+ _Trigger show_  | Trigger show on the current selected DOM element
+ _Trigger reset_  | Trigger reset on the current selected DOM element
  _Trigger play_  | Trigger play on the current selected DOM element
  _Trigger pause_  | Trigger play on the current selected DOM element
  _Trigger mouse over_  | Trigger mouseover on the current selected DOM element
@@ -100,6 +103,12 @@ Command  | Result
  _Trigger mouse move_  | Trigger mousemove on the current selected DOM element
  _Trigger mouse enter_  | Trigger mouseenter on the current selected DOM element
  _Trigger mouse out_  | Trigger mouseout on the current selected DOM element
+ _Trigger scroll y_  | Trigger Y scroll on the current selected DOM element
+ _Trigger scroll x_  | Trigger X scroll on the current selected DOM element
+ _Trigger window scroll y_  | Trigger window Y scroll
+ _Trigger window scroll x_  | Trigger window X scroll
+ _Trigger window resize y_  | Trigger window Y resize
+ _Trigger window resize x_  | Trigger window X resize
 
 ###Events
 Available events
