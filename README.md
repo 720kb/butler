@@ -109,6 +109,7 @@ Command  | Result
  _Trigger drag enter_  | Trigger dragenter on the current selected DOM element
  _Trigger drag leave_  | Trigger dragleave on the current selected DOM element
  _Trigger drag over_  | Trigger dragmove on the current selected DOM element
+ _Trigger drop_  | Trigger drop on the current selected DOM element 
  _Trigger touch start_  | Trigger touchstart on the current selected DOM element
  _Trigger touch end_  | Trigger touchend on the current selected DOM element
  _Trigger touch enter_  | Trigger touchenter on the current selected DOM element
