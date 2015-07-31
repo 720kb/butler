@@ -283,6 +283,15 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           window.alert(e);
         }
       },
+      'trigger select': function triggerSelect() {
+        try {
+          triggerUI('close', Highlighter.element);
+          window.console.info('Triggered select');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
       'trigger mouse over': function triggerMouseover() {
         try {
           triggerMouse('mouseover', Highlighter.element);
@@ -341,15 +350,6 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         try {
           triggerMouse('mousedown', Highlighter.element);
           window.console.info('Triggered mousedown');
-        } catch(e) {
-
-          window.alert(e);
-        }
-      },
-      'trigger select': function triggerSelect() {
-        try {
-          triggerUI('close', Highlighter.element);
-          window.console.info('Triggered select');
         } catch(e) {
 
           window.alert(e);
