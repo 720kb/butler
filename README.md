@@ -103,11 +103,18 @@ Command  | Result
  _Trigger mouse move_  | Trigger mousemove on the current selected DOM element
  _Trigger mouse enter_  | Trigger mouseenter on the current selected DOM element
  _Trigger mouse out_  | Trigger mouseout on the current selected DOM element
+ _Trigger drag_  | Trigger drag on the current selected DOM element 
+ _Trigger drag start_  | Trigger dragstart on the current selected DOM element
+ _Trigger drag end_  | Trigger dragend on the current selected DOM element
+ _Trigger drag enter_  | Trigger dragenter on the current selected DOM element
+ _Trigger drag leave_  | Trigger dragleave on the current selected DOM element
+ _Trigger drag over_  | Trigger dragmove on the current selected DOM element
  _Trigger touch start_  | Trigger touchstart on the current selected DOM element
  _Trigger touch end_  | Trigger touchend on the current selected DOM element
  _Trigger touch enter_  | Trigger touchenter on the current selected DOM element
  _Trigger touch leave_  | Trigger touchleave on the current selected DOM element
  _Trigger touch move_  | Trigger touchmove on the current selected DOM element
+ _Trigger touch cancel_  | Trigger touchcancel on the current selected DOM element
  _Trigger scroll y_  | Trigger Y scroll on the current selected DOM element
  _Trigger scroll x_  | Trigger X scroll on the current selected DOM element
  _Trigger window scroll y_  | Trigger window Y scroll
