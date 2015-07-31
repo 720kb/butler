@@ -118,10 +118,18 @@ Command  | Result
  _Trigger touch cancel_  | Trigger touchcancel on the current selected DOM element
  _Trigger scroll y_  | Trigger Y scroll on the current selected DOM element
  _Trigger scroll x_  | Trigger X scroll on the current selected DOM element
- _Trigger window scroll y_  | Trigger window Y scroll
- _Trigger window scroll x_  | Trigger window X scroll
- _Trigger window resize y_  | Trigger window Y resize
- _Trigger window resize x_  | Trigger window X resize
+ 
+####Window
+ 
+Commands to manipulate, trigger, window events and actions
+
+Command  | Result
+------------- | -------------
+ _Window scroll y_  | Trigger window Y scroll
+ _Window scroll x_  | Trigger window X scroll
+ _Window resize y_  | Trigger window Y resize
+ _Window resize x_  | Trigger window X resize
+ 
  
 ####Navigator
  
