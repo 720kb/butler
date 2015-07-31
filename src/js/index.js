@@ -394,7 +394,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           window.alert(e);
         }
       },
-      'trigger window scroll y': function triggerWindowScrollY() {
+      'window scroll y': function triggerWindowScrollY() {
         try {
           window.scrollBy(0, 300);
           window.console.info('Triggered window scroll Y');
@@ -403,7 +403,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           window.alert(e);
         }
       },
-      'trigger window scroll x': function triggerWindowScrollX() {
+      'window scroll x': function triggerWindowScrollX() {
         try {
           window.scrollBy(300, 0);
           window.console.info('Triggered window scroll X');
@@ -412,7 +412,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           window.alert(e);
         }
       },
-      'trigger window resize y': function triggerWindowResizeY() {
+      'window resize y': function triggerWindowResizeY() {
         try {
           window.resizeTo(window.innerWidth, window.innerHeight / 2);
           window.console.info('Triggered window resize Y');
@@ -421,7 +421,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           window.alert(e);
         }
       },
-      'trigger window resize x': function triggerWindowResizeX() {
+      'window resize x': function triggerWindowResizeX() {
         try {
           window.resizeTo(window.innerWidth / 2, window.innerHeight);
           window.console.info('Triggered window resize X');
