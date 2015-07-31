@@ -84,9 +84,22 @@ Commands to trigger events on selected DOM elements
 
 Command  | Result
 ------------- | -------------
- _Trigger click_  | Trigger click event on the current selected DOM element
- _Trigger focus_  | Trigger focus event on the current selected DOM element
- _Trigger hover_  | Trigger mouseover event on the current selected DOM element
+ _Trigger click_  | Trigger click on the current selected DOM element
+ _Trigger focus_  | Trigger focus on the current selected DOM element
+ _Trigger fade_  | Trigger fade on the current selected DOM element
+ _Trigger pin_  | Trigger pin on the current selected DOM element
+ _Trigger blur_  | Trigger blur on the current selected DOM element
+ _Trigger submit_  | Trigger submit on the current selected DOM element
+ _Trigger change_  | Trigger change on the current selected DOM element
+ _Trigger play_  | Trigger play on the current selected DOM element
+ _Trigger pause_  | Trigger play on the current selected DOM element
+ _Trigger mouse over_  | Trigger mouseover on the current selected DOM element
+ _Trigger mouse up_  | Trigger mouseup on the current selected DOM element
+ _Trigger mouse down_  | Trigger mousedown on the current selected DOM element
+ _Trigger mouse leave_  | Trigger mouseover on the current selected DOM element
+ _Trigger mouse move_  | Trigger mousemove on the current selected DOM element
+ _Trigger mouse enter_  | Trigger mouseenter on the current selected DOM element
+ _Trigger mouse out_  | Trigger mouseout on the current selected DOM element
 
 ###Events
 Available events
