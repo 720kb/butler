@@ -77,9 +77,9 @@ Command  | Result
  _Selector insert text :detection:_  | Insert detected text inside the current selected DOM element
  _Selector empty text_  | Remove all the text from the current selected DOM element
  _Selector which_  | Alert the current selected DOM element's informations
- 
+
 ####Trigger
- 
+
 Commands to trigger events and actions on the selected DOM elements
 
 Command  | Result
@@ -103,13 +103,13 @@ Command  | Result
  _Trigger mouse move_  | Trigger mousemove on the current selected DOM element
  _Trigger mouse enter_  | Trigger mouseenter on the current selected DOM element
  _Trigger mouse out_  | Trigger mouseout on the current selected DOM element
- _Trigger drag_  | Trigger drag on the current selected DOM element 
+ _Trigger drag_  | Trigger drag on the current selected DOM element
  _Trigger drag start_  | Trigger dragstart on the current selected DOM element
  _Trigger drag end_  | Trigger dragend on the current selected DOM element
  _Trigger drag enter_  | Trigger dragenter on the current selected DOM element
  _Trigger drag leave_  | Trigger dragleave on the current selected DOM element
  _Trigger drag over_  | Trigger dragmove on the current selected DOM element
- _Trigger drop_  | Trigger drop on the current selected DOM element 
+ _Trigger drop_  | Trigger drop on the current selected DOM element
  _Trigger touch start_  | Trigger touchstart on the current selected DOM element
  _Trigger touch end_  | Trigger touchend on the current selected DOM element
  _Trigger touch enter_  | Trigger touchenter on the current selected DOM element
@@ -118,9 +118,9 @@ Command  | Result
  _Trigger touch cancel_  | Trigger touchcancel on the current selected DOM element
  _Trigger scroll y_  | Trigger Y scroll on the current selected DOM element
  _Trigger scroll x_  | Trigger X scroll on the current selected DOM element
- 
+
 ####Window
- 
+
 Commands to manipulate, trigger, ```window``` events and actions
 
 Command  | Result
@@ -129,17 +129,18 @@ Command  | Result
  _Window scroll x_  | Trigger window X scroll
  _Window resize y_  | Trigger window Y resize
  _Window resize x_  | Trigger window X resize
- 
- 
+
+
 ####Navigator
- 
+
 Commands to manipulate, trigger, ```window.navigator```
 
 Command  | Result
 ------------- | -------------
  _Navigator go online_  | Set navigator online
  _Navigator go offline_  | Set navigator offline
- 
+ _Navigator vibrate_  | Vibrate navigator
+
 
 ###Events
 Available events
@@ -212,14 +213,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 ```
 ###Browser Support
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Google_Chrome_icon_(2011).svg/1024px-Google_Chrome_icon_(2011).svg.png" width="50"/> 
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Google_Chrome_icon_(2011).svg/1024px-Google_Chrome_icon_(2011).svg.png" width="50"/>
 
 Google Chrome (latest versions)
 
 http://caniuse.com/#feat=web-speech
 
 ###Contributing
-We will be much grateful if you help us making this project to grow up. 
+We will be much grateful if you help us making this project to grow up.
 Feel free to contribute by forking, opening issues, pull requests etc...
 
 ###License

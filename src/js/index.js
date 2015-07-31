@@ -566,6 +566,15 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
 
           window.alert(e);
         }
+      },
+      'navigator vibrate': function triggerVibrate() {
+        try {
+          window.navigator.vibrate(500);
+          window.console.info('Vibrated navigator');
+        } catch(e) {
+
+          window.alert(e);
+        }
       }
     };
     //mic access allowed
