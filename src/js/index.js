@@ -46,70 +46,91 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
     , onDetectionEvent = new window.CustomEvent('Butler:detection')
     , onDetectionMatchEvent = new window.CustomEvent('Butler:detection-match')
     , onDetectionNotMatchEvent = new window.CustomEvent('Butler:detection-not-match')
-    , onErrorsEvent = new window.CustomEvent('Butler:error');
+    , onErrorsEvent = new window.CustomEvent('Butler:error')
+    , trigger = function triggerHandler(event, eventType, element) {
+
+      var evObj = document.createEvent(eventType);
+
+      evObj.initEvent(event, true, true);
+      element.dispatchEvent(evObj);
+    }
+    , triggerMouse = function triggerMouseEvents(event, element) {
+      trigger(event, 'MouseEvents', element);
+    }
+    , triggerEvent = function triggerEvents(event, element) {
+      trigger(event, 'Events', element);
+    }
+    , triggerTouch = function triggerTouchEvents(event, element) {
+      trigger(event, 'TouchEvents', element);
+    }
+    , triggerUI = function triggerUIEvents(event, element) {
+      trigger(event, 'UIEvents', element);
+    };
 
     this.lang = 'en-EN';
     this.commands = {
       'selector on': function selectorOn() {
         Highlighter.erase();
         Highlighter.underline();
+        window.console.info('Turned selector on');
       },
-      'selector off': function selectorOff(detection) {
+      'selector off': function selectorOff() {
         Highlighter.erase();
         Highlighter = new window.Highlighter();
-        window.console.info('Deselect all elements', detection);
+        window.console.info('Turned selector off');
       },
-      'selector next': function selectorNext(detection) {
+      'selector next': function selectorNext() {
         Highlighter.erase();
         Highlighter.next();
         Highlighter.underline();
-        window.console.info('Select next element', detection);
+        window.console.info('Selected next element');
       },
-      'selector back': function selectorBack(detection) {
+      'selector back': function selectorBack() {
         Highlighter.erase();
         Highlighter.previous();
         Highlighter.underline();
-        window.console.info('Select next element', detection);
+        window.console.info('Selected next element');
       },
       'selector next id *detect': function selectorNextById(detection) {
         Highlighter.erase();
         Highlighter.next('#' + detection);
         Highlighter.underline();
-        window.console.info('Select next element by id', detection);
+        window.console.info('Selected next element by id: #' + detection);
       },
       'selector next tag *detect': function selectorNextByTag(detection) {
         Highlighter.erase();
         Highlighter.next('<' + detection.replace('<', '').replace('>', '') + '>');
         Highlighter.underline();
-        window.console.info('Select next element by id', detection);
+        window.console.info('Selected next element by id: #' + detection);
       },
       'selector next class *detect': function selectorNextByClass(detection) {
         Highlighter.erase();
         Highlighter.next('.' + detection.replace('.', ''));
         Highlighter.underline();
-        window.console.info('Select next element by class', detection);
+        window.console.info('Selected next element by class: .' + detection);
       },
       'selector back id *detect': function selectorBackById(detection) {
         Highlighter.erase();
         Highlighter.next('#' + detection);
         Highlighter.underline();
-        window.console.info('Select next element by id', detection);
+        window.console.info('Selected next element by id: #' + detection);
       },
       'selector back tag *detect': function selectorBackByTag(detection) {
         Highlighter.erase();
         Highlighter.next('<' + detection.replace('<', '').replace('>', '') + '>');
         Highlighter.underline();
-        window.console.info('Select next element by id', detection);
+        window.console.info('Selected next element by id: .' + detection);
       },
       'selector back class *detect': function selectorBackByClass(detection) {
         Highlighter.erase();
         Highlighter.next('.' + detection.replace('.', ''));
         Highlighter.underline();
-        window.console.info('Select next element by class', detection);
+        window.console.info('Selected next element by class: .' + detection);
       },
       'selector add class *detection': function selectorAddClass(detection) {
         try {
           Highlighter.element.classList.add(detection);
+          window.console.info('Added class: .' + detection);
         } catch(e) {
 
           window.alert(e);
@@ -118,6 +139,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       'selector add id *detection': function selectorAddId(detection) {
         try {
           Highlighter.element.id = detection;
+          window.console.info('Added id: #' + detection);
         } catch(e) {
 
           window.alert(e);
@@ -126,6 +148,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       'selector put value *detection': function selectorPutValue(detection) {
         try {
           Highlighter.element.value = detection;
+          window.console.info('Added value: ' + detection);
         } catch(e) {
 
           window.alert(e);
@@ -134,6 +157,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       'selector insert text *detection': function selectorInsertText(detection) {
         try {
           Highlighter.element.innerText = detection;
+          window.console.info('Inserted text: ' + detection);
         } catch(e) {
 
           window.alert(e);
@@ -142,6 +166,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       'selector remove class *detection': function selectorRemoveClass(detection) {
         try {
           Highlighter.element.classElement.remove(detection);
+          window.console.info('Removed class: .' + detection);
         } catch(e) {
 
           window.alert(e);
@@ -150,6 +175,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       'selector empty text': function selectorRemoveText() {
         try {
           Highlighter.element.innerText = '';
+          window.console.info('Removed text');
         } catch(e) {
 
           window.alert(e);
@@ -163,35 +189,281 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           'classes: ' + Highlighter.element.classList.toString() + '\n' +
           'id:' + Highlighter.element.id
         );
+        window.console.info('Shown which selector element');
         /*eslint-enable*/
         //jscs:enable
       },
-      'trigger click': function selectorClick() {
-        try {
-          Highlighter.element.click();
-        } catch(e) {
-
-          window.alert(e);
-        }
-      },
-      'trigger focus': function selectorFocus() {
+      'trigger focus': function triggerFocus() {
         try {
           Highlighter.element.focus();
+          window.console.info('Triggered focus');
         } catch(e) {
 
           window.alert(e);
         }
       },
-      'trigger hover': function selectorHover() {
+      'trigger fade': function triggerFade() {
         try {
-          Highlighter.element.onmouseover();
+          Highlighter.element.fade();
+          window.console.info('Triggered fade');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger pin': function triggerPin() {
+        try {
+          Highlighter.element.pin();
+          window.console.info('Triggered pin');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger mouse over': function triggerMouseover() {
+        try {
+          triggerMouse('mouseover', Highlighter.element);
+          window.console.info('Triggered mouseover');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger mouse move': function triggerMousemove() {
+        try {
+          triggerMouse('mousemove', Highlighter.element);
+          window.console.info('Triggered mousemove');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger mouse enter': function triggerMouseenter() {
+        try {
+          triggerMouse('mouseenter', Highlighter.element);
+          window.console.info('Triggered mouseenter');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger mouse leave': function triggerMouseleave() {
+        try {
+          triggerMouse('mouseleave', Highlighter.element);
+          window.console.info('Triggered mouseleave');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger mouse out': function triggerMouseout() {
+        try {
+          triggerMouse('mouseout', Highlighter.element);
+          window.console.info('Triggered mouseout');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger mouse up': function triggerMouseup() {
+        try {
+          triggerMouse('mouseup', Highlighter.element);
+          window.console.info('Triggered mouseup');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger mouse down': function triggerMousedown() {
+        try {
+          triggerMouse('mousedown', Highlighter.element);
+          window.console.info('Triggered mousedown');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger blur': function triggerBlur() {
+        try {
+          Highlighter.element.blur();
+          window.console.info('Triggered blur');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger submit': function triggerSubmit() {
+        try {
+          Highlighter.element.submit();
+          window.console.info('Triggered submit');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger change': function triggerChange() {
+        try {
+          triggerEvent('change', Highlighter.element);
+          window.console.info('Triggered change');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger close': function triggerClose() {
+        try {
+          triggerEvent('close', Highlighter.element);
+          window.console.info('Triggered close');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger play': function triggerPlay() {
+        try {
+          Highlighter.element.play();
+          window.console.info('Triggered play');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger pause': function triggerPause() {
+        try {
+          Highlighter.element.pause();
+          window.console.info('Triggered pause');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger select': function triggerSelect() {
+        try {
+          triggerUI('close', Highlighter.element);
+          window.console.info('Triggered select');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger scroll x': function triggerScrollX() {
+        try {
+          Highlighter.element.scrollBy(35, 0);
+          window.console.info('Triggered scroll X');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger scroll y': function triggerScrollY() {
+        try {
+          Highlighter.element.scrollBy(0, 35);
+          window.console.info('Triggered scroll Y');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger window scroll y': function triggerWindowScrollY() {
+        try {
+          window.scrollBy(0, 300);
+          window.console.info('Triggered window scroll Y');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger window scroll x': function triggerWindowScrollX() {
+        try {
+          window.scrollBy(300, 0);
+          window.console.info('Triggered window scroll X');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger window resize y': function triggerWindowResizeY() {
+        try {
+          window.resizeTo(window.innerWidth, window.innerHeight / 2);
+          window.console.info('Triggered window resize Y');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger window resize x': function triggerWindowResizeX() {
+        try {
+          window.resizeTo(window.innerWidth / 2, window.innerHeight);
+          window.console.info('Triggered window resize X');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger show': function triggerShow() {
+        try {
+          triggerUI('show', Highlighter.element);
+          window.console.info('Triggered show');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger reset': function triggerReset() {
+        try {
+          triggerEvent('reset', Highlighter.element);
+          window.console.info('Triggered reset');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger touch start': function triggerTouchStart() {
+        try {
+          triggerTouch('touchstart', Highlighter.element);
+          window.console.info('Triggered touch start');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger touch enter': function triggerTouchEnter() {
+        try {
+          triggerTouch('touchenter', Highlighter.element);
+          window.console.info('Triggered touch enter');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger touch move': function triggerTouchMove() {
+        try {
+          triggerTouch('touchmove', Highlighter.element);
+          window.console.info('Triggered touch move');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger touch leave': function triggerTouchLeave() {
+        try {
+          triggerTouch('touchleave', Highlighter.element);
+          window.console.info('Triggered touch leave');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger touch end': function triggerTouchEnd() {
+        try {
+          triggerTouch('touchend', Highlighter.element);
+          window.console.info('Triggered touch end');
         } catch(e) {
 
           window.alert(e);
         }
       }
     };
-
     //mic access allowed
     annyang.addCallback('start', function onButlerStartEvent(data) {
       onStartEvent.eventData = data;
