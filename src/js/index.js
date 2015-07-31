@@ -63,6 +63,9 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
     , triggerTouch = function triggerTouchEvents(event, element) {
       trigger(event, 'TouchEvents', element);
     }
+    , triggerDrag = function triggerDragEvents(event, element) {
+      trigger(event, 'DragEvents', element);
+    }
     , triggerUI = function triggerUIEvents(event, element) {
       trigger(event, 'UIEvents', element);
     };
@@ -292,6 +295,24 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           window.alert(e);
         }
       },
+      'trigger show': function triggerShow() {
+        try {
+          triggerUI('show', Highlighter.element);
+          window.console.info('Triggered show');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger reset': function triggerReset() {
+        try {
+          triggerEvent('reset', Highlighter.element);
+          window.console.info('Triggered reset');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
       'trigger mouse over': function triggerMouseover() {
         try {
           triggerMouse('mouseover', Highlighter.element);
@@ -409,24 +430,6 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           window.alert(e);
         }
       },
-      'trigger show': function triggerShow() {
-        try {
-          triggerUI('show', Highlighter.element);
-          window.console.info('Triggered show');
-        } catch(e) {
-
-          window.alert(e);
-        }
-      },
-      'trigger reset': function triggerReset() {
-        try {
-          triggerEvent('reset', Highlighter.element);
-          window.console.info('Triggered reset');
-        } catch(e) {
-
-          window.alert(e);
-        }
-      },
       'trigger touch start': function triggerTouchStart() {
         try {
           triggerTouch('touchstart', Highlighter.element);
@@ -467,6 +470,98 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         try {
           triggerTouch('touchend', Highlighter.element);
           window.console.info('Triggered touch end');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger touch cancel': function triggerTouchCancel() {
+        try {
+          triggerTouch('touchcancel', Highlighter.element);
+          window.console.info('Triggered touch cancel');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger drop': function triggerDrop() {
+        try {
+          triggerDrag('drop', Highlighter.element);
+          window.console.info('Triggered drop');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger drag': function triggerDragg() {
+        try {
+          triggerDrag('drag', Highlighter.element);
+          window.console.info('Triggered drag');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger drag start': function triggerDragStart() {
+        try {
+          triggerDrag('dragstart', Highlighter.element);
+          window.console.info('Triggered drag start');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger drag end': function triggerDragEnd() {
+        try {
+          triggerDrag('dragend', Highlighter.element);
+          window.console.info('Triggered drag end');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger drag enter': function triggerDragEnter() {
+        try {
+          triggerDrag('dragenter', Highlighter.element);
+          window.console.info('Triggered drag enter');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger drag over': function triggerDragOver() {
+        try {
+          triggerDrag('dragover', Highlighter.element);
+          window.console.info('Triggered drag over');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'trigger drag leave': function triggerDragLeave() {
+        try {
+          triggerDrag('dragleave', Highlighter.element);
+          window.console.info('Triggered drag leave');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'navigator go offline': function triggerOffline() {
+        try {
+          window.navigator.onLine = false;
+          triggerEvent('offline', window);
+          window.console.info('Setted navigator offline');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'navigator go online': function triggerOnline() {
+        try {
+          window.navigator.onLine = true;
+          triggerEvent('online', window);
+          window.console.info('Setted navigator online');
         } catch(e) {
 
           window.alert(e);

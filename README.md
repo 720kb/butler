@@ -6,7 +6,7 @@
   |
   <b><a href="#usage">Usage</a></b>
   |
-  <b><a href="#commands">Commands</a></b>
+  <b><a href="#-commands">Commands</a></b>
   |
   <b><a href="#plugins">Plugins</a></b>
   |
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
 Default voice commands you can abuse of.
 
 ####Selector
-Commands to select, visualize and manipulate DOM elements
+Commands to select, visualize and manipulate the DOM elements
 
 Command  | Result
 ------------- | -------------
@@ -80,7 +80,7 @@ Command  | Result
  
 ####Trigger
  
-Commands to trigger events on selected DOM elements
+Commands to trigger events and actions on the selected DOM elements
 
 Command  | Result
 ------------- | -------------
@@ -109,6 +109,7 @@ Command  | Result
  _Trigger drag enter_  | Trigger dragenter on the current selected DOM element
  _Trigger drag leave_  | Trigger dragleave on the current selected DOM element
  _Trigger drag over_  | Trigger dragmove on the current selected DOM element
+ _Trigger drop_  | Trigger drop on the current selected DOM element 
  _Trigger touch start_  | Trigger touchstart on the current selected DOM element
  _Trigger touch end_  | Trigger touchend on the current selected DOM element
  _Trigger touch enter_  | Trigger touchenter on the current selected DOM element
@@ -121,6 +122,16 @@ Command  | Result
  _Trigger window scroll x_  | Trigger window X scroll
  _Trigger window resize y_  | Trigger window Y resize
  _Trigger window resize x_  | Trigger window X resize
+ 
+####Navigator
+ 
+Commands to manipulate, trigger, window.navigator
+
+Command  | Result
+------------- | -------------
+ _Navigator go online_  | Set navigator online
+ _Navigator go offline_  | Set navigator offline
+ 
 
 ###Events
 Available events
