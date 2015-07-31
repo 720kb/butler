@@ -394,42 +394,6 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           window.alert(e);
         }
       },
-      'window scroll y': function triggerWindowScrollY() {
-        try {
-          window.scrollBy(0, 300);
-          window.console.info('Triggered window scroll Y');
-        } catch(e) {
-
-          window.alert(e);
-        }
-      },
-      'window scroll x': function triggerWindowScrollX() {
-        try {
-          window.scrollBy(300, 0);
-          window.console.info('Triggered window scroll X');
-        } catch(e) {
-
-          window.alert(e);
-        }
-      },
-      'window resize y': function triggerWindowResizeY() {
-        try {
-          window.resizeTo(window.innerWidth, window.innerHeight / 2);
-          window.console.info('Triggered window resize Y');
-        } catch(e) {
-
-          window.alert(e);
-        }
-      },
-      'window resize x': function triggerWindowResizeX() {
-        try {
-          window.resizeTo(window.innerWidth / 2, window.innerHeight);
-          window.console.info('Triggered window resize X');
-        } catch(e) {
-
-          window.alert(e);
-        }
-      },
       'trigger touch start': function triggerTouchStart() {
         try {
           triggerTouch('touchstart', Highlighter.element);
@@ -542,6 +506,42 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         try {
           triggerDrag('dragleave', Highlighter.element);
           window.console.info('Triggered drag leave');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'window scroll y': function triggerWindowScrollY() {
+        try {
+          window.scrollBy(0, 300);
+          window.console.info('Triggered window scroll Y');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'window scroll x': function triggerWindowScrollX() {
+        try {
+          window.scrollBy(300, 0);
+          window.console.info('Triggered window scroll X');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'window resize y': function triggerWindowResizeY() {
+        try {
+          window.resizeTo(window.innerWidth, window.innerHeight / 2);
+          window.console.info('Triggered window resize Y');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'window resize x': function triggerWindowResizeX() {
+        try {
+          window.resizeTo(window.innerWidth / 2, window.innerHeight);
+          window.console.info('Triggered window resize X');
         } catch(e) {
 
           window.alert(e);
