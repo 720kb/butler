@@ -121,7 +121,7 @@ Command  | Result
  
 ####Window
  
-Commands to manipulate, trigger, window events and actions
+Commands to manipulate, trigger, ```window``` events and actions
 
 Command  | Result
 ------------- | -------------
@@ -133,7 +133,7 @@ Command  | Result
  
 ####Navigator
  
-Commands to manipulate, trigger, window.navigator
+Commands to manipulate, trigger, ```window.navigator```
 
 Command  | Result
 ------------- | -------------
