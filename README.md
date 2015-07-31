@@ -122,6 +122,16 @@ Command  | Result
  _Trigger window scroll x_  | Trigger window X scroll
  _Trigger window resize y_  | Trigger window Y resize
  _Trigger window resize x_  | Trigger window X resize
+ 
+####Navigator
+ 
+Commands to manipulate, trigger, window.navigator
+
+Command  | Result
+------------- | -------------
+ _Navigator go online_  | Set navigator online
+ _Navigator go offline_  | Set navigator offline
+ 
 
 ###Events
 Available events
