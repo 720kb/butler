@@ -6,7 +6,7 @@
   |
   <b><a href="#usage">Usage</a></b>
   |
-  <b><a href="#commands">Commands</a></b>
+  <b><a href="#-commands">Commands</a></b>
   |
   <b><a href="#plugins">Plugins</a></b>
   |
