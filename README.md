@@ -132,13 +132,6 @@ Command  | Result
 ------------- | -------------
  _Window scroll y_  | Trigger window Y scroll
  _Window scroll x_  | Trigger window X scroll
- _Window resize y_  | Trigger window Y resize
- _Window resize x_  | Trigger window X resize
- _Window resize to small mobile_  | Resize window to 360x420
- _Window resize to big mobile_  | Resize window to 480x800
- _Window resize to small tablet_  | Resize window to X 800x1280
- _Window resize to big tablet_  | Resize window to 1200x1920
- _Window resize to desktop_  | Resize window to fit the screen
 
 
 ####Navigator
