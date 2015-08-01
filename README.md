@@ -76,6 +76,11 @@ Command  | Result
  _Selector put value :detection:_  | Add detected value to the current selected DOM element (helpful for inputs)
  _Selector insert text :detection:_  | Insert detected text inside the current selected DOM element
  _Selector empty text_  | Remove all the text from the current selected DOM element
+ _Selector copy text_  | Copy all the text from the current selected DOM element
+ _Selector paste text_  | Paste the previously copied text to the current selected DOM element
+ _Selector clone_  | Clone the current selected DOM element
+ _Selector append clone_  | Append the cloned element to the current selected DOM element
+ _Selector prepend clone_  | Prepend the cloned element to the current selected DOM element
  _Selector which_  | Alert the current selected DOM element's informations
 
 ####Trigger
