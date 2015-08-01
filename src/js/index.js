@@ -595,7 +595,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           window.alert(e);
         }
       },
-      'window scroll x': function triggerWindowScrollX() {
+      'window scroll x': function windowScrollX() {
         try {
           window.scrollBy(300, 0);
           window.console.info('Triggered window scroll X');
@@ -604,7 +604,8 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           window.alert(e);
         }
       },
-      'window resize y': function triggerWindowResizeY() {
+      /*
+      'window resize y': function windowResizeY() {
         try {
           window.resizeTo(window.innerWidth, window.innerHeight / 2);
           window.console.info('Triggered window resize Y');
@@ -613,7 +614,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           window.alert(e);
         }
       },
-      'window resize x': function triggerWindowResizeX() {
+      'window resize x': function windowResizeX() {
         try {
           window.resizeTo(window.innerWidth / 2, window.innerHeight);
           window.console.info('Triggered window resize X');
@@ -622,6 +623,52 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           window.alert(e);
         }
       },
+      'window resize to small mobile': function windowResizeToSmallMobile() {
+        try {
+          window.resizeTo(320, 480);
+          window.console.info('Window resized to small mobile');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'window resize to big mobile': function windowResizeToBigMobile() {
+        try {
+          window.resizeTo(480, 800);
+          window.console.info('Window resized to big mobile');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'window resize to small tablet': function windowResizeToSmallTablet() {
+        try {
+          window.resizeTo(800, 1280);
+          window.console.info('Window resized to small tablet');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'window resize to big tablet': function windowResizeToBigTablet() {
+        try {
+          window.resizeTo(1200, 1920);
+          window.console.info('Window resized to big tablet');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'window resize to desktop': function windowResizeToDesktop() {
+        try {
+          window.resizeTo(5000, 5000);
+          window.console.info('Window resized to big tablet');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      */
       'navigator go offline': function triggerOffline() {
         try {
           window.navigator.onLine = false;
