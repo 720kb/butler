@@ -40,6 +40,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
     var Highlighter = new window.Highlighter({
       'scroll':false
     })
+    , clipboard = []
     /*eslint-enable*/
     , onStartEvent = new window.CustomEvent('Butler:start')
     , onEndEvent = new window.CustomEvent('Butler:end')
@@ -179,6 +180,80 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         try {
           Highlighter.element.innerText = '';
           window.console.info('Removed text');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'selector clone': function selectorClone() {
+        try {
+          clipboard.clone = Highlighter.element;
+          window.console.info('Cloned element');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'selector append clone': function selectorAppendClone() {
+        try {
+          if (clipboard && clipboard.clone) {
+
+            Highlighter.element.appendChild(clipboard.clone);
+            window.console.info('Appended cloned element');
+          } else {
+
+            window.console.warn('No clipboard.clone element to append');
+          }
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'selector prepend clone': function selectorPrependClone() {
+        try {
+          if (clipboard && clipboard.clone) {
+
+            Highlighter.element.insertBefore(clipboard.clone);
+            window.console.info('Prepended cloned element');
+          } else {
+
+            window.console.warn('No clipboard.clone element to prepend');
+          }
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'selector copy text': function selectorCopyText() {
+        try {
+          clipboard.text = Highlighter.element.innerText || Highlighter.element.value;
+          window.console.info('Copied text');
+        } catch(e) {
+
+          window.alert(e);
+        }
+      },
+      'selector paste text': function selectorPasteText() {
+        try {
+          if (clipboard && clipboard.text) {
+            if (Highlighter.element.nodeName.toLowerCase() === 'input'
+            || Highlighter.element.nodeName.toLowerCase() === 'textarea') {
+
+              Highlighter.element.value = clipboard.text;
+              window.console.info('Pasted text as value');
+            } else {
+              try {
+
+                Highlighter.element.innerText = clipboard.text;
+                window.console.info('Pasted text');
+              } catch(e) {
+
+                window.alert(e);
+              }
+            }
+          } else {
+            window.console.warn('No clipboard.text to paste');
+          }
         } catch(e) {
 
           window.alert(e);
