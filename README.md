@@ -136,6 +136,8 @@ Command  | Result
 ####Router
 Commands to manipulate, navigate urls and history
 
+Command  | Result
+------------- | -------------
  _Router refresh_  | Refresh the page
  _Router back_  | Go to previous history url
  _Router forward_  | Go to next history url
