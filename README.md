@@ -11,10 +11,6 @@
   <b><a href="#plugins">Plugins</a></b>
   |
   <b><a href="#browser-support">Browser support</a></b>
-  |
-  <b><a href="#contributing">Contributing</a></b>
-  |
-  <b><a href="#license">License</a></b>
 </p>
 <br><br>
 
