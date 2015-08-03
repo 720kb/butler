@@ -132,9 +132,14 @@ Command  | Result
 ------------- | -------------
  _Window scroll y_  | Trigger window Y scroll
  _Window scroll x_  | Trigger window X scroll
- _Window refresh_  | Trigger window refresh
 
+####Router
+Commands to manipulate, navigate urls and history
 
+ _Router refresh_  | Refresh the page
+ _Router back_  | Go to previous history url
+ _Router forward_  | Go to next history url
+ 
 ####Navigator
 
 Commands to manipulate, trigger ```window.navigator```
