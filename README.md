@@ -132,6 +132,7 @@ Command  | Result
 ------------- | -------------
  _Window scroll y_  | Trigger window Y scroll
  _Window scroll x_  | Trigger window X scroll
+ _Window refresh_  | Trigger window refresh
 
 
 ####Navigator
