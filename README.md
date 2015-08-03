@@ -141,6 +141,8 @@ Command  | Result
  _Location refresh_  | Location refresh
  _Location back_  | Go to previous location url
  _Location forward_  | Go to next location url
+ _Location hashbang_  | Add hashbang at the end of the location url
+ 
  
 ####Navigator
 
