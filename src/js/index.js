@@ -69,6 +69,24 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
     }
     , triggerUI = function triggerUIEvents(event, element) {
       trigger(event, 'UIEvents', element);
+    }
+    , triggerKeyboard = function triggerKeyboardEvents(event, keyCode) {
+
+      var evObj = document.createEvent('HTMLEvents');
+
+      evObj.initEvent(event, true, false);
+
+      Object.defineProperty(evObj, 'keyCode', {
+        'get': function definePropoertyKeycode() {
+          return keyCode;
+        }
+      });
+      Object.defineProperty(evObj, 'which', {
+        'get': function definePropoertyWhich() {
+          return keyCode;
+        }
+      });
+      window.dispatchEvent(evObj);
     };
 
     this.lang = 'en-EN';
@@ -265,9 +283,10 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         window.alert(
           'nodename: ' + Highlighter.element.nodeName.toLowerCase() + '\n' +
           'classes: ' + Highlighter.element.classList.toString() + '\n' +
-          'id:' + Highlighter.element.id
+          'id: ' + Highlighter.element.id + '\n' +
+          'OPEN CONSOLE FOR MORE INFORMATIONS'
         );
-        window.console.info('Shown which selector element');
+        window.console.info('Showing which selector element', 'Element is: ', highlighter.element);
         /*eslint-enable*/
         //jscs:enable
       },
@@ -604,72 +623,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           window.alert(e);
         }
       },
-      /*
-      'window resize y': function windowResizeY() {
-        try {
-          window.resizeTo(window.innerWidth, window.innerHeight / 2);
-          window.console.info('Triggered window resize Y');
-        } catch(e) {
-
-          window.alert(e);
-        }
-      },
-      'window resize x': function windowResizeX() {
-        try {
-          window.resizeTo(window.innerWidth / 2, window.innerHeight);
-          window.console.info('Triggered window resize X');
-        } catch(e) {
-
-          window.alert(e);
-        }
-      },
-      'window resize to small mobile': function windowResizeToSmallMobile() {
-        try {
-          window.resizeTo(320, 480);
-          window.console.info('Window resized to small mobile');
-        } catch(e) {
-
-          window.alert(e);
-        }
-      },
-      'window resize to big mobile': function windowResizeToBigMobile() {
-        try {
-          window.resizeTo(480, 800);
-          window.console.info('Window resized to big mobile');
-        } catch(e) {
-
-          window.alert(e);
-        }
-      },
-      'window resize to small tablet': function windowResizeToSmallTablet() {
-        try {
-          window.resizeTo(800, 1280);
-          window.console.info('Window resized to small tablet');
-        } catch(e) {
-
-          window.alert(e);
-        }
-      },
-      'window resize to big tablet': function windowResizeToBigTablet() {
-        try {
-          window.resizeTo(1200, 1920);
-          window.console.info('Window resized to big tablet');
-        } catch(e) {
-
-          window.alert(e);
-        }
-      },
-      'window resize to desktop': function windowResizeToDesktop() {
-        try {
-          window.resizeTo(5000, 5000);
-          window.console.info('Window resized to big tablet');
-        } catch(e) {
-
-          window.alert(e);
-        }
-      },
-      */
-      'navigator go offline': function triggerOffline() {
+      'navigator go offline': function navigatorOffline() {
         try {
           window.navigator.onLine = false;
           triggerEvent('offline', window);
@@ -679,7 +633,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           window.alert(e);
         }
       },
-      'navigator go online': function triggerOnline() {
+      'navigator go online': function navigatorOnline() {
         try {
           window.navigator.onLine = true;
           triggerEvent('online', window);
@@ -689,7 +643,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           window.alert(e);
         }
       },
-      'navigator vibrate': function triggerVibrate() {
+      'navigator vibrate': function navigatorVibrate() {
         try {
           window.navigator.vibrate(500);
           window.console.info('Vibrated navigator');
@@ -697,6 +651,140 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
 
           window.alert(e);
         }
+      },
+      'navigator which': function navigatorUserAgent() {
+        /*eslint-disable*/
+        //jscs:disable
+        window.alert(
+          'userAgent: ' + window.navigator.userAgent + '\n' +
+          'appName: ' + window.navigator.appName + '\n' +
+          'appVersion: ' + window.navigator.appVersion + '\n' +
+          'appPlatform: ' + window.navigator.platform + '\n' +
+          'vendor: ' + window.navigator.vendor + '\n' +
+          'language: ' + window.navigator.language + '\n' +
+          'languages: ' + window.navigator.languages.join('|') + '\n' +
+          'OPEN CONSOLE FOR MORE INFORMATIONS'
+        );
+        window.console.info('Showing which navigator', 'Navigator is: ', window.navigator);
+        /*eslint-enable*/
+        //jscs:enable
+      },
+      'key enter': function keyEnter() {
+        triggerKeyboard('keydown', 13);
+      },
+      'key space': function keyspace() {
+        triggerKeyboard('keydown', 8);
+      },
+      'key tab': function keyTab() {
+        triggerKeyboard('keydown', 9);
+      },
+      'key shift': function keyShift() {
+        triggerKeyboard('keydown', 16);
+      },
+      'key ctrl': function keyCtrl() {
+        triggerKeyboard('keydown', 17);
+      },
+      'key alt': function keyAlt() {
+        triggerKeyboard('keydown', 17);
+      },
+      'key up': function keyUp() {
+        triggerKeyboard('keydown', 38);
+      },
+      'key down': function keyDown() {
+        triggerKeyboard('keydown', 40);
+      },
+      'key left': function keyLeft() {
+        triggerKeyboard('keydown', 37);
+      },
+      'key right': function keyRight() {
+        triggerKeyboard('keydown', 39);
+      },
+      'key pause': function keyPause() {
+        triggerKeyboard('keydown', 19);
+      },
+      'key insert': function keyInsert() {
+        triggerKeyboard('keydown', 45);
+      },
+      'key delete': function keyDelete() {
+        triggerKeyboard('keydown', 46);
+      },
+      'key comma': function keyComma() {
+        triggerKeyboard('keydown', 188);
+      },
+      'key dash': function keyDash() {
+        triggerKeyboard('keydown', 189);
+      },
+      'key equal': function keyEqual() {
+        triggerKeyboard('keydown', 187);
+      },
+      'key period': function keyPeriod() {
+        triggerKeyboard('keydown', 190);
+      },
+      'key semi colon': function keySemicolon() {
+        triggerKeyboard('keydown', 186);
+      },
+      'key multiply': function keyMultiply() {
+        triggerKeyboard('keydown', 106);
+      },
+      'key add': function keyAdd() {
+        triggerKeyboard('keydown', 107);
+      },
+      'key subtract': function keySubtract() {
+        triggerKeyboard('keydown', 109);
+      },
+      'key decimal point': function keyDecimalpoint() {
+        triggerKeyboard('keydown', 110);
+      },
+      'key divide': function keyDivide() {
+        triggerKeyboard('keydown', 111);
+      },
+      'key slash': function keySlash() {
+        triggerKeyboard('keydown', 191);
+      },
+      'key back slash': function keyBackslash() {
+        triggerKeyboard('keydown', 220);
+      },
+      'key close bracket': function keyClosebracket() {
+        triggerKeyboard('keydown', 221);
+      },
+      'key open bracket': function keyOpenBracket() {
+        triggerKeyboard('keydown', 219);
+      },
+      'key accent': function keyAccent() {
+        triggerKeyboard('keydown', 192);
+      },
+      'key quote': function keyQuote() {
+        triggerKeyboard('keydown', 222);
+      },
+      'key zero': function keyZero() {
+        triggerKeyboard('keydown', 48);
+      },
+      'key one': function keyOne() {
+        triggerKeyboard('keydown', 49);
+      },
+      'key two': function keyTwo() {
+        triggerKeyboard('keydown', 50);
+      },
+      'key three': function keyThree() {
+        triggerKeyboard('keydown', 51);
+      },
+      'key four': function keyFour() {
+        triggerKeyboard('keydown', 52);
+      },
+      'key five': function keyFive() {
+        triggerKeyboard('keydown', 53);
+      },
+      'key six': function keySix() {
+        triggerKeyboard('keydown', 54);
+      },
+      'key seven': function keySeven() {
+        triggerKeyboard('keydown', 55);
+      },
+      'key eight': function keyEight() {
+        triggerKeyboard('keydown', 56);
+      },
+      'key nine': function keyNine() {
+        triggerKeyboard('keydown', 57);
       }
     };
     //mic access allowed
