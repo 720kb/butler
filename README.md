@@ -4,13 +4,13 @@
 <p align="center">
   <b><a href="#installation">Installation </a></b> &nbsp; 
   |
-  <b><a href="#usage">Usage</a></b>
+  &nbsp; <b><a href="#usage">Usage</a></b>&nbsp; 
   |
-  <b><a href="#-commands">Commands</a></b>
+  &nbsp; <b><a href="#-commands">Commands</a></b>&nbsp; 
   |
-  <b><a href="#plugins">Plugins</a></b>
+  &nbsp; <b><a href="#plugins">Plugins</a></b>&nbsp; 
   |
-  <b><a href="#browser-support">Browser support</a></b>
+  &nbsp; <b><a href="#browser-support">Browser support</a></b>
 </p>
 <br><br>
 
