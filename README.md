@@ -19,7 +19,9 @@
 **Butler.js** is a voice driven portable major-domo, for your personal needs.
 You can easily customize it to your needs and _"Sir"_ ... he will never never betray you.
 
-Butler is developed with the aim to make developers and designers lifes easier. What would you have done before through the keyboard and text can now be done just commanding Butler.
+Butler is developed with the aim of making life simpler for developers and designers. 
+
+What would you have done before through the keyboard and scripts can now be done right by commanding Butler by voice.
 
 The whole with a bit of healthy humor and fun.
 
@@ -249,7 +251,7 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ####Gtk
-- Not ready for production
+- Not ready for a production project
 - Default [commands](https://github.com/720kb/butler#-commands) may be changed or modified at any time, others will come soon
 
 ####Thank you
