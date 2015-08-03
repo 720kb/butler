@@ -85,7 +85,7 @@ Command  | Result
 
 ####Trigger
 
-Commands to trigger events and actions on the selected DOM elements
+Commands to trigger events and actions
 
 Command  | Result
 ------------- | -------------
@@ -126,7 +126,7 @@ Command  | Result
 
 ####Window
 
-Commands to manipulate, trigger, ```window``` events and actions
+Commands to manipulate, trigger ```window``` events and actions
 
 Command  | Result
 ------------- | -------------
@@ -136,13 +136,13 @@ Command  | Result
 
 ####Navigator
 
-Commands to manipulate, trigger, ```window.navigator```
+Commands to manipulate, trigger ```window.navigator```
 
 Command  | Result
 ------------- | -------------
- _Navigator go online_  | Set navigator online
- _Navigator go offline_  | Set navigator offline
- _Navigator vibrate_  | Vibrate navigator
+ _Navigator go online_  | Set online status
+ _Navigator go offline_  | Set offline status
+ _Navigator vibrate_  | Vibrate device
 
 
 ###Events
