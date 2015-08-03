@@ -240,6 +240,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ####Gtk
 - Not ready for production
+- Default [commands](https://github.com/720kb/butler#-commands) may be changed or modified at any time, others will come soon
 
 ####Thank you
 - to [Google](google.com) and Google developers, for the awesome webkit-speech API
