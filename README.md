@@ -253,7 +253,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ####Gtk
 - Not ready for a production project
 - Default [commands](https://github.com/720kb/butler#-commands) may be changed or modified at any time, others will come soon
-- The Speech Detection is still very slow sometimes, using https:// will be faster
+- The Speech Detection is still very slow sometimes, using https:// will be slighty faster
 
 ####Thank you
 - to [Google](google.com) and Google developers, for the awesome webkit-speech API
