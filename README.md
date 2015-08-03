@@ -133,14 +133,14 @@ Command  | Result
  _Window scroll y_  | Trigger window Y scroll
  _Window scroll x_  | Trigger window X scroll
 
-####Router
+####Location
 Commands to manipulate, navigate urls and history
 
 Command  | Result
 ------------- | -------------
- _Router refresh_  | Refresh the page
- _Router back_  | Go to previous history url
- _Router forward_  | Go to next history url
+ _Location refresh_  | Location refresh
+ _Location back_  | Go to previous location url
+ _Location forward_  | Go to next location url
  
 ####Navigator
 
