@@ -243,7 +243,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
             window.console.info('Appended cloned element');
           } else {
 
-            window.console.warn('No this.Clipboard.clone element to append');
+            window.console.warn('No Clipboard.clone element to append');
           }
         } catch(e) {
 
@@ -258,7 +258,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
             window.console.info('Prepended cloned element');
           } else {
 
-            window.console.warn('No this.Clipboard.clone element to prepend');
+            window.console.warn('No Clipboard.clone element to prepend');
           }
         } catch(e) {
 
@@ -293,7 +293,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
               }
             }
           } else {
-            window.console.warn('No this.Clipboard.text to paste');
+            window.console.warn('No Clipboard.text to paste');
           }
         } catch(e) {
 
@@ -302,15 +302,31 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'selector make editable': function selectorMakeEditable() {
         this.Highlighter.element.setAttribute('contentEditable', 'true');
+        window.console.info('Made editable element:', this.Highlighter.element);
       },
       'selector not editable': function selectorRemoveEditable() {
         this.Highlighter.element.removeAttribute('contentEditable');
+        window.console.info('Made not editable element:', this.Highlighter.element);
       },
       'selector make disabled': function selectorAttrDisable() {
         this.Highlighter.element.setAttribute('disabled', 'disabled');
+        window.console.info('Disabled element:', this.Highlighter.element);
       },
       'selector not disabled': function selectorRemoveAttrDisable() {
         this.Highlighter.element.removeAttribute('disabled');
+        window.console.info('Enabled element:', this.Highlighter.element);
+      },
+      'selector delete': function selectorDeleteElement() {
+        window.console.info('Deleted element:', this.Highlighter.element);
+        this.Highlighter.element.delete();
+      },
+      'selector hide': function selectorHideElement() {
+        this.Highlighter.element.style.display = 'none';
+        window.console.info('Hidden element:', this.Highlighter.element);
+      },
+      'selector show': function selectorHideElement() {
+        this.Highlighter.element.style.display = 'initial';
+        window.console.info('Shown element:', this.Highlighter.element);
       },
       'selector which': function selectorWich() {
         this.Highlighter.erase();
