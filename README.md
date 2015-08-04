@@ -82,6 +82,8 @@ Command  | Result
  _Selector paste text_  | Paste the previously copied text to the current selected DOM element
  _Selector make editable_  | Make the current selected DOM element editable
  _Selector not editable_  | Make the current selected DOM element not editable
+ _Selector make disabled_  | Make the current selected DOM element disabled
+ _Selector not disabled_  | Make the current selected DOM element not disabled
  _Selector clone_  | Clone the current selected DOM element
  _Selector append clone_  | Append the cloned element to the current selected DOM element
  _Selector prepend clone_  | Prepend the cloned element to the current selected DOM element
