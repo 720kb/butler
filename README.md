@@ -161,8 +161,9 @@ Command  | Result
  _Navigator vibrate_  | Vibrate device
  _Navigator which_  | Show and alert navigator informations
 
-###Butler Tools
+###Tools
 Butler exposes some good stuffs that you can interact with.
+
 You can check them all by:
 ```javascript
 window.console.info(Butler);
