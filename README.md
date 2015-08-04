@@ -87,6 +87,9 @@ Command  | Result
  _Selector clone_  | Clone the current selected DOM element
  _Selector append clone_  | Append the cloned element to the current selected DOM element
  _Selector prepend clone_  | Prepend the cloned element to the current selected DOM element
+ _Selector delete_  | Delete the current selected DOM element
+ _Selector hide_  | Hide the current selected DOM element
+ _Selector show_  | Show the current selected DOM element
  _Selector which_  | Show and alert the current selected DOM element's informations
 
 ####Trigger
