@@ -114,6 +114,10 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         window.console.info('Selected next element');
       },
       'selector next id *detect': function selectorNextById(detection) {
+        if (Array.isArray(detection)) {
+
+          detection = detection.join('');
+        }
         Highlighter.erase();
         Highlighter.next('#' + detection);
         Highlighter.underline();
@@ -121,7 +125,11 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'selector next tag *detect': function selectorNextByTag(detection) {
         Highlighter.erase();
-        Highlighter.next('<' + detection.replace('<', '').replace('>', '') + '>');
+        if (Array.isArray(detection)) {
+
+          detection = detection.join('');
+        }
+        Highlighter.next('<' + detection + '>');
         Highlighter.underline();
         window.console.info('Selected next element by id: #' + detection);
       },
@@ -132,12 +140,20 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         window.console.info('Selected next element by class: .' + detection);
       },
       'selector back id *detect': function selectorBackById(detection) {
+        if (Array.isArray(detection)) {
+
+          detection = detection.join('');
+        }
         Highlighter.erase();
         Highlighter.next('#' + detection);
         Highlighter.underline();
         window.console.info('Selected next element by id: #' + detection);
       },
       'selector back tag *detect': function selectorBackByTag(detection) {
+        if (Array.isArray(detection)) {
+
+          detection = detection.join('');
+        }
         Highlighter.erase();
         Highlighter.next('<' + detection.replace('<', '').replace('>', '') + '>');
         Highlighter.underline();
@@ -159,6 +175,10 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         }
       },
       'selector add id *detection': function selectorAddId(detection) {
+        if (Array.isArray(detection)) {
+
+          detection = detection.join('');
+        }
         try {
           Highlighter.element.id = detection;
           window.console.info('Added id: #' + detection);
@@ -186,6 +206,10 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         }
       },
       'selector remove class *detection': function selectorRemoveClass(detection) {
+        if (Array.isArray(detection)) {
+
+          detection = detection.join('');
+        }
         try {
           Highlighter.element.classElement.remove(detection);
           window.console.info('Removed class: .' + detection);
@@ -283,8 +307,8 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         window.alert(
           'nodename: ' + Highlighter.element.nodeName.toLowerCase() + '\n' +
           'classes: ' + Highlighter.element.classList.toString() + '\n' +
-          'id: ' + Highlighter.element.id + '\n' +
-          'OPEN CONSOLE FOR MORE INFORMATIONS'
+          'id: ' + Highlighter.element.id + '\n' + '\n' +
+          'CHECK CONSOLE FOR MORE INFORMATIONS'
         );
         window.console.info('Showing which selector element', 'Element is: ', highlighter.element);
         /*eslint-enable*/
@@ -623,6 +647,18 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           window.alert(e);
         }
       },
+      'location refresh': function routerRefresh() {
+        window.location.reload();
+      },
+      'location back': function locationBack() {
+        window.history.back();
+      },
+      'location forward': function locationForward() {
+        window.history.forward();
+      },
+      'location hashbang *detect': function locationHashBang(detection) {
+        window.location.hash = '#' + detection;
+      },
       'navigator go offline': function navigatorOffline() {
         try {
           window.navigator.onLine = false;
@@ -662,8 +698,8 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           'appPlatform: ' + window.navigator.platform + '\n' +
           'vendor: ' + window.navigator.vendor + '\n' +
           'language: ' + window.navigator.language + '\n' +
-          'languages: ' + window.navigator.languages.join('|') + '\n' +
-          'OPEN CONSOLE FOR MORE INFORMATIONS'
+          'languages: ' + window.navigator.languages.join('|') + '\n' + '\n' +
+          'CHECK CONSOLE FOR MORE INFORMATIONS'
         );
         window.console.info('Showing which navigator', 'Navigator is: ', window.navigator);
         /*eslint-enable*/
@@ -829,6 +865,16 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       'autoRestart': false,
       'continuous': true
     });
+  };
+
+  Butler.prototype.pause = function pauseButler() {
+
+    annyang.pause();
+  };
+
+  Butler.prototype.resume = function resumeButler() {
+
+    annyang.resume();
   };
 
   Butler.prototype.plug = function plugPlugin(plugin) {
