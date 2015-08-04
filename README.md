@@ -168,13 +168,13 @@ You can check them all by:
 ```javascript
 window.console.info(Butler);
 ```
-###Butler.Highlighter
+####Butler.Highlighter
 Highlighter is the Butler selector (taken from [Highlighter.js](https://github.com/720kb/highlighter.js)), is the DOM surfer who take trace of the selected and current elements.
 
 ```javascript
 window.console.info('Which element are you on Butler?', Butler.Highlighter.element);
 ```
-###Butler.Clipboard
+####Butler.Clipboard
 Clipboard is where Butler saves the last copied text or cloned element.
 ```javascript
 window.console.info('What you copied or cloned Butler?', Butler.Clipboard);
