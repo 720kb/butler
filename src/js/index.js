@@ -301,6 +301,12 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           window.alert(e);
         }
       },
+      'selector make editable': function selectorMakeEditable() {
+        Highlighter.element.setAttribute('contentEditable', 'true');
+      },
+      'selector remove editable': function selectorRemoveEditable() {
+        Highlighter.element.setAttribute('contentEditable', 'false');
+      },
       'selector which': function selectorWich() {
         /*eslint-disable*/
         //jscs:disable
