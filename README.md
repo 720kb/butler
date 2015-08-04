@@ -159,7 +159,7 @@ Command  | Result
  _Navigator go online_  | Set online status
  _Navigator go offline_  | Set offline status
  _Navigator vibrate_  | Vibrate device
- _Navigator which_  | Show navigator informations
+ _Navigator which_  | Show and alert navigator informations
 
 
 ###Events
