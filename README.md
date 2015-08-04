@@ -87,7 +87,7 @@ Command  | Result
  _Selector clone_  | Clone the current selected DOM element
  _Selector append clone_  | Append the cloned element to the current selected DOM element
  _Selector prepend clone_  | Prepend the cloned element to the current selected DOM element
- _Selector which_  | Alert the current selected DOM element's informations
+ _Selector which_  | Show and alert the current selected DOM element's informations
 
 ####Trigger
 
