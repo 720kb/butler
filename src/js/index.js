@@ -304,7 +304,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       'selector make editable': function selectorMakeEditable() {
         Highlighter.element.setAttribute('contentEditable', 'true');
       },
-      'selector remove editable': function selectorRemoveEditable() {
+      'selector not editable': function selectorRemoveEditable() {
         Highlighter.element.setAttribute('contentEditable', 'false');
       },
       'selector which': function selectorWich() {
