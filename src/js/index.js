@@ -36,18 +36,14 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
   'use strict';
 
   var Butler = function initButler() {
-    /*eslint-disable*/
-    var Highlighter = new window.Highlighter({
-      'scroll':false
-    })
-    , clipboard = []
-    /*eslint-enable*/
-    , onStartEvent = new window.CustomEvent('Butler:start')
+
+    var onStartEvent = new window.CustomEvent('Butler:start')
     , onEndEvent = new window.CustomEvent('Butler:end')
     , onDetectionEvent = new window.CustomEvent('Butler:detection')
     , onDetectionMatchEvent = new window.CustomEvent('Butler:detection-match')
     , onDetectionNotMatchEvent = new window.CustomEvent('Butler:detection-not-match')
     , onErrorsEvent = new window.CustomEvent('Butler:error')
+    //expose triggers!? ...
     , trigger = function triggerHandler(event, eventType, element) {
 
       var evObj = document.createEvent(eventType);
@@ -89,28 +85,31 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       window.dispatchEvent(evObj);
     };
 
-    this.lang = 'en-EN';
-    this.commands = {
+    this.Highlighter = new window.Highlighter({
+      'scroll': false
+    });
+    this.Clipboard = [];
+    this.Lang = 'en-EN';
+    this.Commands = {
       'selector on': function selectorOn() {
-        Highlighter.erase();
-        Highlighter.underline();
+        this.Highlighter.erase();
+        this.Highlighter.underline();
         window.console.info('Turned selector on');
       },
       'selector off': function selectorOff() {
-        Highlighter.erase();
-        Highlighter = new window.Highlighter();
+        this.Highlighter.erase();
         window.console.info('Turned selector off');
       },
       'selector next': function selectorNext() {
-        Highlighter.erase();
-        Highlighter.next();
-        Highlighter.underline();
+        this.Highlighter.erase();
+        this.Highlighter.next();
+        this.Highlighter.underline();
         window.console.info('Selected next element');
       },
       'selector back': function selectorBack() {
-        Highlighter.erase();
-        Highlighter.previous();
-        Highlighter.underline();
+        this.Highlighter.erase();
+        this.Highlighter.previous();
+        this.Highlighter.underline();
         window.console.info('Selected next element');
       },
       'selector next id *detect': function selectorNextById(detection) {
@@ -118,25 +117,25 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
 
           detection = detection.join('');
         }
-        Highlighter.erase();
-        Highlighter.next('#' + detection);
-        Highlighter.underline();
+        this.Highlighter.erase();
+        this.Highlighter.next('#' + detection);
+        this.Highlighter.underline();
         window.console.info('Selected next element by id: #' + detection);
       },
       'selector next tag *detect': function selectorNextByTag(detection) {
-        Highlighter.erase();
+        this.Highlighter.erase();
         if (Array.isArray(detection)) {
 
           detection = detection.join('');
         }
-        Highlighter.next('<' + detection + '>');
-        Highlighter.underline();
+        this.Highlighter.next('<' + detection + '>');
+        this.Highlighter.underline();
         window.console.info('Selected next element by id: #' + detection);
       },
       'selector next class *detect': function selectorNextByClass(detection) {
-        Highlighter.erase();
-        Highlighter.next('.' + detection.replace('.', ''));
-        Highlighter.underline();
+        this.Highlighter.erase();
+        this.Highlighter.next('.' + detection.replace('.', ''));
+        this.Highlighter.underline();
         window.console.info('Selected next element by class: .' + detection);
       },
       'selector back id *detect': function selectorBackById(detection) {
@@ -144,9 +143,9 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
 
           detection = detection.join('');
         }
-        Highlighter.erase();
-        Highlighter.next('#' + detection);
-        Highlighter.underline();
+        this.Highlighter.erase();
+        this.Highlighter.next('#' + detection);
+        this.Highlighter.underline();
         window.console.info('Selected next element by id: #' + detection);
       },
       'selector back tag *detect': function selectorBackByTag(detection) {
@@ -154,20 +153,20 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
 
           detection = detection.join('');
         }
-        Highlighter.erase();
-        Highlighter.next('<' + detection.replace('<', '').replace('>', '') + '>');
-        Highlighter.underline();
+        this.Highlighter.erase();
+        this.Highlighter.next('<' + detection.replace('<', '').replace('>', '') + '>');
+        this.Highlighter.underline();
         window.console.info('Selected next element by id: .' + detection);
       },
       'selector back class *detect': function selectorBackByClass(detection) {
-        Highlighter.erase();
-        Highlighter.next('.' + detection.replace('.', ''));
-        Highlighter.underline();
+        this.Highlighter.erase();
+        this.Highlighter.next('.' + detection.replace('.', ''));
+        this.Highlighter.underline();
         window.console.info('Selected next element by class: .' + detection);
       },
       'selector add class *detection': function selectorAddClass(detection) {
         try {
-          Highlighter.element.classList.add(detection);
+          this.Highlighter.element.classList.add(detection);
           window.console.info('Added class: .' + detection);
         } catch(e) {
 
@@ -180,7 +179,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           detection = detection.join('');
         }
         try {
-          Highlighter.element.id = detection;
+          this.Highlighter.element.id = detection;
           window.console.info('Added id: #' + detection);
         } catch(e) {
 
@@ -189,7 +188,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'selector put value *detection': function selectorPutValue(detection) {
         try {
-          Highlighter.element.value = detection;
+          this.Highlighter.element.value = detection;
           window.console.info('Added value: ' + detection);
         } catch(e) {
 
@@ -198,7 +197,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'selector insert text *detection': function selectorInsertText(detection) {
         try {
-          Highlighter.element.innerText = detection;
+          this.Highlighter.element.innerText = detection;
           window.console.info('Inserted text: ' + detection);
         } catch(e) {
 
@@ -211,7 +210,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
           detection = detection.join('');
         }
         try {
-          Highlighter.element.classElement.remove(detection);
+          this.Highlighter.element.classElement.remove(detection);
           window.console.info('Removed class: .' + detection);
         } catch(e) {
 
@@ -220,7 +219,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'selector empty text': function selectorRemoveText() {
         try {
-          Highlighter.element.innerText = '';
+          this.Highlighter.element.innerText = '';
           window.console.info('Removed text');
         } catch(e) {
 
@@ -229,7 +228,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'selector clone': function selectorClone() {
         try {
-          clipboard.clone = Highlighter.element;
+          this.Clipboard.clone = this.Highlighter.element;
           window.console.info('Cloned element');
         } catch(e) {
 
@@ -238,13 +237,13 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'selector append clone': function selectorAppendClone() {
         try {
-          if (clipboard && clipboard.clone) {
+          if (this.Clipboard && this.Clipboard.clone) {
 
-            Highlighter.element.appendChild(clipboard.clone);
+            this.Highlighter.element.appendChild(this.Clipboard.clone);
             window.console.info('Appended cloned element');
           } else {
 
-            window.console.warn('No clipboard.clone element to append');
+            window.console.warn('No this.Clipboard.clone element to append');
           }
         } catch(e) {
 
@@ -253,13 +252,13 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'selector prepend clone': function selectorPrependClone() {
         try {
-          if (clipboard && clipboard.clone) {
+          if (this.Clipboard && this.Clipboard.clone) {
 
-            Highlighter.element.insertBefore(clipboard.clone);
+            this.Highlighter.element.insertBefore(this.Clipboard.clone);
             window.console.info('Prepended cloned element');
           } else {
 
-            window.console.warn('No clipboard.clone element to prepend');
+            window.console.warn('No this.Clipboard.clone element to prepend');
           }
         } catch(e) {
 
@@ -268,7 +267,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'selector copy text': function selectorCopyText() {
         try {
-          clipboard.text = Highlighter.element.innerText || Highlighter.element.value;
+          this.Clipboard.text = this.Highlighter.element.innerText || this.Highlighter.element.value;
           window.console.info('Copied text');
         } catch(e) {
 
@@ -277,16 +276,16 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'selector paste text': function selectorPasteText() {
         try {
-          if (clipboard && clipboard.text) {
-            if (Highlighter.element.nodeName.toLowerCase() === 'input'
-            || Highlighter.element.nodeName.toLowerCase() === 'textarea') {
+          if (this.Clipboard && this.Clipboard.text) {
+            if (this.Highlighter.element.nodeName.toLowerCase() === 'input'
+            || this.Highlighter.element.nodeName.toLowerCase() === 'textarea') {
 
-              Highlighter.element.value = clipboard.text;
+              this.Highlighter.element.value = this.Clipboard.text;
               window.console.info('Pasted text as value');
             } else {
               try {
 
-                Highlighter.element.innerText = clipboard.text;
+                this.Highlighter.element.innerText = this.Clipboard.text;
                 window.console.info('Pasted text');
               } catch(e) {
 
@@ -294,7 +293,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
               }
             }
           } else {
-            window.console.warn('No clipboard.text to paste');
+            window.console.warn('No this.Clipboard.text to paste');
           }
         } catch(e) {
 
@@ -302,35 +301,35 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         }
       },
       'selector make editable': function selectorMakeEditable() {
-        Highlighter.element.setAttribute('contentEditable', 'true');
+        this.Highlighter.element.setAttribute('contentEditable', 'true');
       },
       'selector not editable': function selectorRemoveEditable() {
-        Highlighter.element.removeAttribute('contentEditable');
+        this.Highlighter.element.removeAttribute('contentEditable');
       },
       'selector make disabled': function selectorAttrDisable() {
-        Highlighter.element.setAttribute('disabled', 'disabled');
+        this.Highlighter.element.setAttribute('disabled', 'disabled');
       },
       'selector not disabled': function selectorRemoveAttrDisable() {
-        Highlighter.element.removeAttribute('disabled');
+        this.Highlighter.element.removeAttribute('disabled');
       },
       'selector which': function selectorWich() {
-        Highlighter.erase();
-        Highlighter.underline();
+        this.Highlighter.erase();
+        this.Highlighter.underline();
         /*eslint-disable*/
         //jscs:disable
         window.alert(
-          'nodename: ' + Highlighter.element.nodeName.toLowerCase() + '\n' +
-          'classes: ' + Highlighter.element.classList.toString() + '\n' +
-          'id: ' + Highlighter.element.id + '\n' + '\n' +
+          'nodename: ' + this.Highlighter.element.nodeName.toLowerCase() + '\n' +
+          'classes: ' + this.Highlighter.element.classList.toString() + '\n' +
+          'id: ' + this.Highlighter.element.id + '\n' + '\n' +
           'CHECK CONSOLE FOR MORE INFORMATIONS'
         );
-        window.console.info('Showing which selector element', 'Element is: ', highlighter.element);
+        window.console.info('Showing which selector element', 'Element is: ', this.Highlighter.element);
         /*eslint-enable*/
         //jscs:enable
       },
       'trigger click': function triggerClick() {
         try {
-          Highlighter.element.click();
+          this.Highlighter.element.click();
           window.console.info('Triggered click');
         } catch(e) {
 
@@ -339,7 +338,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger focus': function triggerFocus() {
         try {
-          Highlighter.element.focus();
+          this.Highlighter.element.focus();
           window.console.info('Triggered focus');
         } catch(e) {
 
@@ -348,7 +347,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger fade': function triggerFade() {
         try {
-          Highlighter.element.fade();
+          this.Highlighter.element.fade();
           window.console.info('Triggered fade');
         } catch(e) {
 
@@ -357,7 +356,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger blur': function triggerBlur() {
         try {
-          Highlighter.element.blur();
+          this.Highlighter.element.blur();
           window.console.info('Triggered blur');
         } catch(e) {
 
@@ -366,7 +365,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger submit': function triggerSubmit() {
         try {
-          Highlighter.element.submit();
+          this.Highlighter.element.submit();
           window.console.info('Triggered submit');
         } catch(e) {
 
@@ -375,7 +374,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger change': function triggerChange() {
         try {
-          triggerEvent('change', Highlighter.element);
+          triggerEvent('change', this.Highlighter.element);
           window.console.info('Triggered change');
         } catch(e) {
 
@@ -384,7 +383,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger close': function triggerClose() {
         try {
-          triggerEvent('close', Highlighter.element);
+          triggerEvent('close', this.Highlighter.element);
           window.console.info('Triggered close');
         } catch(e) {
 
@@ -393,7 +392,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger play': function triggerPlay() {
         try {
-          Highlighter.element.play();
+          this.Highlighter.element.play();
           window.console.info('Triggered play');
         } catch(e) {
 
@@ -402,7 +401,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger pause': function triggerPause() {
         try {
-          Highlighter.element.pause();
+          this.Highlighter.element.pause();
           window.console.info('Triggered pause');
         } catch(e) {
 
@@ -411,7 +410,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger pin': function triggerPin() {
         try {
-          Highlighter.element.pin();
+          this.Highlighter.element.pin();
           window.console.info('Triggered pin');
         } catch(e) {
 
@@ -420,7 +419,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger select': function triggerSelect() {
         try {
-          triggerUI('close', Highlighter.element);
+          triggerUI('close', this.Highlighter.element);
           window.console.info('Triggered select');
         } catch(e) {
 
@@ -429,7 +428,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger show': function triggerShow() {
         try {
-          triggerUI('show', Highlighter.element);
+          triggerUI('show', this.Highlighter.element);
           window.console.info('Triggered show');
         } catch(e) {
 
@@ -438,7 +437,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger reset': function triggerReset() {
         try {
-          triggerEvent('reset', Highlighter.element);
+          triggerEvent('reset', this.Highlighter.element);
           window.console.info('Triggered reset');
         } catch(e) {
 
@@ -447,7 +446,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger mouse over': function triggerMouseover() {
         try {
-          triggerMouse('mouseover', Highlighter.element);
+          triggerMouse('mouseover', this.Highlighter.element);
           window.console.info('Triggered mouseover');
         } catch(e) {
 
@@ -456,7 +455,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger mouse move': function triggerMousemove() {
         try {
-          triggerMouse('mousemove', Highlighter.element);
+          triggerMouse('mousemove', this.Highlighter.element);
           window.console.info('Triggered mousemove');
         } catch(e) {
 
@@ -465,7 +464,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger mouse enter': function triggerMouseenter() {
         try {
-          triggerMouse('mouseenter', Highlighter.element);
+          triggerMouse('mouseenter', this.Highlighter.element);
           window.console.info('Triggered mouseenter');
         } catch(e) {
 
@@ -474,7 +473,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger mouse leave': function triggerMouseleave() {
         try {
-          triggerMouse('mouseleave', Highlighter.element);
+          triggerMouse('mouseleave', this.Highlighter.element);
           window.console.info('Triggered mouseleave');
         } catch(e) {
 
@@ -483,7 +482,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger mouse out': function triggerMouseout() {
         try {
-          triggerMouse('mouseout', Highlighter.element);
+          triggerMouse('mouseout', this.Highlighter.element);
           window.console.info('Triggered mouseout');
         } catch(e) {
 
@@ -492,7 +491,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger mouse up': function triggerMouseup() {
         try {
-          triggerMouse('mouseup', Highlighter.element);
+          triggerMouse('mouseup', this.Highlighter.element);
           window.console.info('Triggered mouseup');
         } catch(e) {
 
@@ -501,7 +500,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger mouse down': function triggerMousedown() {
         try {
-          triggerMouse('mousedown', Highlighter.element);
+          triggerMouse('mousedown', this.Highlighter.element);
           window.console.info('Triggered mousedown');
         } catch(e) {
 
@@ -510,7 +509,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger scroll x': function triggerScrollX() {
         try {
-          Highlighter.element.scrollBy(35, 0);
+          this.Highlighter.element.scrollBy(35, 0);
           window.console.info('Triggered scroll X');
         } catch(e) {
 
@@ -519,7 +518,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger scroll y': function triggerScrollY() {
         try {
-          Highlighter.element.scrollBy(0, 35);
+          this.Highlighter.element.scrollBy(0, 35);
           window.console.info('Triggered scroll Y');
         } catch(e) {
 
@@ -528,7 +527,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger touch start': function triggerTouchStart() {
         try {
-          triggerTouch('touchstart', Highlighter.element);
+          triggerTouch('touchstart', this.Highlighter.element);
           window.console.info('Triggered touch start');
         } catch(e) {
 
@@ -537,7 +536,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger touch enter': function triggerTouchEnter() {
         try {
-          triggerTouch('touchenter', Highlighter.element);
+          triggerTouch('touchenter', this.Highlighter.element);
           window.console.info('Triggered touch enter');
         } catch(e) {
 
@@ -546,7 +545,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger touch move': function triggerTouchMove() {
         try {
-          triggerTouch('touchmove', Highlighter.element);
+          triggerTouch('touchmove', this.Highlighter.element);
           window.console.info('Triggered touch move');
         } catch(e) {
 
@@ -555,7 +554,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger touch leave': function triggerTouchLeave() {
         try {
-          triggerTouch('touchleave', Highlighter.element);
+          triggerTouch('touchleave', this.Highlighter.element);
           window.console.info('Triggered touch leave');
         } catch(e) {
 
@@ -564,7 +563,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger touch end': function triggerTouchEnd() {
         try {
-          triggerTouch('touchend', Highlighter.element);
+          triggerTouch('touchend', this.Highlighter.element);
           window.console.info('Triggered touch end');
         } catch(e) {
 
@@ -573,7 +572,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger touch cancel': function triggerTouchCancel() {
         try {
-          triggerTouch('touchcancel', Highlighter.element);
+          triggerTouch('touchcancel', this.Highlighter.element);
           window.console.info('Triggered touch cancel');
         } catch(e) {
 
@@ -582,7 +581,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger drop': function triggerDrop() {
         try {
-          triggerDrag('drop', Highlighter.element);
+          triggerDrag('drop', this.Highlighter.element);
           window.console.info('Triggered drop');
         } catch(e) {
 
@@ -591,7 +590,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger drag': function triggerDragg() {
         try {
-          triggerDrag('drag', Highlighter.element);
+          triggerDrag('drag', this.Highlighter.element);
           window.console.info('Triggered drag');
         } catch(e) {
 
@@ -600,7 +599,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger drag start': function triggerDragStart() {
         try {
-          triggerDrag('dragstart', Highlighter.element);
+          triggerDrag('dragstart', this.Highlighter.element);
           window.console.info('Triggered drag start');
         } catch(e) {
 
@@ -609,7 +608,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger drag end': function triggerDragEnd() {
         try {
-          triggerDrag('dragend', Highlighter.element);
+          triggerDrag('dragend', this.Highlighter.element);
           window.console.info('Triggered drag end');
         } catch(e) {
 
@@ -618,7 +617,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger drag enter': function triggerDragEnter() {
         try {
-          triggerDrag('dragenter', Highlighter.element);
+          triggerDrag('dragenter', this.Highlighter.element);
           window.console.info('Triggered drag enter');
         } catch(e) {
 
@@ -627,7 +626,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger drag over': function triggerDragOver() {
         try {
-          triggerDrag('dragover', Highlighter.element);
+          triggerDrag('dragover', this.Highlighter.element);
           window.console.info('Triggered drag over');
         } catch(e) {
 
@@ -636,7 +635,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger drag leave': function triggerDragLeave() {
         try {
-          triggerDrag('dragleave', Highlighter.element);
+          triggerDrag('dragleave', this.Highlighter.element);
           window.console.info('Triggered drag leave');
         } catch(e) {
 
@@ -863,8 +862,8 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       window.dispatchEvent(onDetectionNotMatchEvent);
     });
 
-    annyang.setLanguage(this.lang);
-    annyang.addCommands(this.commands, false);
+    annyang.setLanguage(this.Lang);
+    annyang.addCommands(this.Commands, false);
   };
 
   Butler.prototype.start = function startButler(settings) {

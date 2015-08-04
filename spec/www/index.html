@@ -12,7 +12,8 @@
     Butler.plug({
       'commands': {
         'go': function hey() {
-          alert('go');
+          Butler.Highlighter.next();
+          console.log('antani', Butler.Highlighter.element);
         }
       }
     });
