@@ -90,7 +90,7 @@ Command  | Result
  _Selector hide_  | Hide the current selected DOM element
  _Selector show_  | Show the current selected DOM element
  _Selector let me choose_  |  Select yourself which DOM element by clicking the element
- _Selector which_  | Show and alert the current selected DOM element proprieties
+ _Selector which_  | Show and alert the current selected DOM element informations
 
 ####Trigger
 
