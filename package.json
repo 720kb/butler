@@ -1,6 +1,6 @@
 {
   "name": "butler.js",
-  "version": "0.0.1-beta-0.1.0",
+  "version": "0.0.1-beta-0.1.1",
   "description": "Butler is your I/O javascript voice driven major-domo",
   "scripts": {
     "js-min": "./tasks/banner | xargs -0 -I banner uglifyjs src/js/index.js --preamble banner -c -m --screw-ie8 -p relative --source-map dist/butler.min.js.map -o dist/butler.min.js",
