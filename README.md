@@ -90,6 +90,7 @@ Command  | Result
  _Selector delete_  | Delete the current selected DOM element
  _Selector hide_  | Hide the current selected DOM element
  _Selector show_  | Show the current selected DOM element
+ _Selector let me choose_  |  Select yourself which DOM element by clicking the element
  _Selector which_  | Show and alert the current selected DOM element's informations
 
 ####Trigger
