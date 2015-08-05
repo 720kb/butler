@@ -16,7 +16,7 @@
 
 ###What is this?
 
-**Butler.js** is a voice driven portable major-domo, for your personal needs.
+**Butler.js** is the voice driven and portable major-domo, for your personal needs.
 You can easily customize it to your needs and _"Sir"_ ... he will never never betray you.
 
 Butler is developed with the aim of making life simpler for developers and designers, specially in debugging. 
@@ -180,7 +180,7 @@ Highlighter is the Butler selector (taken from [Highlighter.js](https://github.c
 window.console.info('Which element are you on Butler?', Butler.Highlighter.element);
 ```
 ####Butler.Clipboard
-Clipboard is where Butler saves the last copied text or cloned element.
+Clipboard is where Butler saves the last copied text and/or cloned element.
 ```javascript
 window.console.info('What you copied or cloned Butler?', Butler.Clipboard);
 ```
