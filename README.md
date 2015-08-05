@@ -141,6 +141,7 @@ Command  | Result
 ------------- | -------------
  _Window scroll y_  | Trigger window Y scroll
  _Window scroll x_  | Trigger window X scroll
+ _Window size_  | Alert window dimensions
 
 ####Location
 Commands to manipulate, navigate urls and history
