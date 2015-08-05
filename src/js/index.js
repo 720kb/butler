@@ -328,6 +328,19 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         this.Highlighter.element.style.display = 'initial';
         window.console.info('Shown element:', this.Highlighter.element);
       },
+      'selector let me choose': function selectorLetMeChoose() {
+        //need to restart Highlighter from clicked element
+        var fn = function listenClickOneTime(e) {
+
+          Butler.Highlighter.erase();
+          Butler.Highlighter.element = e.target;
+          Butler.Highlighter.underline();
+          window.removeEventListener('click', fn, false);
+          window.console.info('Choosed the selector element by myself');
+        };
+
+        window.addEventListener('click', fn, false);
+      },
       'selector which': function selectorWich() {
         this.Highlighter.erase();
         this.Highlighter.underline();
@@ -675,6 +688,19 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
 
           window.alert(e);
         }
+      },
+      'window size': function windowSize() {
+        /*eslint-disable*/
+        //jscs:disable
+        window.console.info('Showing window dimensions');
+        window.alert(
+          'innerWidth: ' + window.innerWidth + '\n' +
+          'innerHeight: ' + window.innerHeight + '\n' +
+          'outerWidth: ' + window.outerWidth + '\n' +
+          'outerHeight: ' + window.outerHeight
+        );
+        /*eslint-enable*/
+        //jscs:enable
       },
       'location refresh': function routerRefresh() {
         window.location.reload();
