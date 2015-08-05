@@ -25,7 +25,6 @@ What would you have done before through the keyboard and scripts can now be done
 
 The whole with a bit of healthy humor and fun.
 
-
 [![Join the chat at https://gitter.im/720kb/butler](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/720kb/butler?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ###Installation
@@ -91,7 +90,7 @@ Command  | Result
  _Selector hide_  | Hide the current selected DOM element
  _Selector show_  | Show the current selected DOM element
  _Selector let me choose_  |  Select yourself which DOM element by clicking the element
- _Selector which_  | Show and alert the current selected DOM element's informations
+ _Selector which_  | Show and alert the current selected DOM element proprieties
 
 ####Trigger
 
