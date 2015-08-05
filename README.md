@@ -264,8 +264,11 @@ Google Chrome (latest versions)
 http://caniuse.com/#feat=web-speech
 
 ###Contributing
-We will be much grateful if you help us making this project to grow up.
-Feel free to contribute by forking, opening issues, pull requests etc...
+
+We would be pleased if you help to develop and grow the project more and more.
+The goal is to make the life of programmers and designers more simple and fun, so any suggestion, PR, and specially plugin is welcome and appreciated a lot.
+
+Thank you.
 
 ###License
 The MIT License (MIT)
