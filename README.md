@@ -19,7 +19,7 @@
 **Butler.js** is the voice driven and portable major-domo, for your personal needs.
 You can easily customize it to your needs and _"Sir"_ ... he will never never betray you.
 
-Butler is developed with the aim of making life simpler for developers and designers, specially in debugging. 
+Butler is developed with the aim of making life simpler for developers and designers, specially in debugging and in drafting. 
 
 What would you have done before through the keyboard and scripts can now be done right by commanding Butler by voice.
 
