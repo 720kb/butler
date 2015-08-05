@@ -332,14 +332,15 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         //need to restart Highlighter from clicked element
         var fn = function listenClickOneTime(e) {
 
-          Butler.Highlighter.erase();
-          Butler.Highlighter.element = e.target;
-          Butler.Highlighter.underline();
+          this.Highlighter.erase();
+          this.Highlighter.element = e.target;
+          this.Highlighter.underline();
           window.removeEventListener('click', fn, false);
           window.console.info('Choosed the selector element by myself');
         };
 
         window.addEventListener('click', fn, false);
+        window.alert('Ok do it yourself, click which element.');
       },
       'selector which': function selectorWich() {
         this.Highlighter.erase();
