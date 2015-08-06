@@ -165,6 +165,17 @@ Command  | Result
  _Navigator vibrate_  | Vibrate device
  _Navigator which_  | Show and alert navigator informations
 
+####Browser
+
+Commands to manipulate and interact with the browser
+
+Command  | Result
+------------- | -------------
+ _Browser clean cookies_  | Clean browser cookies
+ _Browser clean session storage_  | Clean browser session storage
+ _Browser clean local storage_  | Clean browser local storage
+ 
+ 
 ###Tools
 Butler exposes some good stuffs that you can interact with.
 
