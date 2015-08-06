@@ -58,6 +58,7 @@ Default voice commands you can abuse of. (many others are coming...)
 
 ####Butler
 Common commands for Butler
+
 Command  | Result
 ------------- | -------------
 _Butler audio on_ | Turn on Butler audio alert
