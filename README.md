@@ -56,6 +56,13 @@ document.addEventListener("DOMContentLoaded", function() {
 ### <img src="http://i.imgur.com/1p126e1.png" valign="text-top" width="25"/> Commands
 Default voice commands you can abuse of. (many others are coming...)
 
+####Butler
+Common commands for Butler
+Command  | Result
+------------- | -------------
+_Butler audio on_ | Turn on Butler audio alert
+_Butler audio off_ | Shut up Butler
+
 ####Selector
 Commands to select, visualize and manipulate the DOM elements
 
