@@ -95,10 +95,10 @@ window.ButlerAudioOk.volume = 0;
     this.Clipboard = [];
     this.Lang = 'en-EN';
     this.Commands = {
-      'butler audio on': function butlerAudioOn() {
+      'butler voice': function butlerAudioOn() {
         window.ButlerAudioOk.volume = 0.15;
       },
-      'butler audio off': function butlerAudioOff() {
+      'butler shut up': function butlerAudioOff() {
         window.ButlerAudioOk.volume = 0;
       },
       'selector on': function selectorOn() {
