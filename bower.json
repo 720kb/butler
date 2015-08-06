@@ -1,6 +1,6 @@
 {
   "name": "butler.js",
-  "version": "0.0.1-beta-0.1.2",
+  "version": "0.0.1-beta-0.1.3",
   "description": "Butler is your I/O javascript voice driven major-domo",
   "homepage": "http://github.com/720kb/butler",
   "authors": [
