@@ -762,6 +762,29 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         /*eslint-enable*/
         //jscs:enable
       },
+      'browser clean local storage': function cleanLocalStorage() {
+        window.localStorage.clean();
+        window.console.info('Browser cleaned localStorage');
+      },
+      'browser clean session storage': function cleanSessionStorage() {
+        window.sessionStorage.clean();
+        window.console.info('Browser cleaned sessionStorage');
+      },
+      'browser clean cookies': function browserCleanCookies() {
+        /*eslint-disable*/
+        //jscs:disable
+        try {
+           window.document.cookie.split(';').forEach(function forAnyCookie(c) {
+             window.document.cookie = c.replace(/^ +/, '').replace(/=.*/, '=;expires=' + new Date().toUTCString() + ';path=/');
+           });
+
+          window.console.info('Browser cleaned cookies');
+        } catch (e) {
+          window.console.warn('Unable to clean cookies', e);
+        }
+        /*eslint-enable*/
+        //jscs:enable
+      },
       'key enter': function keyEnter() {
         triggerKeyboard('keydown', 13);
       },
