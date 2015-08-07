@@ -67,7 +67,7 @@ Common commands for Butler
 Command  | Result
 ------------- | -------------
 _Butler speak_ | Turn on Butler voice
-_Butler shut up_ | Shut up Butler
+_Butler silence_ | turn off Butler voice
 
 ####Selector
 Commands to select, visualize and manipulate the DOM elements
