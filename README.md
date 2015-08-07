@@ -14,7 +14,7 @@
 </p>
 <br><br>
 
-###What is this?
+###What is Butler?
 
 **Butler.js** is the voice driven, portable butler for your personal needs.
 
@@ -28,7 +28,7 @@ With a bit of healthy humor and fun.
 
 [![Join the chat at https://gitter.im/720kb/butler](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/720kb/butler?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-###Why this?
+###Why Butler?
 
 Wouldn't you to rest your hands at least for a while?
 
