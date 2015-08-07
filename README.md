@@ -190,7 +190,7 @@ Command  | Result
  
  
 ###Tools
-Butler exposes some good stuffs that you can interact with.
+Butler exposes some good stuff you can interact with.
 
 You can check them all by:
 ```javascript
