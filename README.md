@@ -16,15 +16,15 @@
 
 ###What is this?
 
-**Butler.js** is the voice driven, portable, major-domo, for your personal needs.
+**Butler.js** is the voice driven, portable butler for your personal needs.
 
-You can easily customize it to your needs and _"Sir"_ ... he will never betray you.
+You can easily customize it to your needs and he will never betray you.
 
-Butler is developed with the aim of making life simpler for developers and designers, specially in debugging/drafting. 
+Butler is developed with the aim of making life simpler for developers and designers, specifically  in debugging/drafting.
 
-What would you have done before through the keyboard and scripts can now be done right by commanding Butler by voice.
+What you would have done before through the keyboard and scripts can now be done by commanding Butler by voice.
 
-The whole with a bit of healthy humor and fun.
+With a bit of healthy humor and fun.
 
 [![Join the chat at https://gitter.im/720kb/butler](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/720kb/butler?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
