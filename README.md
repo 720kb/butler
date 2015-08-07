@@ -16,8 +16,9 @@
 
 ###What is this?
 
-**Butler.js** is the voice driven and portable major-domo, for your personal needs.
-You can easily customize it to your needs and _"Sir"_ ... he will never never betray you.
+**Butler.js** is the voice driven, portable, major-domo, for your personal needs.
+
+You can easily customize it to your needs and _"Sir"_ ... he will never betray you.
 
 Butler is developed with the aim of making life simpler for developers and designers, specially in debugging/drafting. 
 
