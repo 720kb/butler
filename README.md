@@ -202,6 +202,12 @@ Clipboard is where Butler saves the last copied text and/or cloned element.
 ```javascript
 window.console.info('What you copied or cloned Butler?', Butler.Clipboard);
 ```
+####Butler.Voice
+Voice is the Butler voice, simple.
+```javascript
+Butler.Voice.volume = 0.5;
+Butler.Voice.play();
+```
 
 ###Events
 Available events
