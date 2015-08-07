@@ -208,6 +208,19 @@ Voice is the Butler voice, simple.
 Butler.Voice.volume = 0.5;
 Butler.Voice.play();
 ```
+####Butler.Commands
+Commands is the Object containing all the default Butler voice commands.
+
+```javascript
+window.console.info('Which commands do you know Butler?', Butler.Commands);
+```
+
+If you need some of [them](https://github.com/720kb/butler#-commands) to be run just do:
+
+```javascript
+var ButlerCommand = Butler.Commands['selector on'];
+ButlerCommand();
+```
 
 ###Events
 Available events
