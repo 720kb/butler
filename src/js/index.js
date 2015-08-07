@@ -101,7 +101,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         that.Voice.play();
         window.console.info('Butler got permission to speak');
       },
-      'butler shut up': function butlerAudioOff() {
+      'butler silence': function butlerAudioOff() {
         that.Voice.play();
         that.Voice.volume = 0;
         window.console.info('Butler has to shut up now');
