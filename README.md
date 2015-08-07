@@ -28,6 +28,10 @@ The whole with a bit of healthy humor and fun.
 
 [![Join the chat at https://gitter.im/720kb/butler](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/720kb/butler?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+###Why this?
+
+Wouldn't you to rest your hands at least for a while?
+
 ###Installation
 
 ####HTML
