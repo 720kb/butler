@@ -1,0 +1,46 @@
+{
+  "name": "butler.js",
+  "version": "0.0.1-beta-0.1.6",
+  "description": "Butler is your I/O javascript voice driven major-domo",
+  "homepage": "http://github.com/720kb/butler",
+  "authors": [
+    "45kb <filippo.oretti@gmail.com>",
+    "wouldgo <wouldgo84@gmail.com>"
+  ],
+  "main": "dist/butler.min.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "test",
+    "tests",
+    "node_modules"
+  ],
+  "keywords": [
+    "butler",
+    "major-domo",
+    "javascript",
+    "js",
+    "bot",
+    "speech",
+    "recognition",
+    "voice",
+    "commands",
+    "voice",
+    "driven",
+    "customizable"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "_release": "0.0.1-beta-0.1.6",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.1-beta-0.1.6",
+    "commit": "819e552362d60d8979c39e5ba015fe8e7e95cfe0"
+  },
+  "_source": "git://github.com/720kb/butler.git",
+  "_target": "~0.0.1-beta-0.1.6",
+  "_originalSource": "butler.js",
+  "_direct": true
+}
