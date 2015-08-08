@@ -30,7 +30,9 @@ With a bit of healthy humor and fun.
 
 ###Why Butler?
 
-Wouldn't you to rest your hands at least for a while?
+Many libraries offer the possibility to activate voice commands, Butler offers the same but it starts with already defined commands that can help you debugging or anyway to have fun while debugging and make your life simpler in the browser daily routine.
+
+Plus you have the ability to write your own [plugins](https://github.com/720kb/butler#plugins) (and this is very easy) to expand the abilities of Butler at your leisure.
 
 ###Installation
 
