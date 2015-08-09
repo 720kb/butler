@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 ```
 ###Demo
-[Live demo](http://720kb.github.io/butler/);
+[Live demo](http://720kb.github.io/butler/)
 
 ### <img src="http://i.imgur.com/1p126e1.png" valign="text-top" width="25"/> Commands
 Default voice commands you can abuse of. (many others are coming...)
