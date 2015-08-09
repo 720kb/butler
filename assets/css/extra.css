@@ -1,0 +1,40 @@
+
+html{
+  font-family: 'Arial';
+}
+#problem{
+  color:white;
+  width:250px;
+  color:white;
+  position:fixed;
+  bottom:30px;
+  left:0;
+  right:0;
+  padding:10px 0;
+background:#FA2901;
+}
+#problem h3{
+  font-size:20px;
+}
+#problem h3 i{
+  font-size:28px;
+  line-height: -10px;
+  margin-top:-5px;
+}
+.header img {
+  margin-top:10%;
+width:300px;
+}
+
+.banner{
+  color:white;
+  line-height: 30px;
+  font-size:18px;
+  background:blue;
+  display: inline-block;
+  font-weight:500;
+  width:300px;
+}
+input{
+  max-width: 300px;
+}

@@ -3,17 +3,91 @@
 <head>
   <title>Butler.js ~ Yes Sir...</title>
   <link rel="stylesheet" href="bower_components/csshelper/dist/helper.min.css" type="text/css"/>
+  <link rel="stylesheet" href="assets/css/extra.css" type="text/css"/>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" type="text/css"/>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css" type="text/css"/>
   <script src="bower_components/butler.js/dist/butler.min.js"></script>
-  <script>
-  window.document.addEventListener('DOMContentLoaded', function () {
-
-    Butler.start();
-  }, false);
-  </script>
 </head>
 <body>
-  <div class="line center-content">
-    <img src="https://camo.githubusercontent.com/3666fdd69613a8703ac505a02ac3bdf5f3333c2a/687474703a2f2f692e696d6775722e636f6d2f37354e4934746a2e6a7067"/>
+  <div id="problem" class="center-content radius5 hide">
+  <h3><i class="fa fa-close color-white v-middle"></i> SORRY</h3>
+  <div class="separator5"></div>
+  Can you repeat Sir ?
   </div>
+  <div class="line header center-content">
+    <img src="assets/img/butlerjs.png"/>
+  </div>
+    <div class="separator5"></div>
+  <div class="line center-content">
+    <h3 class="banner">
+    &nbsp;Your personal javascript butler &nbsp;
+    </h3>
+  </div>
+    <div class="separator50"></div>
+    <div class="line center-content">
+      <div class="separator50"></div>
+        <div id="not-started">
+        <i class="fa fa-microphone fa-3x animated bounce infinite"></i>
+        <div class="separator15"></div>
+        <h1 class="color-muted font-light">Sir please ...</h1>
+        <div class="separator5"></div>
+        <h3 class="font-light">allow your microphone</h3>
+      </div>
+        <div id="started" class="hide">
+          <div>
+          <input class="radius5 animated fadeIn" type="text"/>
+        </div>
+        <div class="separator30"></div>
+        <div id="select">
+            <h1 class="animated fadeIn color-muted font-light">Thank you Sir!</h1>
+          <div class="separator15"></div>
+          <h3 class="font-light">Say please: <i class="color-muted font-light">"Selector next tag input"</i></h3>
+        </div>
+        <div id="value" class="hide">
+          <h1 class="animated fadeIn color-muted font-light">Cool Sir!</h1>
+        <div class="separator15"></div>
+        <h3 class="font-light">Say please: <i class="color-muted font-light">"Selector put value random"</i></h3>
+        </div>
+        </div>
+  </div>
+  <script>
+    var started = window.document.getElementById('started')
+      , notStarted = window.document.getElementById('not-started')
+      , select = window.document.getElementById('select')
+      , value = window.document.getElementById('value')
+      , problem = window.document.getElementById('problem')
+      , hideProblem = function () {
+        problem.classList.add('hide');
+      }
+      , showProblem = function () {
+        problem.classList.add('animated');
+        problem.classList.add('bounceIn');
+        problem.classList.remove('hide');
+      };
+    window.addEventListener('Butler:start', function () {
+      notStarted.classList.add('hide');
+      started.classList.remove('hide');
+    });
+    window.addEventListener('Highlighter:selected', function () {
+      select.classList.add('animated');
+      select.classList.add('fadeOut');
+      select.classList.add('hide');
+      value.classList.add('animated')
+      value.classList.add('fadeIn');
+      value.classList.remove('hide');
+    });
+    window.addEventListener('Butler:detection-match', function (e) {
+      hideProblem();
+    });
+    window.addEventListener('Butler:detection-not-match', function (e) {
+      showProblem();
+    });
+    window.document.addEventListener('DOMContentLoaded', function () {
+
+      Butler.start({
+        'debug':true
+      });
+    }, false);
+  </script>
 </body>
 </html>
