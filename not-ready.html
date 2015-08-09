@@ -35,7 +35,7 @@
       </div>
         <div id="started" class="hide">
           <div>
-          <input class="radius5 animated fadeIn" type="text"/>
+          <input id="input" class="radius5 animated fadeIn" readonly type="text"/>
         </div>
         <div class="separator30"></div>
         <div id="select">
@@ -51,7 +51,21 @@
         </div>
   </div>
   <script>
-    var started = window.document.getElementById('started')
+    var detectionOne
+      , inputOnChange = window.setInterval(function() {
+        if (Butler.Highlighter.element.value
+          && Butler.Highlighter.element.value.length
+          && Butler.Highlighter.element.value.length > 0) {
+
+          Butler.Highlighter.erase();
+          hideProblem();
+          value.remove();
+          window.clearInterval(inputOnChange);
+          window.alert('Congratulations Sir!');
+          }
+        }, 800)
+      , input = window.document.getElementById('input')
+      , started = window.document.getElementById('started')
       , notStarted = window.document.getElementById('not-started')
       , select = window.document.getElementById('select')
       , value = window.document.getElementById('value')
@@ -64,6 +78,7 @@
         problem.classList.add('bounceIn');
         problem.classList.remove('hide');
       };
+
     window.addEventListener('Butler:start', function () {
       notStarted.classList.add('hide');
       started.classList.remove('hide');
@@ -76,6 +91,29 @@
       value.classList.add('fadeIn');
       value.classList.remove('hide');
     });
+
+    window.addEventListener('Butler:detection', function (e) {
+
+      window.setTimeout(function () {
+
+        if (detectionOne && !Butler.Highlighter.element.value) {
+          showProblem();
+        } else {
+          window.dispatchEvent(finishedEvent);
+          hideProblem();
+        }
+
+        if (Butler.Highlighter.element.nodeName.toLowerCase().toString() !== 'input') {
+
+          showProblem();
+        } else {
+
+          hideProblem();
+          detectionOne = true;
+        }
+      }, 800);
+    });
+
     window.addEventListener('Butler:detection-match', function (e) {
       hideProblem();
     });
