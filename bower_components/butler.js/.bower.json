@@ -1,6 +1,6 @@
 {
   "name": "butler.js",
-  "version": "0.0.1-beta-0.1.6",
+  "version": "0.0.1-beta-0.1.7",
   "description": "Butler is your I/O javascript voice driven major-domo",
   "homepage": "http://github.com/720kb/butler",
   "authors": [
@@ -33,14 +33,13 @@
   "moduleType": [
     "globals"
   ],
-  "_release": "0.0.1-beta-0.1.6",
+  "_release": "0.0.1-beta-0.1.7",
   "_resolution": {
     "type": "version",
-    "tag": "0.0.1-beta-0.1.6",
-    "commit": "819e552362d60d8979c39e5ba015fe8e7e95cfe0"
+    "tag": "0.0.1-beta-0.1.7",
+    "commit": "0ee6cd07aab400294099e229c4a405209407213b"
   },
   "_source": "git://github.com/720kb/butler.git",
   "_target": "~0.0.1-beta-0.1.6",
-  "_originalSource": "butler.js",
-  "_direct": true
+  "_originalSource": "butler.js"
 }

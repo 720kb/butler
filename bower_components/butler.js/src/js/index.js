@@ -104,7 +104,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       'butler silence': function butlerAudioOff() {
         that.Voice.play();
         that.Voice.volume = 0;
-        window.console.info('Butler has to shut up now');
+        window.console.info('Butler must be silent now');
       },
       'selector on': function selectorOn() {
         that.Highlighter.erase();
@@ -125,9 +125,9 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         that.Highlighter.erase();
         that.Highlighter.previous();
         that.Highlighter.underline();
-        window.console.info('Selected next element');
+        window.console.info('Selected previous element');
       },
-      'selector next id *detect': function selectorNextById(detection) {
+      'selector next id *detection': function selectorNextById(detection) {
         if (Array.isArray(detection)) {
 
           detection = detection.join('');
@@ -137,7 +137,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         that.Highlighter.underline();
         window.console.info('Selected next element by id: #' + detection);
       },
-      'selector next tag *detect': function selectorNextByTag(detection) {
+      'selector next tag *detection': function selectorNextByTag(detection) {
         that.Highlighter.erase();
         if (Array.isArray(detection)) {
 
@@ -145,15 +145,15 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         }
         that.Highlighter.next('<' + detection + '>');
         that.Highlighter.underline();
-        window.console.info('Selected next element by id: #' + detection);
+        window.console.info('Selected next element by tag: <' + detection + '>');
       },
-      'selector next class *detect': function selectorNextByClass(detection) {
+      'selector next class *detection': function selectorNextByClass(detection) {
         that.Highlighter.erase();
         that.Highlighter.next('.' + detection.replace('.', ''));
         that.Highlighter.underline();
         window.console.info('Selected next element by class: .' + detection);
       },
-      'selector back id *detect': function selectorBackById(detection) {
+      'selector back id *detection': function selectorBackById(detection) {
         if (Array.isArray(detection)) {
 
           detection = detection.join('');
@@ -161,9 +161,9 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         that.Highlighter.erase();
         that.Highlighter.next('#' + detection);
         that.Highlighter.underline();
-        window.console.info('Selected next element by id: #' + detection);
+        window.console.info('Selected previous element by id: #' + detection);
       },
-      'selector back tag *detect': function selectorBackByTag(detection) {
+      'selector back tag *detection': function selectorBackByTag(detection) {
         if (Array.isArray(detection)) {
 
           detection = detection.join('');
@@ -171,13 +171,13 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         that.Highlighter.erase();
         that.Highlighter.next('<' + detection.replace('<', '').replace('>', '') + '>');
         that.Highlighter.underline();
-        window.console.info('Selected next element by id: .' + detection);
+        window.console.info('Selected prevous element by tag: <' + detection + '>');
       },
-      'selector back class *detect': function selectorBackByClass(detection) {
+      'selector back class *detection': function selectorBackByClass(detection) {
         that.Highlighter.erase();
         that.Highlighter.next('.' + detection.replace('.', ''));
         that.Highlighter.underline();
-        window.console.info('Selected next element by class: .' + detection);
+        window.console.info('Selected previous element by class: .' + detection);
       },
       'selector add class *detection': function selectorAddClass(detection) {
         try {
@@ -727,7 +727,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       'location forward': function locationForward() {
         window.history.forward();
       },
-      'location hashbang *detect': function locationHashBang(detection) {
+      'location hashbang *detection': function locationHashBang(detection) {
         window.location.hash = '#' + detection;
       },
       'navigator go offline': function navigatorOffline() {
@@ -917,6 +917,9 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         triggerKeyboard('keydown', 57);
       }
     };
+
+    annyang.setLanguage(this.Lang);
+    annyang.addCommands(this.Commands, false);
     //mic access allowed
     annyang.addCallback('start', function onButlerStartEvent(data) {
       onStartEvent.eventData = data;
@@ -943,9 +946,6 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       onDetectionNotMatchEvent.eventData = data;
       window.dispatchEvent(onDetectionNotMatchEvent);
     });
-
-    annyang.setLanguage(this.Lang);
-    annyang.addCommands(this.Commands, false);
   };
 
   Butler.prototype.start = function startButler(settings) {
