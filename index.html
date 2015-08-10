@@ -93,7 +93,9 @@
         problem.classList.add('bounceIn');
         problem.classList.remove('hide');
       };
-
+    if (!('webkitSpeechRecognition' in window)) {
+      notStarted.innerHTML = '<h3>This is not Chrome!</h3><div class="separator5"></div><h4 class="font-light"><div>Please Sir use <div class="separator5"></div> <i class="fa fa-chrome"></i> Google Chrome</div></h4>'
+    }
     window.addEventListener('Butler:start', function () {
       notStarted.classList.add('hide');
       started.classList.remove('hide');
