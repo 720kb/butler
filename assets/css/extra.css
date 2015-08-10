@@ -22,9 +22,8 @@ background:#FA2901;
 }
 .header img {
   margin-top:10%;
-width:300px;
+  width:270px;
 }
-
 .banner{
   color:white;
   line-height: 30px;
@@ -32,7 +31,7 @@ width:300px;
   background:blue;
   display: inline-block;
   font-weight:500;
-  width:300px;
+  width:270px;
 }
 input{
   max-width: 300px;
@@ -46,3 +45,10 @@ input{
 .font-x-small, .font-x-small *{
   font-size:12.5px;
 }
+/*tablet*/
+ @media screen and (max-width:800px){
+ /*put in here all tablet rules*/
+ .mobile-center-content{
+   text-align:center;
+ }
+ }
