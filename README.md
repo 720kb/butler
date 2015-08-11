@@ -197,15 +197,16 @@ Command  | Result
  
 
 ###i18n
-Butler will can be used in various languages [available here](https://github.com/720kb/butler/tree/master/src/js/i18n)
-If you want Butler to understand Italian for example just include the i18n italian file after butler main file:
+Butler can be used in various languages [available here](https://github.com/720kb/butler/tree/master/src/js/i18n) (Soon there will be more languages)
+
+If you want Butler to understand italian language for example, just include the i18n italian file after butler main file:
 
 ```html
 <script src="butler.min.js"></script>
 <script src="butler.it_IT.js"></script>
 ```
 
-This way all the default commands gets translated to italian, you can check translation by each i18n file [README](https://github.com/720kb/butler/blob/master/src/js/i18n/it/README.md)
+This way all the default commands gets translated to italian, you can check translations for each i18n file  from their [README](https://github.com/720kb/butler/blob/master/src/js/i18n/it/README.md) file
 
 ###Tools
 Butler exposes some good stuff you can interact with.
