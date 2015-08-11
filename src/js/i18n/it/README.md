@@ -1,4 +1,10 @@
 ###Butler i18n Italian
+####Installation
+
+```html
+<script src="butler.min.js"></script>
+<script src="butler.it_IT.js"></script>
+```
 
 ####Translated Default Commands
 ####Butler
