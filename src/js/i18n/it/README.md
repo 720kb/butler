@@ -104,9 +104,9 @@ Command  | Result
  _Indirizzo refresh_  | Location refresh
  _Indirizzo indietro_  | Go to previous location url
  _Indirizzo avanti_  | Go to next location url
- _Indirizzo hashbang_  | Add hashbang at the end of the location url
- 
- 
+ _Indirizzo hashbang :detection:_  | Add hashbang at the end of the location url
+
+
 ####Navigator
 
 Commands to manipulate, trigger ```window.navigator```
