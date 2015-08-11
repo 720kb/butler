@@ -12,11 +12,11 @@
 Element.prototype.isVisible=function(){"use strict";function t(n,s,o,h,r,l,a){var d=n.parentNode,m=2;return i(n)?9===d.nodeType?!0:"0"===e(n,"opacity")||"none"===e(n,"display")||"hidden"===e(n,"visibility")?!1:(("undefined"==typeof s||"undefined"==typeof o||"undefined"==typeof h||"undefined"==typeof r||"undefined"==typeof l||"undefined"==typeof a)&&(s=n.offsetTop,r=n.offsetLeft,h=s+n.offsetHeight,o=r+n.offsetWidth,l=n.offsetWidth,a=n.offsetHeight),d?"hidden"!==e(d,"overflow")&&"scroll"!==e(d,"overflow")||!(r+m>d.offsetWidth+d.scrollLeft||r+l-m<d.scrollLeft||s+m>d.offsetHeight+d.scrollTop||s+a-m<d.scrollTop)?(n.offsetParent===d&&(r+=d.offsetLeft,s+=d.offsetTop),t(d,s,o,h,r,l,a)):!1:!0):!1}function e(t,e){return window.getComputedStyle?document.defaultView.getComputedStyle(t,null)[e]:t.currentStyle?t.currentStyle[e]:void 0}function i(t){for(;t=t.parentNode;)if(t==document)return!0;return!1}return t(this)},window.smoothScroll=function(){if(void 0!==document.querySelectorAll&&void 0!==window.pageYOffset&&void 0!==history.pushState){var t=function(t){return"HTML"===t.nodeName?-window.pageYOffset:t.getBoundingClientRect().top+window.pageYOffset},e=function(t){return.5>t?4*t*t*t:(t-1)*(2*t-2)*(2*t-2)+1},i=function(t,i,n,s){return n>s?i:t+(i-t)*e(n/s)},n=function(e,n,s){n=n||500;var o=window.pageYOffset;if("number"==typeof e)var h=parseInt(e);else var h=t(e);var r=Date.now(),l=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||function(t){window.setTimeout(t,15)},a=function(){var t=Date.now()-r;window.scroll(0,i(o,h,t,n)),t>n?"function"==typeof s&&s(e):l(a)};a()},s=function(t){t.preventDefault(),location.hash!==this.hash&&window.history.pushState(null,null,this.hash),n(document.getElementById(this.hash.substring(1)),500,function(t){location.replace("#"+t.id)})};return document.addEventListener("DOMContentLoaded",function(){for(var t,e=document.querySelectorAll('a[href^="#"]:not([href="#"])'),i=e.length;t=e[--i];)t.addEventListener("click",s,!1)}),n}}(),function(t){"use strict";var e=function(e){var i=[],n=0;if(this.onSelectedEvent=new t.CustomEvent("Highlighter:selected"),this.onUnderlinedEvent=new t.CustomEvent("Highlighter:underlined"),this.onErasedEvent=new t.CustomEvent("Highlighter:erased"),this.onSkippedEvent=new t.CustomEvent("Highlighter:skipped"),this.onScrolledEvent=new t.CustomEvent("Highlighter:scrolled"),this.onRestartEvent=new t.CustomEvent("Highlighter:restart"),this.position=0,this.dom=t.document.body.getElementsByTagName("*"),this.element=this.dom[this.position],this.scroll=!1,this.scrollDuration=500,this.classAliasList=[],this.identifierClassArray=[],e&&(e.scroll&&(this.scroll=!0),e.scrollDuration&&(this.scrollDuration=Number(e.scrollDuration)),e.viewable)){for(n;n<=this.dom.length;n+=1)this.dom[n]&&this.dom[n].isVisible()&&i.push(this.dom[n]);this.dom=i}};e.prototype.scroller=function(e){this.scroll&&(t.smoothScroll(e,this.scrollDuration),this.onScrolledEvent.eventData={element:e},t.dispatchEvent(this.onScrolledEvent))},e.prototype.underline=function(){this.scroller(this.element,500),this.element&&this.element.style&&(this.element.style.transition="outline 0.55s linear",this.element.style.outline="3px inset #08FD31",this.element.style.outlineOffset="-2px",this.onUnderlinedEvent.eventData={element:this.element},t.dispatchEvent(this.onUnderlinedEvent))},e.prototype.erase=function(){this.element&&this.element.style&&(this.element.style.transition="outline none",this.element.style.outline="none",this.onErasedEvent.eventData={element:this.element},t.dispatchEvent(this.onErasedEvent))},e.prototype.select=function(e){this.position=0,this.element=this.dom[this.position],this.next(e),this.onSelectedEvent.eventData={element:this.element},t.dispatchEvent(this.onSelectedEvent)},e.prototype.point=function(e){var i=0;if(e&&this.dom&&this.dom.length>0){for(i;i<=this.dom.length;i+=1)if(this.dom[i]===e){this.position=i,this.element=this.dom[i],t.console.log("Highlighter pointing to element:",this.element);break}}else t.console.error("Unable to retrieve starting element")},e.prototype.arrayCompared=function(t,e){return t.filter(function(t){return e.indexOf(t)>-1})},e.prototype.next=function(e){var i=this.position;if(e)if(-1!==e.indexOf("#"))for(i;i<=this.dom.length;i+=1){if(this.dom[i]&&this.dom[i].id&&this.dom[i].id.toString()===e.replace("#","")){this.element=this.dom[i],this.position=i+1,this.onSelectedEvent.eventData={element:this.element},t.dispatchEvent(this.onSelectedEvent);break}if(i>=this.dom.length){this.position=0,t.dispatchEvent(this.onRestartEvent),t.console.info("No next elements, restarting from the first element in page");break}}else if(-1!==e.indexOf("."))for(this.identifierClassArray=e.toString().replace(".","").split(" "),i;i<=this.dom.length;i+=1){if(this.dom[i]&&this.dom[i].classList&&-1!==e.indexOf(".")&&(this.classAliasList=this.dom[i].classList.toString().split(" "),this.arrayCompared(this.classAliasList,this.identifierClassArray).length>0)){this.element=this.dom[i],this.position=i+1,this.onSelectedEvent.eventData={element:this.element},t.dispatchEvent(this.onSelectedEvent);break}if(i>=this.dom.length){this.position=0,t.dispatchEvent(this.onRestartEvent),t.console.info("No next elements, restarting from the first element in page");break}}else if(e.indexOf("<")>-1)for(i;i<=this.dom.length;i+=1){if(this.dom[i]&&this.dom[i].tagName&&this.dom[i].tagName.toString().toLowerCase()===e.replace("<","").replace(">","")){this.element=this.dom[i],this.position=i+1,this.onSelectedEvent.eventData={element:this.element},t.dispatchEvent(this.onSelectedEvent);break}if(i>=this.dom.length){this.position=0,t.dispatchEvent(this.onRestartEvent),t.console.info("No next elements, restarting from the first element in page");break}}else t.console.error("Please set a correct #id or .class or <tag> identifier");else this.position+=1,this.position>this.dom.length&&(this.position=0,this.element=this.dom[this.position],t.dispatchEvent(this.onRestartEvent),t.console.info("No next elements, restarting from the first element in page")),this.element=this.dom[this.position],this.onSelectedEvent.eventData={element:this.element},t.dispatchEvent(this.onSelectedEvent)},e.prototype.previous=function(e){var i=this.position;if(e)if(-1!==e.indexOf("#"))for(i<=this.position;i>=0;i-=1){if(this.dom[i]&&this.dom[i].id&&this.dom[i].id.toString()===e.replace("#","")){this.element=this.dom[i],this.position=i-1,this.onSelectedEvent.eventData={element:this.element},t.dispatchEvent(this.onSelectedEvent);break}if(i<this.dom.length){this.position=0,t.dispatchEvent(this.onRestartEvent),t.console.info("No previous elements, restarting from the first element in page");break}}else if(e.indexOf(".")>-1)for(this.identifierClassArray=e.toString().replace(".","").split(" "),i<=this.position;i>=0;i-=1){if(this.dom[i]&&this.dom[i].classList&&-1!==e.indexOf(".")&&(this.classAliasList=this.dom[i].classList.toString().split(" "),this.arrayCompared(this.classAliasList,this.identifierClassArray).length>0)){this.element=this.dom[i],this.position=i-1,this.onSelectedEvent.eventData={element:this.element},t.dispatchEvent(this.onSelectedEvent);break}if(i<this.dom.length){this.position=0,t.dispatchEvent(this.onRestartEvent),t.console.info("No previous elements, restarting from the first element in page");break}}else if(e.indexOf("<")>-1)for(i<=this.position;i>=0;i-=1){if(this.dom[i]&&this.dom[i].tagName&&this.dom[i].tagName.toString().toLowerCase()===e.replace("<","").replace(">","")){this.element=this.dom[i],this.position=i-1,this.onSelectedEvent.eventData={element:this.element},t.dispatchEvent(this.onSelectedEvent);break}if(i<this.dom.length){this.position=0,t.dispatchEvent(this.onRestartEvent),t.console.info("No previous elements, restarting from the first element in page");break}}else t.console.error("You must set a correct #id or .class or <tag> parameter");else this.position-=1,this.position<0&&(this.position=0,t.dispatchEvent(this.onRestartEvent),t.console.info("No previous elements, restarting from the first element in page")),this.element=this.dom[this.position],this.onSelectedEvent.eventData={element:this.element},t.dispatchEvent(this.onSelectedEvent)},e.prototype.skipNext=function(e){Number(e)>0&&(this.position+=e,this.onSkippedEvent.eventData={element:this.dom[this.position]},t.dispatchEvent(this.onSkippedEvent)),Number(e)>this.dom.length&&(this.position=0,this.element=this.dom[this.position],t.dispatchEvent(this.onRestartEvent),t.console.log("No next elements, restarting from the first DOM element"))},e.prototype.skipPrev=function(e){Number(e)>0&&(this.position-=e,this.onSkippedEvent.eventData={element:this.dom[this.position]},t.dispatchEvent(this.onSkippedEvent)),this.position<0&&(this.position=0,this.element=this.dom[this.position],t.dispatchEvent(this.onRestartEvent),t.console.log("No previous elements, restarting from the first DOM element"))},t.Highlighter=e}(window);
 //# sourceMappingURL=highlighter.min.js.map
 //! annyang
-//! version : 1.6.0
+//! version : 2.0.0
 //! author  : Tal Ater @TalAter
 //! license : MIT
 //! https://www.TalAter.com/annyang/
-(function(a){"use strict";var b=this,c=b.SpeechRecognition||b.webkitSpeechRecognition||b.mozSpeechRecognition||b.msSpeechRecognition||b.oSpeechRecognition;if(!c)return b.annyang=null,a;var d,e,f=[],g={start:[],error:[],end:[],result:[],resultMatch:[],resultNoMatch:[],errorNetwork:[],errorPermissionBlocked:[],errorPermissionDenied:[]},h=0,i=!1,j="font-weight: bold; color: #00f;",k=!1,l=/\s*\((.*?)\)\s*/g,m=/(\(\?:[^)]+\))\?/g,n=/(\(\?)?:\w+/g,o=/\*\w+/g,p=/[\-{}\[\]+?.,\\\^$|#]/g,q=function(a){return a=a.replace(p,"\\$&").replace(l,"(?:$1)?").replace(n,function(a,b){return b?a:"([^\\s]+)"}).replace(o,"(.*?)").replace(m,"\\s*$1?\\s*"),new RegExp("^"+a+"$","i")},r=function(a){a.forEach(function(a){a.callback.apply(a.context)})},s=function(){t()||b.annyang.init({},!1)},t=function(){return d!==a};b.annyang={init:function(l,m){m=m===a?!0:!!m,d&&d.abort&&d.abort(),d=new c,d.maxAlternatives=5,d.continuous="http:"===b.location.protocol,d.lang="en-US",d.onstart=function(){r(g.start)},d.onerror=function(a){switch(r(g.error),a.error){case"network":r(g.errorNetwork);break;case"not-allowed":case"service-not-allowed":e=!1,r((new Date).getTime()-h<200?g.errorPermissionBlocked:g.errorPermissionDenied)}},d.onend=function(){if(r(g.end),e){var a=(new Date).getTime()-h;1e3>a?setTimeout(b.annyang.start,1e3-a):b.annyang.start()}},d.onresult=function(a){if(k)return i&&b.console.log("Speech heard, but annyang is paused"),!1;r(g.result);for(var c,d=a.results[a.resultIndex],e=0;e<d.length;e++){c=d[e].transcript.trim(),i&&b.console.log("Speech recognized: %c"+c,j);for(var h=0,l=f.length;l>h;h++){var m=f[h].command.exec(c);if(m){var n=m.slice(1);return i&&(b.console.log("command matched: %c"+f[h].originalPhrase,j),n.length&&b.console.log("with parameters",n)),f[h].callback.apply(this,n),r(g.resultMatch),!0}}}return r(g.resultNoMatch),!1},m&&(f=[]),l.length&&this.addCommands(l)},start:function(c){k=!1,s(),c=c||{},e=c.autoRestart!==a?!!c.autoRestart:!0,c.continuous!==a&&(d.continuous=!!c.continuous),h=(new Date).getTime();try{d.start()}catch(f){i&&b.console.log(f.message)}},abort:function(){e=!1,t&&d.abort()},pause:function(){k=!0},resume:function(){b.annyang.start()},debug:function(a){i=arguments.length>0?!!a:!0},setLanguage:function(a){s(),d.lang=a},addCommands:function(a){var c,d;s();for(var e in a)if(a.hasOwnProperty(e)){if(c=b[a[e]]||a[e],"function"!=typeof c)continue;d=q(e),f.push({command:d,callback:c,originalPhrase:e})}i&&b.console.log("Commands successfully loaded: %c"+f.length,j)},removeCommands:function(b){return b===a?void(f=[]):(b=Array.isArray(b)?b:[b],void(f=f.filter(function(a){for(var c=0;c<b.length;c++)if(b[c]===a.originalPhrase)return!1;return!0})))},addCallback:function(c,d,e){if(g[c]!==a){var f=b[d]||d;"function"==typeof f&&g[c].push({callback:f,context:e||this})}}}}).call(this);
+(function(a){"use strict";var b=this,c=b.SpeechRecognition||b.webkitSpeechRecognition||b.mozSpeechRecognition||b.msSpeechRecognition||b.oSpeechRecognition;if(!c)return b.annyang=null,a;var d,e,f=[],g={start:[],error:[],end:[],result:[],resultMatch:[],resultNoMatch:[],errorNetwork:[],errorPermissionBlocked:[],errorPermissionDenied:[]},h=0,i=!1,j="font-weight: bold; color: #00f;",k=!1,l=/\s*\((.*?)\)\s*/g,m=/(\(\?:[^)]+\))\?/g,n=/(\(\?)?:\w+/g,o=/\*\w+/g,p=/[\-{}\[\]+?.,\\\^$|#]/g,q=function(a){return a=a.replace(p,"\\$&").replace(l,"(?:$1)?").replace(n,function(a,b){return b?a:"([^\\s]+)"}).replace(o,"(.*?)").replace(m,"\\s*$1?\\s*"),new RegExp("^"+a+"$","i")},r=function(a){var b=Array.prototype.slice.call(arguments,1);a.forEach(function(a){a.callback.apply(a.context,b)})},s=function(){t()||b.annyang.init({},!1)},t=function(){return d!==a},u=function(a,c,d){f.push({command:a,callback:c,originalPhrase:d}),i&&b.console.log("Command successfully loaded: %c"+d,j)};b.annyang={init:function(l,m){m=m===a?!0:!!m,d&&d.abort&&d.abort(),d=new c,d.maxAlternatives=5,d.continuous="http:"===b.location.protocol,d.lang="en-US",d.onstart=function(){r(g.start)},d.onerror=function(a){switch(r(g.error),a.error){case"network":r(g.errorNetwork);break;case"not-allowed":case"service-not-allowed":e=!1,r((new Date).getTime()-h<200?g.errorPermissionBlocked:g.errorPermissionDenied)}},d.onend=function(){if(r(g.end),e){var a=(new Date).getTime()-h;1e3>a?setTimeout(b.annyang.start,1e3-a):b.annyang.start()}},d.onresult=function(a){if(k)return i&&b.console.log("Speech heard, but annyang is paused"),!1;for(var c=a.results[a.resultIndex],d=[],e=0;e<c.length;e++)d[e]=c[e].transcript;r(g.result,d);for(var h,l=0;l<d.length;l++){h=d[l].trim(),i&&b.console.log("Speech recognized: %c"+h,j);for(var m=0,n=f.length;n>m;m++){var o=f[m].command.exec(h);if(o){var p=o.slice(1);return i&&(b.console.log("command matched: %c"+f[m].originalPhrase,j),p.length&&b.console.log("with parameters",p)),f[m].callback.apply(this,p),r(g.resultMatch,h,f[m].originalPhrase,d),!0}}}return r(g.resultNoMatch,d),!1},m&&(f=[]),l.length&&this.addCommands(l)},start:function(c){k=!1,s(),c=c||{},e=c.autoRestart!==a?!!c.autoRestart:!0,c.continuous!==a&&(d.continuous=!!c.continuous),h=(new Date).getTime();try{d.start()}catch(f){i&&b.console.log(f.message)}},abort:function(){e=!1,t&&d.abort()},pause:function(){k=!0},resume:function(){b.annyang.start()},debug:function(a){i=arguments.length>0?!!a:!0},setLanguage:function(a){s(),d.lang=a},addCommands:function(a){var c;s();for(var d in a)if(a.hasOwnProperty(d))if(c=b[a[d]]||a[d],"function"==typeof c)u(q(d),c,d);else{if(!("object"==typeof c&&c.regexp instanceof RegExp)){i&&b.console.log("Can not register command: %c"+d,j);continue}u(new RegExp(c.regexp.source,"i"),c.callback,d)}},removeCommands:function(b){return b===a?void(f=[]):(b=Array.isArray(b)?b:[b],void(f=f.filter(function(a){for(var c=0;c<b.length;c++)if(b[c]===a.originalPhrase)return!1;return!0})))},addCallback:function(c,d,e){if(g[c]!==a){var f=b[d]||d;"function"==typeof f&&g[c].push({callback:f,context:e||this})}}}}).call(this);
 /*DOMContentLoaded promise*/
 window.document.ready = new Promise(function DOMPromise(resolve) {
     if (window.document.readyState === 'complete') {
@@ -44,31 +44,31 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
     , onDetectionEvent = new window.CustomEvent('Butler:detection')
     , onDetectionMatchEvent = new window.CustomEvent('Butler:detection-match')
     , onDetectionNotMatchEvent = new window.CustomEvent('Butler:detection-not-match')
-    , onErrorsEvent = new window.CustomEvent('Butler:error')
+    , onErrorsEvent = new window.CustomEvent('Butler:error');
     //expose triggers!? ...
-    , trigger = function triggerHandler(event, eventType, element) {
+    this.trigger = function triggerHandler(event, eventType, element) {
 
       var evObj = document.createEvent(eventType);
 
       evObj.initEvent(event, true, true);
       element.dispatchEvent(evObj);
-    }
-    , triggerMouse = function triggerMouseEvents(event, element) {
-      trigger(event, 'MouseEvents', element);
-    }
-    , triggerEvent = function triggerEvents(event, element) {
-      trigger(event, 'Events', element);
-    }
-    , triggerTouch = function triggerTouchEvents(event, element) {
-      trigger(event, 'TouchEvents', element);
-    }
-    , triggerDrag = function triggerDragEvents(event, element) {
-      trigger(event, 'DragEvents', element);
-    }
-    , triggerUI = function triggerUIEvents(event, element) {
-      trigger(event, 'UIEvents', element);
-    }
-    , triggerKeyboard = function triggerKeyboardEvents(event, keyCode) {
+    };
+    this.triggerMouse = function triggerMouseEvents(event, element) {
+      that.trigger(event, 'MouseEvents', element);
+    };
+    this.triggerEvent = function triggerEvents(event, element) {
+      that.trigger(event, 'Events', element);
+    };
+    this.triggerTouch = function triggerTouchEvents(event, element) {
+      that.trigger(event, 'TouchEvents', element);
+    };
+    this.triggerDrag = function triggerDragEvents(event, element) {
+      that.trigger(event, 'DragEvents', element);
+    };
+    this.triggerUI = function triggerUIEvents(event, element) {
+      that.trigger(event, 'UIEvents', element);
+    };
+    this.triggerKeyboard = function triggerKeyboardEvents(event, keyCode) {
 
       var evObj = document.createEvent('HTMLEvents');
 
@@ -419,7 +419,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger change': function triggerChange() {
         try {
-          triggerEvent('change', that.Highlighter.element);
+          that.triggerEvent('change', that.Highlighter.element);
           window.console.info('Triggered change');
         } catch(e) {
 
@@ -428,7 +428,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger close': function triggerClose() {
         try {
-          triggerEvent('close', that.Highlighter.element);
+          that.triggerEvent('close', that.Highlighter.element);
           window.console.info('Triggered close');
         } catch(e) {
 
@@ -464,7 +464,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger select': function triggerSelect() {
         try {
-          triggerUI('close', that.Highlighter.element);
+          that.triggerUI('close', that.Highlighter.element);
           window.console.info('Triggered select');
         } catch(e) {
 
@@ -473,7 +473,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger show': function triggerShow() {
         try {
-          triggerUI('show', that.Highlighter.element);
+          that.triggerUI('show', that.Highlighter.element);
           window.console.info('Triggered show');
         } catch(e) {
 
@@ -482,7 +482,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger reset': function triggerReset() {
         try {
-          triggerEvent('reset', that.Highlighter.element);
+          that.triggerEvent('reset', that.Highlighter.element);
           window.console.info('Triggered reset');
         } catch(e) {
 
@@ -491,7 +491,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger mouse over': function triggerMouseover() {
         try {
-          triggerMouse('mouseover', that.Highlighter.element);
+          that.triggerMouse('mouseover', that.Highlighter.element);
           window.console.info('Triggered mouseover');
         } catch(e) {
 
@@ -500,7 +500,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger mouse move': function triggerMousemove() {
         try {
-          triggerMouse('mousemove', that.Highlighter.element);
+          that.triggerMouse('mousemove', that.Highlighter.element);
           window.console.info('Triggered mousemove');
         } catch(e) {
 
@@ -509,7 +509,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger mouse enter': function triggerMouseenter() {
         try {
-          triggerMouse('mouseenter', that.Highlighter.element);
+          that.triggerMouse('mouseenter', that.Highlighter.element);
           window.console.info('Triggered mouseenter');
         } catch(e) {
 
@@ -518,7 +518,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger mouse leave': function triggerMouseleave() {
         try {
-          triggerMouse('mouseleave', that.Highlighter.element);
+          that.triggerMouse('mouseleave', that.Highlighter.element);
           window.console.info('Triggered mouseleave');
         } catch(e) {
 
@@ -527,7 +527,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger mouse out': function triggerMouseout() {
         try {
-          triggerMouse('mouseout', that.Highlighter.element);
+          that.triggerMouse('mouseout', that.Highlighter.element);
           window.console.info('Triggered mouseout');
         } catch(e) {
 
@@ -536,7 +536,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger mouse up': function triggerMouseup() {
         try {
-          triggerMouse('mouseup', that.Highlighter.element);
+          that.triggerMouse('mouseup', that.Highlighter.element);
           window.console.info('Triggered mouseup');
         } catch(e) {
 
@@ -545,7 +545,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger mouse down': function triggerMousedown() {
         try {
-          triggerMouse('mousedown', that.Highlighter.element);
+          that.triggerMouse('mousedown', that.Highlighter.element);
           window.console.info('Triggered mousedown');
         } catch(e) {
 
@@ -572,7 +572,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger touch start': function triggerTouchStart() {
         try {
-          triggerTouch('touchstart', that.Highlighter.element);
+          that.triggerTouch('touchstart', that.Highlighter.element);
           window.console.info('Triggered touch start');
         } catch(e) {
 
@@ -581,7 +581,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger touch enter': function triggerTouchEnter() {
         try {
-          triggerTouch('touchenter', that.Highlighter.element);
+          that.triggerTouch('touchenter', that.Highlighter.element);
           window.console.info('Triggered touch enter');
         } catch(e) {
 
@@ -590,7 +590,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger touch move': function triggerTouchMove() {
         try {
-          triggerTouch('touchmove', that.Highlighter.element);
+          that.triggerTouch('touchmove', that.Highlighter.element);
           window.console.info('Triggered touch move');
         } catch(e) {
 
@@ -599,7 +599,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger touch leave': function triggerTouchLeave() {
         try {
-          triggerTouch('touchleave', that.Highlighter.element);
+          that.triggerTouch('touchleave', that.Highlighter.element);
           window.console.info('Triggered touch leave');
         } catch(e) {
 
@@ -608,7 +608,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger touch end': function triggerTouchEnd() {
         try {
-          triggerTouch('touchend', that.Highlighter.element);
+          that.triggerTouch('touchend', that.Highlighter.element);
           window.console.info('Triggered touch end');
         } catch(e) {
 
@@ -617,7 +617,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger touch cancel': function triggerTouchCancel() {
         try {
-          triggerTouch('touchcancel', that.Highlighter.element);
+          that.triggerTouch('touchcancel', that.Highlighter.element);
           window.console.info('Triggered touch cancel');
         } catch(e) {
 
@@ -626,7 +626,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger drop': function triggerDrop() {
         try {
-          triggerDrag('drop', that.Highlighter.element);
+          that.triggerDrag('drop', that.Highlighter.element);
           window.console.info('Triggered drop');
         } catch(e) {
 
@@ -635,7 +635,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger drag': function triggerDragg() {
         try {
-          triggerDrag('drag', that.Highlighter.element);
+          that.triggerDrag('drag', that.Highlighter.element);
           window.console.info('Triggered drag');
         } catch(e) {
 
@@ -644,7 +644,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger drag start': function triggerDragStart() {
         try {
-          triggerDrag('dragstart', that.Highlighter.element);
+          that.triggerDrag('dragstart', that.Highlighter.element);
           window.console.info('Triggered drag start');
         } catch(e) {
 
@@ -653,7 +653,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger drag end': function triggerDragEnd() {
         try {
-          triggerDrag('dragend', that.Highlighter.element);
+          that.triggerDrag('dragend', that.Highlighter.element);
           window.console.info('Triggered drag end');
         } catch(e) {
 
@@ -662,7 +662,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger drag enter': function triggerDragEnter() {
         try {
-          triggerDrag('dragenter', that.Highlighter.element);
+          that.triggerDrag('dragenter', that.Highlighter.element);
           window.console.info('Triggered drag enter');
         } catch(e) {
 
@@ -671,7 +671,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger drag over': function triggerDragOver() {
         try {
-          triggerDrag('dragover', that.Highlighter.element);
+          that.triggerDrag('dragover', that.Highlighter.element);
           window.console.info('Triggered drag over');
         } catch(e) {
 
@@ -680,7 +680,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       },
       'trigger drag leave': function triggerDragLeave() {
         try {
-          triggerDrag('dragleave', that.Highlighter.element);
+          that.triggerDrag('dragleave', that.Highlighter.element);
           window.console.info('Triggered drag leave');
         } catch(e) {
 
@@ -733,7 +733,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       'navigator go offline': function navigatorOffline() {
         try {
           window.navigator.onLine = false;
-          triggerEvent('offline', window);
+          that.triggerEvent('offline', window);
           window.console.info('Setted navigator offline');
         } catch(e) {
 
@@ -743,7 +743,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       'navigator go online': function navigatorOnline() {
         try {
           window.navigator.onLine = true;
-          triggerEvent('online', window);
+          that.triggerEvent('online', window);
           window.console.info('Setted navigator online');
         } catch(e) {
 
@@ -798,123 +798,6 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
         }
         /*eslint-enable*/
         //jscs:enable
-      },
-      'key enter': function keyEnter() {
-        triggerKeyboard('keydown', 13);
-      },
-      'key space': function keyspace() {
-        triggerKeyboard('keydown', 8);
-      },
-      'key tab': function keyTab() {
-        triggerKeyboard('keydown', 9);
-      },
-      'key shift': function keyShift() {
-        triggerKeyboard('keydown', 16);
-      },
-      'key ctrl': function keyCtrl() {
-        triggerKeyboard('keydown', 17);
-      },
-      'key alt': function keyAlt() {
-        triggerKeyboard('keydown', 17);
-      },
-      'key up': function keyUp() {
-        triggerKeyboard('keydown', 38);
-      },
-      'key down': function keyDown() {
-        triggerKeyboard('keydown', 40);
-      },
-      'key left': function keyLeft() {
-        triggerKeyboard('keydown', 37);
-      },
-      'key right': function keyRight() {
-        triggerKeyboard('keydown', 39);
-      },
-      'key pause': function keyPause() {
-        triggerKeyboard('keydown', 19);
-      },
-      'key insert': function keyInsert() {
-        triggerKeyboard('keydown', 45);
-      },
-      'key delete': function keyDelete() {
-        triggerKeyboard('keydown', 46);
-      },
-      'key comma': function keyComma() {
-        triggerKeyboard('keydown', 188);
-      },
-      'key dash': function keyDash() {
-        triggerKeyboard('keydown', 189);
-      },
-      'key equal': function keyEqual() {
-        triggerKeyboard('keydown', 187);
-      },
-      'key period': function keyPeriod() {
-        triggerKeyboard('keydown', 190);
-      },
-      'key semi colon': function keySemicolon() {
-        triggerKeyboard('keydown', 186);
-      },
-      'key multiply': function keyMultiply() {
-        triggerKeyboard('keydown', 106);
-      },
-      'key add': function keyAdd() {
-        triggerKeyboard('keydown', 107);
-      },
-      'key subtract': function keySubtract() {
-        triggerKeyboard('keydown', 109);
-      },
-      'key decimal point': function keyDecimalpoint() {
-        triggerKeyboard('keydown', 110);
-      },
-      'key divide': function keyDivide() {
-        triggerKeyboard('keydown', 111);
-      },
-      'key slash': function keySlash() {
-        triggerKeyboard('keydown', 191);
-      },
-      'key back slash': function keyBackslash() {
-        triggerKeyboard('keydown', 220);
-      },
-      'key close bracket': function keyClosebracket() {
-        triggerKeyboard('keydown', 221);
-      },
-      'key open bracket': function keyOpenBracket() {
-        triggerKeyboard('keydown', 219);
-      },
-      'key accent': function keyAccent() {
-        triggerKeyboard('keydown', 192);
-      },
-      'key quote': function keyQuote() {
-        triggerKeyboard('keydown', 222);
-      },
-      'key zero': function keyZero() {
-        triggerKeyboard('keydown', 48);
-      },
-      'key one': function keyOne() {
-        triggerKeyboard('keydown', 49);
-      },
-      'key two': function keyTwo() {
-        triggerKeyboard('keydown', 50);
-      },
-      'key three': function keyThree() {
-        triggerKeyboard('keydown', 51);
-      },
-      'key four': function keyFour() {
-        triggerKeyboard('keydown', 52);
-      },
-      'key five': function keyFive() {
-        triggerKeyboard('keydown', 53);
-      },
-      'key six': function keySix() {
-        triggerKeyboard('keydown', 54);
-      },
-      'key seven': function keySeven() {
-        triggerKeyboard('keydown', 55);
-      },
-      'key eight': function keyEight() {
-        triggerKeyboard('keydown', 56);
-      },
-      'key nine': function keyNine() {
-        triggerKeyboard('keydown', 57);
       }
     };
 
@@ -942,7 +825,7 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
       onDetectionMatchEvent.eventData = data;
       window.dispatchEvent(onDetectionMatchEvent);
     });
-    annyang.addCallback('resultNotMatch', function onButlerResultNotMatchEvent(data) {
+    annyang.addCallback('resultNoMatch', function onButlerResultNotMatchEvent(data) {
       onDetectionNotMatchEvent.eventData = data;
       window.dispatchEvent(onDetectionNotMatchEvent);
     });
@@ -973,10 +856,22 @@ window.document.ready = new Promise(function DOMPromise(resolve) {
   };
 
   Butler.prototype.plug = function plugPlugin(plugin) {
-    if (plugin
-      && plugin.commands) {
+    if (plugin) {
+      if (plugin.language) {
 
-      annyang.addCommands(plugin.commands);
+        annyang.setLanguage(plugin.language);
+      }
+      if (plugin.commands
+      && plugin.scope === 'i18n') {
+
+        this.Lang = plugin.language;
+        this.Commands = plugin.commands;
+
+        annyang.addCommands(plugin.commands, true);
+      } else if (plugin.commands && plugin.scope !== 'i18n') {
+
+        annyang.addCommands(plugin.commands, false);
+      }
     }
   };
 
