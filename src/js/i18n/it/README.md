@@ -51,40 +51,40 @@ Commands to trigger events and actions
 
 Command  | Result
 ------------- | -------------
- _Innescatore click_  | Trigger click on the current selected DOM element
- _Innescatore focus_  | Trigger focus on the current selected DOM element
- _Innescatore fade_  | Trigger fade on the current selected DOM element
- _Innescatore pin_  | Trigger pin on the current selected DOM element
- _Innescatore blur_  | Trigger blur on the current selected DOM element
- _Innescatore submit_  | Trigger submit on the current selected DOM element
- _Innescatore select_  | Trigger select on the current selected DOM element
- _Innescatore change_  | Trigger change on the current selected DOM element
- _Innescatore show_  | Trigger show on the current selected DOM element
- _Innescatore reset_  | Trigger reset on the current selected DOM element
- _Innescatore play_  | Trigger play on the current selected DOM element
- _Innescatore pause_  | Trigger play on the current selected DOM element
- _Innescatore mouse over_  | Trigger mouseover on the current selected DOM element
- _Innescatore mouse up_  | Trigger mouseup on the current selected DOM element
- _Innescatore mouse down_  | Trigger mousedown on the current selected DOM element
- _Innescatore mouse leave_  | Trigger mouseover on the current selected DOM element
- _Innescatore mouse move_  | Trigger mousemove on the current selected DOM element
- _Innescatore mouse enter_  | Trigger mouseenter on the current selected DOM element
- _Innescatore mouse out_  | Trigger mouseout on the current selected DOM element
- _Innescatore drag_  | Trigger drag on the current selected DOM element
- _Innescatore drag start_  | Trigger dragstart on the current selected DOM element
- _Innescatore drag end_  | Trigger dragend on the current selected DOM element
- _Innescatore drag enter_  | Trigger dragenter on the current selected DOM element
- _Innescatore drag leave_  | Trigger dragleave on the current selected DOM element
- _Innescatore drag over_  | Trigger dragmove on the current selected DOM element
- _Innescatore drop_  | Trigger drop on the current selected DOM element
- _Innescatore touch start_  | Trigger touchstart on the current selected DOM element
- _Innescatore touch end_  | Trigger touchend on the current selected DOM element
- _Innescatore touch enter_  | Trigger touchenter on the current selected DOM element
- _Innescatore touch leave_  | Trigger touchleave on the current selected DOM element
- _Innescatore touch move_  | Trigger touchmove on the current selected DOM element
- _Innescatore touch cancel_  | Trigger touchcancel on the current selected DOM element
- _Innescatore scorri y_  | Trigger Y scroll on the current selected DOM element
- _Innescatore scorri x_  | Trigger X scroll on the current selected DOM element
+ _Innesca click_  | Trigger click on the current selected DOM element
+ _Innesca focus_  | Trigger focus on the current selected DOM element
+ _Innesca fade_  | Trigger fade on the current selected DOM element
+ _Innesca pin_  | Trigger pin on the current selected DOM element
+ _Innesca blur_  | Trigger blur on the current selected DOM element
+ _Innesca submit_  | Trigger submit on the current selected DOM element
+ _Innesca select_  | Trigger select on the current selected DOM element
+ _Innesca change_  | Trigger change on the current selected DOM element
+ _Innesca show_  | Trigger show on the current selected DOM element
+ _Innesca reset_  | Trigger reset on the current selected DOM element
+ _Innesca play_  | Trigger play on the current selected DOM element
+ _Innesca pause_  | Trigger play on the current selected DOM element
+ _Innesca mouse over_  | Trigger mouseover on the current selected DOM element
+ _Innesca mouse up_  | Trigger mouseup on the current selected DOM element
+ _Innesca mouse down_  | Trigger mousedown on the current selected DOM element
+ _Innesca mouse leave_  | Trigger mouseover on the current selected DOM element
+ _Innesca mouse move_  | Trigger mousemove on the current selected DOM element
+ _Innesca mouse enter_  | Trigger mouseenter on the current selected DOM element
+ _Innesca mouse out_  | Trigger mouseout on the current selected DOM element
+ _Innesca drag_  | Trigger drag on the current selected DOM element
+ _Innesca drag start_  | Trigger dragstart on the current selected DOM element
+ _Innesca drag end_  | Trigger dragend on the current selected DOM element
+ _Innesca drag enter_  | Trigger dragenter on the current selected DOM element
+ _Innesca drag leave_  | Trigger dragleave on the current selected DOM element
+ _Innesca drag over_  | Trigger dragmove on the current selected DOM element
+ _Innesca drop_  | Trigger drop on the current selected DOM element
+ _Innesca touch start_  | Trigger touchstart on the current selected DOM element
+ _Innesca touch end_  | Trigger touchend on the current selected DOM element
+ _Innesca touch enter_  | Trigger touchenter on the current selected DOM element
+ _Innesca touch leave_  | Trigger touchleave on the current selected DOM element
+ _Innesca touch move_  | Trigger touchmove on the current selected DOM element
+ _Innesca touch cancel_  | Trigger touchcancel on the current selected DOM element
+ _Innesca scorri y_  | Trigger Y scroll on the current selected DOM element
+ _Innesca scorri x_  | Trigger X scroll on the current selected DOM element
 
 ####Window
 
