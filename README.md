@@ -8,6 +8,8 @@
   |
   &nbsp; <b><a href="#-commands">Commands</a></b>&nbsp; 
   |
+  &nbsp; <b><a href="#i18n">Langs</a></b>&nbsp; 
+  |
   &nbsp; <b><a href="#plugins">Plugins</a></b>&nbsp; 
   |
   &nbsp; <b><a href="#browser-support">Browser support</a></b>
@@ -193,7 +195,18 @@ Command  | Result
  _Browser clean session storage_  | Clean browser session storage
  _Browser clean local storage_  | Clean browser local storage
  
- 
+
+###i18n
+Butler will can be used in various languages [available here](https://github.com/720kb/butler/tree/master/src/js/i18n)
+If you want Butler to understand Italian for example just include the i18n italian file after butler main file:
+
+```html
+<script src="butler.min.js"></script>
+<script src="butler.it_IT.js"></script>
+```
+
+This way all the default commands gets translated to italian, you can check translation by each i18n file [README](https://github.com/720kb/butler/blob/master/src/js/i18n/it/README.md)
+
 ###Tools
 Butler exposes some good stuff you can interact with.
 
