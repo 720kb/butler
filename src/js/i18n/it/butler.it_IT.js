@@ -687,15 +687,15 @@
         /*eslint-enable*/
         //jscs:enable
       },
-      'browser pulisci local storage': function cleanLocalStorage() {
+      'browser cancella local storage': function cleanLocalStorage() {
         window.localStorage.clean();
         window.console.info('Browser cleaned localStorage');
       },
-      'browser pulisci session storage': function cleanSessionStorage() {
+      'browser cancella session storage': function cleanSessionStorage() {
         window.sessionStorage.clean();
         window.console.info('Browser cleaned sessionStorage');
       },
-      'browser pulisci cookies': function browserCleanCookies() {
+      'browser cancella cookies': function browserCleanCookies() {
         /*eslint-disable*/
         //jscs:disable
         try {
