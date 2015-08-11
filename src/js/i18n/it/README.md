@@ -124,6 +124,6 @@ Commands to manipulate and interact with the browser
 
 Command  | Result
 ------------- | -------------
- _Browser pulisci cookies_  | Clean browser cookies
- _Browser pulisci session storage_  | Clean browser session storage
- _Browser pulisci local storage_  | Clean browser local storage
+ _Browser cancella cookies_  | Clean browser cookies
+ _Browser cancella session storage_  | Clean browser session storage
+ _Browser cancella local storage_  | Clean browser local storage
