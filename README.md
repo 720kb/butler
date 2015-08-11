@@ -279,9 +279,6 @@ Writing a plugin is very simple, all you have to do is to define new commands us
 
 _If you want to access Butler tools have a look [here](https://github.com/720kb/butler#tools)_
 
-####Plugin commands
-Please refer to [annyang](https://github.com/TalAter/annyang/blob/master/docs/README.md#commands-object) documentation to define new commands
-
 **Example**
 
 
@@ -308,6 +305,9 @@ document.addEventListener("DOMContentLoaded", function () {
 </head>
 ```
 Now all the _butler.plugin.js_ defined commands and callbacks are plugged and can be used.
+
+####Plugin commands
+Please refer to [annyang](https://github.com/TalAter/annyang/blob/master/docs/README.md#commands-object) documentation to define new commands
 
 ###Debug
 Enable debug mode
