@@ -13,88 +13,95 @@
 </head>
 <body>
   <div id="problem" class="center-content radius5 hide">
-  <h3><i class="fa fa-close color-white v-middle"></i> SORRY</h3>
-  <div class="separator5"></div>
-  Can you repeat Sir ?
+    <h3><i class="fa fa-close color-white v-middle"></i> SORRY</h3>
+    <div class="separator5"></div>
+    Can you repeat Sir ?
   </div>
   <div class="separator50"></div>
   <div class="line header center-content">
     <img src="assets/img/butlerjs.png"/>
   </div>
-    <div class="separator5"></div>
+  <div class="separator5"></div>
   <div class="line center-content">
     <h3 class="banner">
-    &nbsp;Your personal javascript butler &nbsp;
+      &nbsp;Your personal javascript butler &nbsp;
     </h3>
   </div>
+  <div class="separator50"></div>
+  <div class="line center-content">
     <div class="separator50"></div>
-    <div class="line center-content">
-      <div class="separator50"></div>
-        <div id="not-started">
-        <i class="fa fa-microphone fa-3x animated bounce infinite"></i>
-        <div class="separator15"></div>
-        <h1 class="color-muted font-light">Sir please ...</h1>
-        <div class="separator5"></div>
-        <h3 class="font-light">allow your microphone</h3>
+    <div id="not-started">
+      <i class="fa fa-microphone fa-3x animated bounce infinite"></i>
+      <div class="separator15"></div>
+      <h1 class="color-muted font-light">Sir please ...</h1>
+      <div class="separator5"></div>
+      <h3 class="font-light">allow your microphone</h3>
+    </div>
+    <div id="started" class="hide">
+      <div>
+        <input id="input" class="radius5 animated fadeIn" readonly type="text"/>
       </div>
-        <div id="started" class="hide">
-          <div>
-          <input id="input" class="radius5 animated fadeIn" readonly type="text"/>
-        </div>
-        <div class="separator30"></div>
-        <div id="select">
-            <h1 class="animated fadeIn color-muted font-light">Thank you Sir!</h1>
-          <div class="separator15"></div>
-          <h3 class="font-light">Say please: <i class="color-muted font-light">"Selector next tag input"</i></h3>
-        </div>
-        <div id="value" class="hide">
-          <h1 class="animated fadeIn color-muted font-light">Cool Sir!</h1>
+      <div class="separator30"></div>
+      <div id="select">
+        <h1 class="animated fadeIn color-muted font-light">Thank you Sir!</h1>
+        <div class="separator15"></div>
+        <h3 class="font-light">Say please: <i class="color-muted font-light">"Selector next tag input"</i></h3>
+      </div>
+      <div id="value" class="hide">
+        <h1 class="animated fadeIn color-muted font-light">Cool Sir!</h1>
         <div class="separator15"></div>
         <h3 class="font-light">Say please: <i class="color-muted font-light">"Selector put value random"</i></h3>
-        </div>
-        </div>
-        <div class="fixed top layer2 right-content line-compress mobile-center-content">
-          <div class="separator5 tablet mobile"></div>
-        <a class="btn-github toggle-opacity-hover color-black font-bold" href="//github.com/720kb/butler" target="_blankgit ">
+      </div>
+    </div>
+    <div class="fixed top layer2 right-content line-compress mobile-center-content">
+      <div class="separator5 tablet mobile"></div>
+      <a class="btn-github toggle-opacity-hover color-black font-bold" href="//github.com/720kb/butler" target="_blankgit ">
         <div class="separator10"></div>
-          <i class="fa fa-github-alt"></i>
-          See on Github
-          </a>
-        </div>
-        <div class="separator100"></div>
-        <small class="line center-content color-muted font-x-small">
-
-         <a class="color-black toggle-opacity-hover" href="//720kb.net">720kb</a>
-       </small>
+        <i class="fa fa-github-alt"></i>
+        See on Github
+      </a>
+    </div>
+    <div class="separator100"></div>
+    <div class="line center-content">
+      <a class="github-button color-muted" href="https://github.com/720kb/butler" data-icon="octicon-star" data-style="small" data-count-href="/720kb/butler/stargazers" data-count-api="/repos/720kb/butler#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star 720kb/butler on GitHub">Star</a>
+      &nbsp;&nbsp;
+      <a class="github-button color-muted" href="https://github.com/720kb/butler/fork" data-icon="octicon-git-branch" data-style="small" data-count-href="/720kb/butler/network" data-count-api="/repos/720kb/butler#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork 720kb/butler on GitHub">Fork</a>
+      &nbsp;&nbsp;
+      <a class="github-button color-muted" href="https://github.com/720kb/butler/archive/master.zip" data-icon="octicon-cloud-download" data-style="small" aria-label="Download 720kb/butler on GitHub">Download</a>
+    </div>
+    <div class="separator30"></div>
+    <small class="line center-content color-muted font-x-small">
+      <a class="color-black toggle-opacity-hover" href="//720kb.net">720kb</a>
+    </small>
   </div>
   <script>
-    var detectionOne
-      , inputOnChange = window.setInterval(function() {
-        if (Butler.Highlighter.element.value
-          && Butler.Highlighter.element.value.length
-          && Butler.Highlighter.element.value.length > 0) {
+  var detectionOne
+  , inputOnChange = window.setInterval(function() {
+    if (Butler.Highlighter.element.value
+      && Butler.Highlighter.element.value.length
+      && Butler.Highlighter.element.value.length > 0) {
 
-          Butler.Highlighter.erase();
-          hideProblem();
-          value.remove();
-          window.clearInterval(inputOnChange);
-          window.alert('Congratulations Sir!');
-          }
-        }, 800)
-      , input = window.document.getElementById('input')
-      , started = window.document.getElementById('started')
-      , notStarted = window.document.getElementById('not-started')
-      , select = window.document.getElementById('select')
-      , value = window.document.getElementById('value')
-      , problem = window.document.getElementById('problem')
-      , hideProblem = function () {
-        problem.classList.add('hide');
+        Butler.Highlighter.erase();
+        hideProblem();
+        value.remove();
+        window.clearInterval(inputOnChange);
+        window.alert('Congratulations Sir!');
       }
-      , showProblem = function () {
-        problem.classList.add('animated');
-        problem.classList.add('bounceIn');
-        problem.classList.remove('hide');
-      };
+    }, 800)
+    , input = window.document.getElementById('input')
+    , started = window.document.getElementById('started')
+    , notStarted = window.document.getElementById('not-started')
+    , select = window.document.getElementById('select')
+    , value = window.document.getElementById('value')
+    , problem = window.document.getElementById('problem')
+    , hideProblem = function () {
+      problem.classList.add('hide');
+    }
+    , showProblem = function () {
+      problem.classList.add('animated');
+      problem.classList.add('bounceIn');
+      problem.classList.remove('hide');
+    };
     if (!('webkitSpeechRecognition' in window)) {
       notStarted.innerHTML = '<h3>This is not Chrome!</h3><div class="separator5"></div><h4 class="font-light"><div>Please Sir use <div class="separator5"></div> <i class="fa fa-chrome"></i> Google Chrome</div></h4>'
     }
@@ -145,17 +152,17 @@
         'debug':true
       });
     }, false);
-  </script>
-  <!--G-->
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-66133212-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-</body>
-</html>
+    </script>
+    <!-- Place this tag right after the last button or just before your close body tag. -->
+    <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+    <!--G-->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66133212-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+  </body>
+  </html>
