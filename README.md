@@ -1,6 +1,13 @@
+
 <br>
+
 ![Butler.js](http://i.imgur.com/75NI4tj.jpg)
-<br><br><br>
+
+<br>
+<br>
+
+<br>
+
 <p align="center">
   <b><a href="#installation">Installation </a></b> &nbsp; 
   |
@@ -16,7 +23,7 @@
 </p>
 <br><br>
 
-###What is Butler?
+# What is Butler?
 
 **Butler.js** is the voice driven, portable butler for your personal needs.
 
@@ -33,15 +40,15 @@ Butler.js is developed by [720kb](http://720kb.net).
 
 [![Join the chat at https://gitter.im/720kb/butler](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/720kb/butler?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-###Why Butler?
+### Why Butler?
 
 Many libraries offer the possibility to activate voice commands, Butler offers the same but it starts with already defined commands that can help you debugging or anyway to have fun while debugging and make your life simpler in the browser daily routine.
 
 Plus you have the ability to write your own [plugins](https://github.com/720kb/butler#plugins) (and this is very easy) to expand the abilities of Butler at your leisure.
 
-###Installation
+### Installation
 
-####HTML
+#### HTML
 ```html
 <!DOCTYPE html>
 <html>
@@ -49,29 +56,30 @@ Plus you have the ability to write your own [plugins](https://github.com/720kb/b
 <script src="../path/to/butler.min.js"></script>
 </head>
 ```
-####Bower
+#### Bower
 ```bash
 bower install butler.js
 ```
 
-####Npm
+#### npm
 ```bash
 npm install butler.js
 ```
 
-###Usage
+### Usage
 ```javascript
 document.addEventListener("DOMContentLoaded", function() {
   Butler.start();
 });
 ```
-###Demo
+### Demo
+
 [Live demo](http://720kb.github.io/butler/)
 
 ### <img src="http://i.imgur.com/1p126e1.png" valign="text-top" width="25"/> Commands
 Default voice commands you can abuse of. (many others are coming...)
 
-####Butler
+#### Butler
 Common commands for Butler
 
 Command  | Result
@@ -79,7 +87,7 @@ Command  | Result
 _Butler speak_ | Turn on Butler voice
 _Butler silence_ | Turn off Butler voice
 
-####Selector
+#### Selector
 Commands to select, visualize and manipulate the DOM elements
 
 Command  | Result
@@ -115,7 +123,7 @@ Command  | Result
  _Selector let me choose_  |  Select yourself which DOM element by clicking the element
  _Selector which_  | Show and alert the current selected DOM element informations
 
-####Trigger
+#### Trigger
 
 Commands to trigger events and actions
 
@@ -156,7 +164,7 @@ Command  | Result
  _Trigger scroll y_  | Trigger Y scroll on the current selected DOM element
  _Trigger scroll x_  | Trigger X scroll on the current selected DOM element
 
-####Window
+#### Window
 
 Commands to manipulate, trigger ```window``` events and actions
 
@@ -166,7 +174,7 @@ Command  | Result
  _Window scroll x_  | Trigger window X scroll
  _Window size_  | Alert window dimensions
 
-####Location
+#### Location
 Commands to manipulate, navigate urls and history
 
 Command  | Result
@@ -177,7 +185,7 @@ Command  | Result
  _Location hashbang_  | Add hashbang at the end of the location url
  
  
-####Navigator
+#### Navigator
 
 Commands to manipulate, trigger ```window.navigator```
 
@@ -188,7 +196,7 @@ Command  | Result
  _Navigator vibrate_  | Vibrate device
  _Navigator which_  | Show and alert navigator informations
 
-####Browser
+#### Browser
 
 Commands to manipulate and interact with the browser
 
@@ -199,7 +207,7 @@ Command  | Result
  _Browser clean local storage_  | Clean browser local storage
  
 
-###i18n
+### i18n
 Butler can be used in various languages [available here](https://github.com/720kb/butler/tree/master/src/js/i18n) (Soon there will be more languages)
 
 If you want Butler to understand italian language for example, just include the i18n italian file after butler main file:
@@ -211,31 +219,31 @@ If you want Butler to understand italian language for example, just include the 
 
 This way all the default commands gets translated to italian, you can check translations for each i18n file  from their [README](https://github.com/720kb/butler/blob/master/src/js/i18n/it/README.md) file
 
-###Tools
+### Tools
 Butler exposes some good stuff you can interact with.
 
 You can check them all by:
 ```javascript
 window.console.info(Butler);
 ```
-####Butler.Highlighter
+#### Butler.Highlighter
 Highlighter is the Butler selector (taken from [Highlighter.js](https://github.com/720kb/highlighter.js)), is the DOM surfer who take trace of the selected and current elements.
 
 ```javascript
 window.console.info('Which element are you on Butler?', Butler.Highlighter.element);
 ```
-####Butler.Clipboard
+#### Butler.Clipboard
 Clipboard is where Butler saves the last copied text and/or cloned element.
 ```javascript
 window.console.info('What you copied or cloned Butler?', Butler.Clipboard);
 ```
-####Butler.Voice
+#### Butler.Voice
 Voice is the Butler voice, simple.
 ```javascript
 Butler.Voice.volume = 0.5;
 Butler.Voice.play();
 ```
-####Butler.Commands
+#### Butler.Commands
 Commands is the Object containing all the default Butler voice commands.
 
 ```javascript
@@ -249,7 +257,7 @@ var ButlerCommand = Butler.Commands['selector on'];
 ButlerCommand();
 ```
 
-###Events
+### Events
 Available events
 ```javascript
 document.addEventListner('Butler:start', function (data) {
@@ -277,7 +285,7 @@ document.addEventListner('Butler:error', function (error) {
 });
 ```
 
-###Plugins
+### Plugins
 Writing a plugin is very simple, all you have to do is to define new commands using the ```plug()``` method.
 
 _If you want to access Butler tools have a look [here](https://github.com/720kb/butler#tools)_
@@ -309,10 +317,10 @@ document.addEventListener("DOMContentLoaded", function () {
 ```
 Now all the _butler.plugin.js_ defined commands and callbacks are plugged and can be used.
 
-####Plugin commands
+#### Plugin commands
 Please refer to [annyang](https://github.com/TalAter/annyang/blob/master/docs/README.md#commands-object) documentation to define new commands
 
-###Debug
+### Debug
 Enable debug mode
 ```javascript
 document.addEventListener("DOMContentLoaded", function () {
@@ -321,14 +329,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 ```
-###Browser Support
+### Browser Support
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Google_Chrome_icon_(2011).svg/1024px-Google_Chrome_icon_(2011).svg.png" width="50"/>
 
 Google Chrome (latest versions)
 
 http://caniuse.com/#feat=web-speech
 
-###Contributing
+### Contributing
 
 We would be pleased if you help to develop and grow the project more and more.
 
@@ -336,7 +344,7 @@ The goal is to make the life of programmers and designers more simple and fun, s
 
 Thank you.
 
-###License
+### License
 The MIT License (MIT)
 
 Copyright (c) 2015 Filippo Oretti, Dario Andrei
@@ -347,12 +355,12 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-####Gtk
+#### Gtk
 - Not ready for a production project
 - Default [commands](https://github.com/720kb/butler#-commands) may be changed or modified at any time, others will come soon
 - The Speech Detection is still very slow sometimes, using https:// will be slighty faster
 - If you have multiple tabs working on speech recognition and microphone there will be problems, please use Butler on a single browser tab and close the other tabs that are asking for your microphone 
 
-####Thank you
+#### Thank you
 - to [Google](google.com) and Google developers, for the awesome webkit-speech API
 - to https://github.com/TalAter/annyang developers and maintainers for the awesome library.
